@@ -1,0 +1,79 @@
+<!-- Email Protection Component -->
+<!-- Bot-proof, visible but not easily copied, no 404 errors -->
+
+<style>
+.protected-email {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    color: #2563eb;
+    text-decoration: underline;
+}
+.protected-email:hover {
+    opacity: 0.8;
+}
+</style>
+
+<!-- Method 1: Reversed Text (Visible, not copyable, bot-resistant) -->
+<span class="protected-email" onclick="sendEmail()" title="Click to send email">
+    ten.kkettrats@htnakirs
+</span>
+
+<!-- Method 2: Obfuscated with Data Attributes -->
+<span class="email-link" 
+      data-user="srikanth" 
+      data-domain="startekk" 
+      data-tld="net"
+      onclick="composeEmail(this)"
+      style="cursor: pointer; color: #2563eb; text-decoration: underline;">
+    [Click to reveal email]
+</span>
+
+<script>
+// Method 1: Direct email composition
+function sendEmail() {
+    const reversed = 'ten.kkettrats@htnakirs';
+    const email = reversed.split('').reverse().join('');
+    window.location.href = 'mailto:' + email;
+}
+
+// Method 2: Construct from data attributes
+function composeEmail(element) {
+    const user = element.getAttribute('data-user');
+    const domain = element.getAttribute('data-domain');
+    const tld = element.getAttribute('data-tld');
+    const email = user + '@' + domain + '.' + tld;
+    window.location.href = 'mailto:' + email;
+}
+
+// Method 3: Show email on click
+function revealEmail(element) {
+    const user = atob('c3Jpa2FudGg='); // base64 encoded
+    const domain = atob('c3RhcnRla2s=');
+    const tld = atob('bmV0');
+    const email = user + '@' + domain + '.' + tld;
+    element.textContent = email;
+    element.style.userSelect = 'text';
+    element.onclick = null;
+}
+</script>
+
+<!-- For Contact Page: Replace existing email link with this -->
+<div class="flex items-center gap-3">
+    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+    </svg>
+    <div>
+        <div class="text-sm text-gray-600">Email</div>
+        <div class="text-gray-900 font-semibold">
+            <span class="protected-email" onclick="sendEmail()" title="Click to send email">
+                ten.kkettrats@htnakirs
+            </span>
+        </div>
+    </div>
+</div>

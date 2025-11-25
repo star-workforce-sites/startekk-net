@@ -1,0 +1,25 @@
+# robots.txt for StartTekk.net
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.startekk.net/sitemap.xml
+
+# Disallow admin and private areas (when implemented)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

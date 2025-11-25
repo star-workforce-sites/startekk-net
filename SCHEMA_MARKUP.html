@@ -1,0 +1,252 @@
+<!-- SCHEMA MARKUP - Add to relevant pages -->
+
+<!-- 1. ORGANIZATION SCHEMA - Add to BOTH homepages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "StarTekk, LLC",
+  "alternateName": "Star Workforce Solutions",
+  "url": "https://www.startekk.net",
+  "logo": "https://www.startekk.net/logo.png",
+  "description": "Offshore software development, cloud automation, AI implementation, and IT staffing services",
+  "foundingDate": "2003",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5465 Legacy Drive Suite 650",
+    "addressLocality": "Plano",
+    "addressRegion": "TX",
+    "postalCode": "75024",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-469-713-3993",
+    "contactType": "sales",
+    "areaServed": ["US", "CA", "IN", "AU"],
+    "availableLanguage": ["en"]
+  },
+  "sameAs": [
+    "https://www.starworkforce.net"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "47"
+  }
+}
+</script>
+
+<!-- 2. SERVICE SCHEMA - StarTekk Cloud Services -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Cloud Migration Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "StarTekk, LLC"
+  },
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cloud Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AWS Migration",
+          "description": "Complete AWS cloud migration with automation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Azure Migration",
+          "description": "Microsoft Azure cloud transformation services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GCP Migration",
+          "description": "Google Cloud Platform migration and optimization"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- 3. PRODUCT SCHEMA - Star AI eDiscovery -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Star AI eDiscovery",
+  "applicationCategory": "LegalApplication",
+  "operatingSystem": "Web-based",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.10",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "0.10",
+      "priceCurrency": "USD",
+      "referenceQuantity": {
+        "@type": "QuantitativeValue",
+        "value": "1",
+        "unitText": "document"
+      }
+    },
+    "description": "Pay per document reviewed"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "23"
+  },
+  "description": "AI-powered legal document review and eDiscovery platform at $0.10 per document"
+}
+</script>
+
+<!-- 4. FAQ SCHEMA - Cost Calculator Page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much can I save with offshore development?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most clients save 30-50% on development costs with offshore teams. Our calculator shows exact savings for 250+ job titles comparing USA market rates vs offshore rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are typical offshore developer rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Offshore rates typically range from $20-$45/hour for India-based developers, compared to $60-$120/hour for USA market rates. Exact rates vary by role and seniority level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I save money with nearshore teams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, nearshore teams (Canada) typically cost 15-25% less than USA market rates while providing same timezone coverage and cultural alignment."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 5. JOB POSTING SCHEMA - Jobs Page (Example for one job) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Software Engineer - Contract",
+  "description": "Contract software engineering position with flexible duration. Full-stack, backend, or frontend roles available.",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Star Workforce Solutions"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Remote",
+      "addressRegion": "US",
+      "addressCountry": "US"
+    }
+  },
+  "employmentType": "CONTRACTOR",
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 100000,
+      "maxValue": 180000,
+      "unitText": "YEAR"
+    }
+  }
+}
+</script>
+
+<!-- 6. LOCAL BUSINESS SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "StarTekk, LLC",
+  "image": "https://www.startekk.net/logo.png",
+  "priceRange": "$$",
+  "telephone": "+1-469-713-3993",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5465 Legacy Drive Suite 650",
+    "addressLocality": "Plano",
+    "addressRegion": "TX",
+    "postalCode": "75024",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.0198,
+    "longitude": -96.8178
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+}
+</script>
+
+<!-- 7. BREADCRUMB SCHEMA - For navigation -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.startekk.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://www.startekk.net/services.html"
+    }
+  ]
+}
+</script>
+
+<!-- Implementation Instructions:
+1. Add Organization schema to both homepages
+2. Add Service schema to service pages (cloud, staffing)
+3. Add Product schema to product pages (eDiscovery, QR Feedback)
+4. Add FAQ schema to cost calculator
+5. Add JobPosting schema to jobs page (one per job listing)
+6. Add LocalBusiness to contact pages
+7. Add Breadcrumb to all non-homepage pages
+-->
