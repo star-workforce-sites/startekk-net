@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star AI Cloud - Intelligent Cloud Automation Advisor | StarTekk</title>
+    <meta name="description" content="Transform your cloud operations with AI-powered automation guidance. Get step-by-step instructions for AWS, Azure, and GCP automation using advanced AI.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': {
+                            600: '#047857',
+                        },
+                        'lime': {
+                            500: '#84CC16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold text-white">StarTekk</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
+                    <a href="about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
+                    <a href="services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
+                    <a href="products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
+                    <a href="case-studies.html" class="text-white hover:text-lime-300 transition-colors">Case Studies</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(135deg, #047857 0%, #065f46 100%);" class="py-20 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-lime-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-72 h-72 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block px-4 py-2 bg-lime-500/20 rounded-full mb-6">
+                        <span class="text-lime-300 font-semibold">🤖 AI-Powered Cloud Automation</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Your Intelligent Cloud Automation Advisor
+                    </h1>
+                    <p class="text-xl text-gray-200 mb-8">
+                        Stop searching documentation. Ask questions in plain English and get instant, step-by-step automation guides for AWS, Azure, and GCP—powered by advanced AI.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#demo" class="px-8 py-4 rounded-lg font-bold text-lg text-center transition-all shadow-lg hover:shadow-xl hover:scale-105" style="background: linear-gradient(135deg, #84CC16 0%, #65A30D 100%); color: #1a1a1a;">
+                            Try Free Demo
+                        </a>
+                        <a href="#pricing" class="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-lg font-bold text-lg text-white text-center border-2 border-white/30 hover:bg-white/20 transition-all">
+                            View Pricing
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="mt-8 flex items-center gap-6 text-gray-300">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-lime-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <span class="font-semibold">Claude AI Powered</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="font-semibold">Multi-Cloud Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image/Illustration -->
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
+                        <!-- Mock Terminal -->
+                        <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                            <div class="flex items-center gap-2 mb-4 pb-3 border-b border-gray-700">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="text-gray-400 ml-2">Star AI Cloud Terminal</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-lime-400">$ How do I automate S3 bucket backups?</div>
+                                <div class="text-gray-300 leading-relaxed">
+                                    <span class="text-blue-400">AI:</span> I'll guide you through setting up automated S3 backups:
+                                    <br><br>
+                                    <span class="text-emerald-400">Step 1:</span> Create a Lambda function...<br>
+                                    <span class="text-emerald-400">Step 2:</span> Configure CloudWatch Events...<br>
+                                    <span class="text-emerald-400">Step 3:</span> Set up IAM permissions...
+                                </div>
+                                <div class="text-lime-400 animate-pulse">▊</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">The Cloud Automation Challenge</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Cloud engineers waste hours searching documentation, piecing together tutorials, and troubleshooting automation scripts.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Problem 1 -->
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-8">
+                    <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Time-Consuming Research</h3>
+                    <p class="text-gray-700">
+                        Engineers spend 3-5 hours per week searching AWS/Azure/GCP documentation for automation solutions.
+                    </p>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-8">
+                    <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Trial & Error Approach</h3>
+                    <p class="text-gray-700">
+                        Copy-paste code from Stack Overflow often leads to configuration errors and security vulnerabilities.
+                    </p>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-8">
+                    <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fragmented Knowledge</h3>
+                    <p class="text-gray-700">
+                        Best practices scattered across blogs, forums, and outdated tutorials make it hard to find reliable solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution/How It Works -->
+    <section class="py-20 bg-gradient-to-br from-emerald-50 to-lime-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How Star AI Cloud Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Simply ask your question in plain English. Our AI instantly provides detailed, step-by-step automation guides tailored to your cloud platform.
+                </p>
+            </div>
+
+            <!-- Phase 1 -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        1
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">Current Phase</div>
+                        <h3 class="text-2xl font-bold text-gray-900">Interactive Cloud Automation Advisor</h3>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-4">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-gray-700"><strong>Natural Language Input:</strong> Ask questions in plain English—no technical syntax required</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-gray-700"><strong>Multi-Cloud Support:</strong> Get guidance for AWS, Azure, and Google Cloud Platform</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-gray-700"><strong>Step-by-Step Guides:</strong> Detailed instructions with code examples and best practices</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-gray-700"><strong>Security Best Practices:</strong> IAM roles, encryption, and compliance guidance included</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-gray-700"><strong>Cost Optimization Tips:</strong> Save money with resource sizing and scheduling recommendations</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-4">Common Use Cases:</h4>
+                        <div class="space-y-3">
+                            <div class="bg-emerald-50 rounded-lg p-4">
+                                <div class="font-semibold text-emerald-900 mb-1">💾 Backup Automation</div>
+                                <p class="text-sm text-gray-700">Automate S3/Blob/Cloud Storage backups with lifecycle policies</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-lg p-4">
+                                <div class="font-semibold text-emerald-900 mb-1">🔄 CI/CD Pipeline Setup</div>
+                                <p class="text-sm text-gray-700">Configure CodePipeline, Azure DevOps, or Cloud Build</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-lg p-4">
+                                <div class="font-semibold text-emerald-900 mb-1">📊 Monitoring & Alerts</div>
+                                <p class="text-sm text-gray-700">Set up CloudWatch, Monitor, or Cloud Logging with notifications</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-lg p-4">
+                                <div class="font-semibold text-emerald-900 mb-1">⚡ Serverless Functions</div>
+                                <p class="text-sm text-gray-700">Deploy Lambda, Functions, or Cloud Functions with triggers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="bg-gradient-to-br from-lime-100 to-emerald-100 rounded-2xl shadow-xl p-8 border-2 border-dashed border-emerald-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold bg-white text-emerald-600 border-2 border-emerald-600">
+                        2
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-emerald-700 uppercase tracking-wide">Coming Soon</div>
+                        <h3 class="text-2xl font-bold text-gray-900">Remote Automation Execution</h3>
+                    </div>
+                </div>
+
+                <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6">
+                    <p class="text-gray-700 mb-4">
+                        <strong>Future enhancement:</strong> Beyond providing instructions, Star AI Cloud will execute automation tasks directly in your cloud environment with your approval.
+                    </p>
+                    
+                    <h4 class="text-lg font-semibold text-gray-900 mb-3">Planned Capabilities:</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <span class="text-gray-700">One-click resource provisioning</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <span class="text-gray-700">Automated script deployment</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <span class="text-gray-700">Configuration management</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <span class="text-gray-700">Secure credential management</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
+                        <p class="text-sm text-amber-800">
+                            <strong>Note:</strong> All automation executions will require explicit approval and follow security best practices. You maintain full control.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Try Star AI Cloud</h2>
+                <p class="text-xl text-gray-600">
+                    Experience the power of AI-driven cloud automation guidance
+                </p>
+            </div>
+
+            <div class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden">
+                <!-- Demo Terminal Header -->
+                <div class="bg-gray-800 px-6 py-3 flex items-center gap-3 border-b border-gray-700">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <span class="text-gray-400 text-sm font-mono">Star AI Cloud Demo - Try Sample Questions</span>
+                </div>
+
+                <!-- Demo Content -->
+                <div class="p-8">
+                    <div class="mb-6">
+                        <label class="block text-gray-400 text-sm font-mono mb-2">SELECT YOUR CLOUD PLATFORM:</label>
+                        <div class="grid grid-cols-3 gap-4">
+                            <button class="px-4 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg font-semibold transition-colors text-white">
+                                AWS
+                            </button>
+                            <button class="px-4 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-colors text-white">
+                                Azure
+                            </button>
+                            <button class="px-4 py-3 bg-red-500 hover:bg-red-600 rounded-lg font-semibold transition-colors text-white">
+                                GCP
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-400 text-sm font-mono mb-2">TRY THESE SAMPLE QUESTIONS:</label>
+                        <div class="space-y-2">
+                            <button class="w-full text-left px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-lime-400 font-mono text-sm transition-colors">
+                                → How do I automate EC2 instance backups with snapshots?
+                            </button>
+                            <button class="w-full text-left px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-lime-400 font-mono text-sm transition-colors">
+                                → Set up auto-scaling for my web application
+                            </button>
+                            <button class="w-full text-left px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-lime-400 font-mono text-sm transition-colors">
+                                → Create a Lambda function to process S3 uploads
+                            </button>
+                            <button class="w-full text-left px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-lime-400 font-mono text-sm transition-colors">
+                                → Configure CloudWatch alerts for high CPU usage
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-400 text-sm font-mono mb-2">OR ASK YOUR OWN QUESTION:</label>
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Type your cloud automation question..." class="flex-1 px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-lime-500 focus:outline-none font-mono text-sm">
+                            <button class="px-6 py-3 rounded-lg font-bold transition-all hover:scale-105" style="background: linear-gradient(135deg, #84CC16 0%, #65A30D 100%); color: #1a1a1a;">
+                                Ask AI
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Demo Response Area -->
+                    <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 font-mono text-sm">
+                        <div class="text-blue-400 mb-2">AI Assistant:</div>
+                        <div class="text-gray-300 leading-relaxed">
+                            Select a cloud platform and click a sample question above, or type your own question to see how Star AI Cloud provides detailed, step-by-step automation guidance.
+                        </div>
+                    </div>
+
+                    <!-- CTA in Demo -->
+                    <div class="mt-6 text-center">
+                        <p class="text-gray-400 text-sm mb-3">Ready to unlock full access?</p>
+                        <a href="#pricing" class="inline-block px-8 py-3 rounded-lg font-bold transition-all hover:scale-105" style="background: linear-gradient(135deg, #84CC16 0%, #65A30D 100%); color: #1a1a1a;">
+                            View Pricing & Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Cloud Engineers Love Star AI Cloud</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-lg flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Save 70% Research Time</h3>
+                    <p class="text-gray-700 mb-4">
+                        Get instant answers instead of spending hours searching documentation and Stack Overflow.
+                    </p>
+                    <div class="text-emerald-600 font-semibold">3-5 hours saved per week</div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-lg flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reduce Security Risks</h3>
+                    <p class="text-gray-700 mb-4">
+                        Get security best practices and IAM recommendations built into every guide.
+                    </p>
+                    <div class="text-emerald-600 font-semibold">Built-in compliance checks</div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-lg flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cut Cloud Costs</h3>
+                    <p class="text-gray-700 mb-4">
+                        Receive cost optimization tips with every automation, including resource right-sizing.
+                    </p>
+                    <div class="text-emerald-600 font-semibold">Average 15-25% cost reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Simple, Usage-Based Pricing</h2>
+                <p class="text-xl text-gray-600">
+                    Pay only for what you use. No subscriptions, no commitments.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free Trial -->
+                <div class="bg-gray-50 rounded-2xl shadow-lg p-8 border-2 border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Free Trial</h3>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">$0</div>
+                        <p class="text-gray-600">First 10 questions free</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">10 AI-powered queries</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">All cloud platforms</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Basic automation guides</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">No credit card required</span>
+                        </li>
+                    </ul>
+                    <a href="/signup" class="block w-full px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white text-center rounded-lg font-semibold transition-colors">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Pay Per Use (Recommended) -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 border-4 border-emerald-600 relative transform scale-105">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                        <div class="px-6 py-2 rounded-full text-white font-bold text-sm" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                            MOST POPULAR
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Pay-Per-Query</h3>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">$2.99</div>
+                        <p class="text-gray-600">per AI query</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700"><strong>Unlimited queries</strong> - pay as you go</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">AWS, Azure, GCP support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Detailed step-by-step guides</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Security best practices</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Cost optimization tips</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Email support</span>
+                        </li>
+                    </ul>
+                    <a href="/signup?plan=payperuse" class="block w-full px-6 py-4 text-white text-center rounded-lg font-bold text-lg transition-all hover:scale-105 shadow-lg" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        Get Started Now
+                    </a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-gray-50 rounded-2xl shadow-lg p-8 border-2 border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">Custom</div>
+                        <p class="text-gray-600">For teams & organizations</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Volume discounts</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Dedicated support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Custom integrations</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Team collaboration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">SLA guarantees</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Priority feature requests</span>
+                        </li>
+                    </ul>
+                    <a href="/contact?inquiry=enterprise" class="block w-full px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white text-center rounded-lg font-semibold transition-colors">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pricing Notes -->
+            <div class="mt-12 max-w-3xl mx-auto">
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                    <h4 class="font-semibold text-blue-900 mb-2">💡 How Pricing Works</h4>
+                    <ul class="space-y-2 text-blue-800 text-sm">
+                        <li>• Each query includes the full conversation context—ask follow-up questions without additional charges within the same session</li>
+                        <li>• Complex queries that require multiple automation steps are still counted as one query</li>
+                        <li>• Enterprise customers get discounted rates based on monthly query volume (typically 30-50% off)</li>
+                        <li>• All plans include access to our knowledge base and community forum at no extra cost</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20" style="background: linear-gradient(135deg, #047857 0%, #065f46 100%);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Automate Smarter?
+            </h2>
+            <p class="text-xl text-gray-200 mb-8">
+                Join cloud engineers who've saved hundreds of hours with AI-powered automation guidance.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/signup" class="px-10 py-4 rounded-lg font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105" style="background: linear-gradient(135deg, #84CC16 0%, #65A30D 100%); color: #1a1a1a;">
+                    Start Free Trial (10 Queries)
+                </a>
+                <a href="/contact" class="px-10 py-4 bg-white/10 backdrop-blur-sm rounded-lg font-bold text-lg text-white border-2 border-white/30 hover:bg-white/20 transition-all">
+                    Schedule a Demo
+                </a>
+            </div>
+            <p class="text-gray-300 text-sm mt-6">
+                No credit card required • Full access to all cloud platforms • Cancel anytime
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #047857;" class="text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">StarTekk</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        AI-powered cloud automation and enterprise solutions.
+                    </p>
+                    <div class="text-sm text-gray-300">
+                        <p class="font-semibold" style="color: #E8C547;">HQ: Plano, TX, USA</p>
+                        <p class="mt-1">Mysore, India</p>
+                        <p>Bangalore, India</p>
+                        <p>Montreal, Quebec</p>
+                        <p>Sydney, Australia</p>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <h3 class="font-bold mb-4 text-lime-300">Products</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="star-ai-cloud.html" class="text-gray-300 hover:text-lime-300 transition-colors">Star AI Cloud</a></li>
+                        <li><a href="star-ai-ediscovery.html" class="text-gray-300 hover:text-lime-300 transition-colors">Star AI eDiscovery</a></li>
+                        <li><a href="qr-feedback.html" class="text-gray-300 hover:text-lime-300 transition-colors">QR Feedback</a></li>
+                        <li><a href="career-accel.html" class="text-gray-300 hover:text-lime-300 transition-colors">Career Accel</a></li>
+                    </ul>
+                </div>
+
+                <!-- Solutions -->
+                <div>
+                    <h3 class="font-bold mb-4 text-lime-300">Solutions</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-gray-300 hover:text-lime-300 transition-colors">Cloud Services</a></li>
+                        <li><a href="outsourcing.html" class="text-gray-300 hover:text-lime-300 transition-colors">IT Outsourcing</a></li>
+                        <li><a href="consulting.html" class="text-gray-300 hover:text-lime-300 transition-colors">Consulting</a></li>
+                        <li><a href="case-studies.html" class="text-gray-300 hover:text-lime-300 transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h3 class="font-bold mb-4 text-lime-300">Company</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-gray-300 hover:text-lime-300 transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-lime-300 transition-colors">Contact</a></li>
+                        <li><a href="blog.html" class="text-gray-300 hover:text-lime-300 transition-colors">Blog</a></li>
+                        <li><a href="https://starworkforce.net" class="text-gray-300 hover:text-lime-300 transition-colors">Careers at Star Workforce</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-emerald-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 text-sm">&copy; 2025 StarTekk, LLC. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="/privacy" class="text-gray-300 hover:text-lime-300 text-sm transition-colors">Privacy Policy</a>
+                    <a href="/terms" class="text-gray-300 hover:text-lime-300 text-sm transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Demo interaction (basic functionality)
+        document.addEventListener('DOMContentLoaded', function() {
+            const demoButtons = document.querySelectorAll('.bg-gray-800.hover\\:bg-gray-700');
+            const responseArea = document.querySelector('.bg-gray-800.rounded-lg.p-6');
+            
+            demoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const question = this.textContent.replace('→ ', '').trim();
+                    if (responseArea) {
+                        responseArea.innerHTML = `
+                            <div class="text-blue-400 mb-2">AI Assistant:</div>
+                            <div class="text-gray-300 leading-relaxed">
+                                <div class="mb-4"><strong>Question:</strong> ${question}</div>
+                                <div class="mb-2"><strong class="text-lime-400">This is a demo response.</strong> In the full version, I would provide:</div>
+                                <div class="ml-4 space-y-2">
+                                    <div>✓ Detailed step-by-step instructions</div>
+                                    <div>✓ Required IAM permissions and security setup</div>
+                                    <div>✓ Complete code examples with explanations</div>
+                                    <div>✓ Cost optimization recommendations</div>
+                                    <div>✓ Troubleshooting tips and best practices</div>
+                                </div>
+                                <div class="mt-4 text-lime-400">Sign up to get full AI-powered responses!</div>
+                            </div>
+                        `;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
