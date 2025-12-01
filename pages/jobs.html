@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - Join Our Team | StartTekk</title>
     <meta name="description" content="Explore career opportunities at StartTekk. Join our team building innovative AI-powered solutions.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="/" class="text-2xl font-bold text-green-600">StartTekk</a>
+                    <a href="/" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-xl font-bold text-white">StarTekk</div>
+                    </a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-green-600 transition">Home</a>
-                    <a href="/about.html" class="text-gray-700 hover:text-green-600 transition">About</a>
-                    <a href="/products.html" class="text-gray-700 hover:text-green-600 transition">Products</a>
-                    <a href="/investor" class="text-gray-700 hover:text-green-600 transition">Investors</a>
-                    <a href="/jobs" class="text-green-600 font-semibold">Jobs</a>
-                    <a href="/contact.html" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+                    <a href="/" class="text-white hover:text-lime-300 transition">Home</a>
+                    <a href="/about.html" class="text-white hover:text-lime-300 transition">About</a>
+                    <a href="/products.html" class="text-white hover:text-lime-300 transition">Products</a>
+                    <a href="/investor" class="text-white hover:text-lime-300 transition">Investors</a>
+                    <a href="/pages/jobs" class="text-lime-300 font-semibold">Jobs</a>
+                    <a href="/contact.html" class="text-white hover:text-lime-300 transition">Contact</a>
                 </div>
             </div>
         </div>
@@ -185,7 +193,7 @@
             }
             
             container.innerHTML = jobs.map(job => `
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition cursor-pointer" onclick="window.location.href='/jobs/${job.id}'">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition cursor-pointer" onclick="window.location.href='/pages/jobs/job-detail?id=${job.id}'">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex-1">
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">${escapeHtml(job.job_title)}</h2>
@@ -224,7 +232,7 @@
                     <p class="text-gray-600 mb-4 line-clamp-2">${escapeHtml(job.description).substring(0, 200)}...</p>
                     
                     <div class="flex justify-between items-center pt-4 border-t border-gray-200">
-                        <a href="/jobs/${job.id}" class="text-green-600 font-semibold hover:text-green-700 transition">
+                        <a href="/pages/jobs/job-detail?id=${job.id}" class="text-green-600 font-semibold hover:text-green-700 transition">
                             View Details & Apply →
                         </a>
                         ${job.application_count > 0 ? `<span class="text-sm text-gray-500">${job.application_count} applicants</span>` : ''}

@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Job Details | StartTekk</title>
     <meta name="description" content="Apply for this position at StartTekk">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="/" class="text-2xl font-bold text-green-600">StartTekk</a>
+                    <a href="/" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-xl font-bold text-white">StarTekk</div>
+                    </a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-green-600 transition">Home</a>
-                    <a href="/about.html" class="text-gray-700 hover:text-green-600 transition">About</a>
-                    <a href="/products.html" class="text-gray-700 hover:text-green-600 transition">Products</a>
-                    <a href="/investor" class="text-gray-700 hover:text-green-600 transition">Investors</a>
-                    <a href="/jobs" class="text-green-600 font-semibold">Jobs</a>
-                    <a href="/contact.html" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+                    <a href="/" class="text-white hover:text-lime-300 transition">Home</a>
+                    <a href="/about.html" class="text-white hover:text-lime-300 transition">About</a>
+                    <a href="/products.html" class="text-white hover:text-lime-300 transition">Products</a>
+                    <a href="/investor" class="text-white hover:text-lime-300 transition">Investors</a>
+                    <a href="/pages/jobs" class="text-lime-300 font-semibold">Jobs</a>
+                    <a href="/contact.html" class="text-white hover:text-lime-300 transition">Contact</a>
                 </div>
             </div>
         </div>
@@ -203,7 +211,8 @@
 
     <script>
         const API_URL = '/api/jobs';
-        const jobId = window.location.pathname.split('/').pop();
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobId = urlParams.get('id');
         let currentJob = null;
 
         // Load job details on page load
