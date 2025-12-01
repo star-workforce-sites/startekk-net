@@ -3,615 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Feedback - Instant Customer Feedback System | StarTekk</title>
-    <meta name="description" content="Collect instant customer feedback with QR codes. Simple, fast, and powerful feedback management for businesses of all sizes.">
+    <title>QR Feedback - Real-Time Customer Insights | StartTekk</title>
+    <meta name="description" content="Contactless customer feedback with QR codes. Get real-time analytics and automated response management.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'emerald': {
-                            600: '#047857',
-                        },
-                        'lime': {
-                            500: '#84CC16',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-3">
+
+<!-- Navigation -->
+<nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <a href="/" class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <div>
-                        <div class="text-xl font-bold text-white">StarTekk</div>
-                    </div>
-                </div>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
-                    <a href="about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
-                    <a href="services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
-                    <a href="products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
-                    <a href="case-studies.html" class="text-white hover:text-lime-300 transition-colors">Case Studies</a>
-                    <a href="contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
-                </div>
-
-                <button class="md:hidden text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section style="background: linear-gradient(135deg, #047857 0%, #065f46 100%);" class="py-20 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-lime-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-20 right-10 w-72 h-72 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-block px-4 py-2 bg-lime-500/20 rounded-full mb-6">
-                        <span class="text-lime-300 font-semibold">📱 Instant Feedback Collection</span>
-                    </div>
-                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                        Turn Every Touch point Into Valuable Feedback
-                    </h1>
-                    <p class="text-xl text-gray-200 mb-8">
-                        QR Feedback makes collecting customer insights effortless. Place QR codes anywhere—get real-time feedback instantly. No apps, no logins, no friction.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#demo" class="px-8 py-4 rounded-lg font-bold text-lg text-center transition-all shadow-lg hover:shadow-xl hover:scale-105" style="background: linear-gradient(135deg, #84CC16 0%, #65A30D 100%); color: #1a1a1a;">
-                            Try Demo
-                        </a>
-                        <a href="#pricing" class="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-lg font-bold text-lg text-white text-center border-2 border-white/30 hover:bg-white/20 transition-all">
-                            View Pricing
-                        </a>
-                    </div>
-
-                    <div class="mt-8 flex items-center gap-6 text-gray-300">
-                        <div class="flex items-center gap-2">
-                            <svg class="w-5 h-5 text-lime-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                            </svg>
-                            <span class="font-semibold">No App Required</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-5 h-5 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                            <span class="font-semibold">Real-Time Insights</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Visual - QR Code Demo -->
-                <div class="relative">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
-                        <div class="bg-white rounded-xl p-8 text-center">
-                            <!-- Mock QR Code -->
-                            <div class="w-64 h-64 mx-auto mb-6 bg-black rounded-lg flex items-center justify-center">
-                                <div class="grid grid-cols-8 gap-1 p-4">
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <div class="w-6 h-6 bg-black"></div>
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <div class="w-6 h-6 bg-black"></div>
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <div class="w-6 h-6 bg-black"></div>
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <!-- More QR pattern squares -->
-                                    <div class="w-6 h-6 bg-black"></div>
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <div class="w-6 h-6 bg-black"></div>
-                                    <div class="w-6 h-6 bg-black"></div>
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <div class="w-6 h-6 bg-black"></div>
-                                    <div class="w-6 h-6 bg-white rounded-sm"></div>
-                                    <div class="w-6 h-6 bg-black"></div>
-                                </div>
-                            </div>
-                            <div class="text-gray-900 font-bold text-xl mb-2">Scan to Leave Feedback</div>
-                            <div class="text-gray-600">Quick • Simple • Anonymous</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Perfect For Every Business</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    From retail stores to healthcare facilities, QR Feedback helps businesses capture insights at every customer touchpoint.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Restaurant/Retail -->
-                <div class="bg-gradient-to-br from-emerald-50 to-lime-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Restaurants & Retail</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Table tents for instant meal feedback</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Receipt QR codes for post-purchase surveys</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>In-store signage for product feedback</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Service counter ratings</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Healthcare -->
-                <div class="bg-gradient-to-br from-emerald-50 to-lime-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Healthcare Facilities</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Patient satisfaction surveys</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Waiting room experience feedback</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Post-appointment follow-ups</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Staff performance evaluations</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Events/Venues -->
-                <div class="bg-gradient-to-br from-emerald-50 to-lime-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Events & Venues</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Conference session ratings</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Hotel room experience surveys</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Event check-out feedback</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-emerald-600 font-bold">•</span>
-                            <span>Venue cleanliness and amenities</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Simple 3-Step Process</h2>
-                <p class="text-xl text-gray-600">Set up your feedback system in minutes</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="relative">
-                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                        <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold text-white" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                            1
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Create Your Feedback Form</h3>
-                        <p class="text-gray-700">
-                            Design custom feedback forms with your questions, rating scales, and branding. Takes less than 5 minutes.
-                        </p>
-                    </div>
-                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                        <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="relative">
-                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                        <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold text-white" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                            2
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Generate QR Codes</h3>
-                        <p class="text-gray-700">
-                            Instantly generate unique QR codes for each location, product, or touchpoint. Print or display digitally.
-                        </p>
-                    </div>
-                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                        <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="relative">
-                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                        <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold text-white" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                            3
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Collect & Analyze</h3>
-                        <p class="text-gray-700">
-                            Watch real-time feedback roll in. View analytics, trends, and actionable insights from your dashboard.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Powerful Features, Simple Interface</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 mb-2">Mobile-Optimized</h3>
-                        <p class="text-gray-700 text-sm">Perfect experience on any device. No app downloads required.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 mb-2">Real-Time Analytics</h3>
-                        <p class="text-gray-700 text-sm">Live dashboard with trends, sentiment analysis, and export options.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 mb-2">Custom Branding</h3>
-                        <p class="text-gray-700 text-sm">Add your logo, colors, and messaging to match your brand.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 mb-2">Instant Alerts</h3>
-                        <p class="text-gray-700 text-sm">Get notified immediately of negative feedback to address issues fast.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 mb-2">Privacy-First</h3>
-                        <p class="text-gray-700 text-sm">Anonymous feedback option. GDPR and CCPA compliant.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 mb-2">Easy Integration</h3>
-                        <p class="text-gray-700 text-sm">Export data to your CRM, email marketing, or analytics tools.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="py-20 bg-gradient-to-br from-emerald-50 to-lime-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-xl text-gray-600">Choose the plan that fits your business</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Starter -->
-                <div class="bg-white rounded-2xl shadow-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
-                    <div class="text-4xl font-bold text-gray-900 mb-4">$29<span class="text-lg text-gray-600">/mo</span></div>
-                    <p class="text-gray-600 mb-6">Perfect for small businesses</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">5 QR codes</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">500 responses/month</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Basic analytics</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Email support</span>
-                        </li>
-                    </ul>
-                    <a href="/signup?plan=starter" class="block w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-center rounded-lg font-semibold transition-colors">
-                        Get Started
-                    </a>
-                </div>
-
-                <!-- Business (Popular) -->
-                <div class="bg-white rounded-2xl shadow-2xl p-8 border-4 border-emerald-600 relative transform scale-105">
-                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2">
-                        <div class="px-6 py-2 rounded-full text-white font-bold text-sm" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                            MOST POPULAR
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Business</h3>
-                    <div class="text-4xl font-bold text-gray-900 mb-4">$99<span class="text-lg text-gray-600">/mo</span></div>
-                    <p class="text-gray-600 mb-6">For growing businesses</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700"><strong>25 QR codes</strong></span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700"><strong>5,000 responses/month</strong></span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Advanced analytics & trends</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Custom branding</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Instant alerts</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Priority support</span>
-                        </li>
-                    </ul>
-                    <a href="/signup?plan=business" class="block w-full px-6 py-4 text-white text-center rounded-lg font-bold text-lg transition-all hover:scale-105 shadow-lg" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                        Get Started
-                    </a>
-                </div>
-
-                <!-- Enterprise -->
-                <div class="bg-white rounded-2xl shadow-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
-                    <div class="text-4xl font-bold text-gray-900 mb-4">Custom</div>
-                    <p class="text-gray-600 mb-6">For large organizations</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Unlimited QR codes</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Unlimited responses</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">White-label solution</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">API access</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">Dedicated account manager</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-gray-700">SLA guarantees</span>
-                        </li>
-                    </ul>
-                    <a href="/contact?inquiry=enterprise" class="block w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-center rounded-lg font-semibold transition-colors">
-                        Contact Sales
-                    </a>
-                </div>
-            </div>
-
-            <p class="text-center text-gray-600 mt-8">All plans include a 14-day free trial. No credit card required.</p>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-20" style="background: linear-gradient(135deg, #047857 0%, #065f46 100%);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                Start Collecting Better Feedback Today
-            </h2>
-            <p class="text-xl text-gray-200 mb-8">
-                Join thousands of businesses using QR Feedback to improve customer satisfaction.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/signup" class="px-10 py-4 rounded-lg font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105" style="background: linear-gradient(135deg, #84CC16 0%, #65A30D 100%); color: #1a1a1a;">
-                    Start Free Trial
-                </a>
-                <a href="#demo" class="px-10 py-4 bg-white/10 backdrop-blur-sm rounded-lg font-bold text-lg text-white border-2 border-white/30 hover:bg-white/20 transition-all">
-                    See Demo
+                    <div class="text-xl font-bold text-white">StarTekk</div>
                 </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background-color: #047857;" class="text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <span class="text-xl font-bold">StarTekk</span>
-                    </div>
-                    <p class="text-gray-300 text-sm mb-4">AI-powered cloud automation and enterprise solutions.</p>
-                    <div class="text-sm text-gray-300">
-                        <p class="font-semibold" style="color: #E8C547;">HQ: Plano, TX, USA</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="font-bold mb-4 text-lime-300">Products</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/investor/star-ai-cloud.html" class="text-gray-300 hover:text-lime-300 transition-colors">Star AI Cloud</a></li>
-                        <li><a href="/investor/star-ai-ediscovery.html" class="text-gray-300 hover:text-lime-300 transition-colors">Star AI eDiscovery</a></li>
-                        <li><a href="/investor/qr-feedback.html" class="text-gray-300 hover:text-lime-300 transition-colors">QR Feedback</a></li>
-                        <li><a href="career-accel.html" class="text-gray-300 hover:text-lime-300 transition-colors">Career Accel</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="font-bold mb-4 text-lime-300">Solutions</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="services.html" class="text-gray-300 hover:text-lime-300 transition-colors">Cloud Services</a></li>
-                        <li><a href="outsourcing.html" class="text-gray-300 hover:text-lime-300 transition-colors">IT Outsourcing</a></li>
-                        <li><a href="case-studies.html" class="text-gray-300 hover:text-lime-300 transition-colors">Case Studies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="font-bold mb-4 text-lime-300">Company</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="text-gray-300 hover:text-lime-300 transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-lime-300 transition-colors">Contact</a></li>
-                        <li><a href="blog.html" class="text-gray-300 hover:text-lime-300 transition-colors">Blog</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-emerald-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-300 text-sm">&copy; 2025 StarTekk, LLC. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="/privacy" class="text-gray-300 hover:text-lime-300 text-sm transition-colors">Privacy Policy</a>
-                    <a href="/terms" class="text-gray-300 hover:text-lime-300 text-sm transition-colors">Terms of Service</a>
-                </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="/" class="text-white hover:text-lime-300 transition">Home</a>
+                <a href="/about.html" class="text-white hover:text-lime-300 transition">About</a>
+                <a href="/products.html" class="text-white hover:text-lime-300 transition">Products</a>
+                <a href="/pages/jobs" class="text-white hover:text-lime-300 transition">Jobs</a>
+                <a href="/investor" class="text-white hover:text-lime-300 transition">Investors</a>
+                <a href="/contact.html" class="text-white hover:text-lime-300 transition">Contact</a>
             </div>
         </div>
-    </footer>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="bg-gradient-to-r from-purple-600 to-pink-500 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl font-bold mb-6">QR Feedback</h1>
+                <p class="text-2xl mb-8">Real-Time Customer Feedback System</p>
+                <p class="text-lg mb-8">Contactless surveys with instant analytics. Know what your customers think before they leave.</p>
+                <div class="flex gap-4">
+                    <a href="/contact.html" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Get Started</a>
+                    <a href="/cost-calculator.html" class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition">Calculate ROI</a>
+                </div>
+            </div>
+            <div class="text-6xl text-center">📱</div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl mb-4">📱</div>
+            <h3 class="font-bold mb-2">QR Code Surveys</h3>
+            <p class="text-gray-600 text-sm">Contactless, instant feedback</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl mb-4">📊</div>
+            <h3 class="font-bold mb-2">Real-Time Analytics</h3>
+            <p class="text-gray-600 text-sm">Live dashboard with insights</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl mb-4">🔔</div>
+            <h3 class="font-bold mb-2">Instant Alerts</h3>
+            <p class="text-gray-600 text-sm">Get notified of negative feedback</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl mb-4">🎨</div>
+            <h3 class="font-bold mb-2">Custom Branding</h3>
+            <p class="text-gray-600 text-sm">Match your brand identity</p>
+        </div>
+    </div>
+</section>
+
+<!-- Use Cases -->
+<section class="bg-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Perfect For</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="text-4xl mb-4">🍽️</div>
+                <h3 class="font-bold text-lg mb-3">Restaurants</h3>
+                <p class="text-gray-600">Table-side feedback collection</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="text-4xl mb-4">🏪</div>
+                <h3 class="font-bold text-lg mb-3">Retail Stores</h3>
+                <p class="text-gray-600">In-store customer satisfaction</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="text-4xl mb-4">🏨</div>
+                <h3 class="font-bold text-lg mb-3">Hotels</h3>
+                <p class="text-gray-600">Room and service feedback</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Why QR Feedback?</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Increase Response Rates</h3>
+            <p class="text-gray-600">QR codes get 3x more responses than traditional surveys. Customers love the convenience.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Respond in Real-Time</h3>
+            <p class="text-gray-600">Address issues immediately, before customers leave negative reviews online.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Eliminate Manual Entry</h3>
+            <p class="text-gray-600">Save 70% of time previously spent on data collection and entry.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Track Trends</h3>
+            <p class="text-gray-600">Identify patterns across locations, times, and staff members.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="bg-gradient-to-r from-purple-600 to-pink-500 text-white p-12 rounded-lg text-center">
+        <h2 class="text-3xl font-bold mb-4">Start Collecting Real Feedback Today</h2>
+        <p class="text-xl mb-8">See what your customers really think, in real-time</p>
+        <a href="/contact.html" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block">Get Started</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white mt-16">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-green-400">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="/about.html" class="text-gray-300 hover:text-green-400 transition">About Us</a></li>
+                    <li><a href="/pages/jobs" class="text-gray-300 hover:text-green-400 transition">Careers</a></li>
+                    <li><a href="/contact.html" class="text-gray-300 hover:text-green-400 transition">Contact Us</a></li>
+                    <li><a href="/investor" class="text-gray-300 hover:text-green-400 transition">Investor Relations</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-green-400">Products</h3>
+                <ul class="space-y-2">
+                    <li><a href="/star-ai-cloud.html" class="text-gray-300 hover:text-green-400 transition">Star AI Cloud</a></li>
+                    <li><a href="/star-ai-ediscovery.html" class="text-gray-300 hover:text-green-400 transition">Star AI eDiscovery</a></li>
+                    <li><a href="/qr-feedback.html" class="text-gray-300 hover:text-green-400 transition">QR Feedback</a></li>
+                    <li><a href="/star-ai-finance.html" class="text-gray-300 hover:text-green-400 transition">Star AI Finance</a></li>
+                    <li><a href="/star-automation.html" class="text-gray-300 hover:text-green-400 transition">Star Automation</a></li>
+                    <li><a href="https://starworkforce.net" class="text-gray-300 hover:text-green-400 transition">Staffing Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-green-400">Legal</h3>
+                <ul class="space-y-2">
+                    <li><a href="/legal/privacy-policy.html" class="text-gray-300 hover:text-green-400 transition">Privacy Policy</a></li>
+                    <li><a href="/legal/terms-of-service.html" class="text-gray-300 hover:text-green-400 transition">Terms of Service</a></li>
+                    <li><a href="/legal/cookie-policy.html" class="text-gray-300 hover:text-green-400 transition">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-green-400">Contact</h3>
+                <div class="space-y-3 text-gray-300 text-sm">
+                    <p><strong>Phone:</strong><br>(469) 713-3993</p>
+                    <p><strong>Address:</strong><br>5465 Legacy Drive Suite 650<br>Plano, TX 75024</p>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 StarTekk, LLC. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
