@@ -3,8 +3,8 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/pages/jobs/:id",
-      "destination": "/pages/jobs/[id].html"
+      "source": "/pages/jobs/job-detail",
+      "destination": "/pages/jobs/job-detail.html"
     }
   ],
   "headers": [
