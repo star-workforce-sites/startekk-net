@@ -3,122 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fraud Alert - Protect Yourself from Scams</title>
+    <title>Fraud Alert - StartTekk</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
 </head>
 <body class="bg-gray-50">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold bg-gradient-to-r from-green-600 to-lime-500 bg-clip-text text-transparent">StartTekk</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-green-600 transition">Home</a>
-                    <a href="/about.html" class="text-gray-700 hover:text-green-600 transition">About</a>
-                    <a href="/contact.html" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+    <nav class="sticky top-0 z-50 shadow-md" style="background-color: #047857;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/index.html" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-white">StartTekk</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/index.html" class="text-white hover:text-green-200 transition">Home</a>
+                    <a href="/about.html" class="text-white hover:text-green-200 transition">About</a>
+                    <a href="/products.html" class="text-white hover:text-green-200 transition">Products</a>
+                    <a href="/contact.html" class="text-white hover:text-green-200 transition">Contact</a>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <main class="max-w-4xl mx-auto px-4 py-12">
-        <div class="bg-white rounded-lg shadow-lg p-8">
-            <h1 class="text-4xl font-bold text-gray-900 mb-6">Fraud Alert</h1>
-            <p class="text-sm text-gray-600 mb-8"><strong>Last Updated:</strong> November 26, 2025</p>
-            <div class="prose prose-lg max-w-none">
-                
-            <section class="mb-8">
-                <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
-                    <h2 class="text-2xl font-bold text-red-800 mb-4">⚠️ Important Security Notice</h2>
-                    <p class="text-red-700 mb-4">
-                        Be aware of fraudulent communications claiming to be from StartTekk or StarWorkforce. We will never ask for sensitive information via email or text.
-                    </p>
-                </div>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Common Fraud Schemes</h2>
-                <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
-                    <li>Fake job postings requesting payment for applications</li>
-                    <li>Phishing emails requesting login credentials</li>
-                    <li>Impersonation of our staff on social media</li>
-                    <li>Requests for personal banking information</li>
-                    <li>Work-from-home scams using our company name</li>
-                </ul>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">How to Verify Communication</h2>
-                <p class="text-gray-700 mb-4">Legitimate communications from us will:</p>
-                <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
-                    <li>Come from @startekk.net or @starworkforce.net email addresses</li>
-                    <li>Never request payment for job applications</li>
-                    <li>Never ask for sensitive financial information via email</li>
-                    <li>Include direct contact information for verification</li>
-                </ul>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Report Fraud</h2>
-                <p class="text-gray-700 mb-4">If you encounter suspected fraud, contact us immediately:</p>
-                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                    <p class="text-gray-700 mb-2"><strong>Security Team</strong></p>
-                    <p class="text-gray-700 mb-2"><strong>Phone:</strong> <a href="tel:+14697133993" class="text-green-600">(469) 713-3993</a></p>
-                    <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:security@startekk.net" class="text-green-600">security@startekk.net</a></p>
-                </div>
-            </section>
-        
             </div>
         </div>
-    </main>
-    
-    <!-- UNIVERSAL FOOTER -->
-    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white mt-16">
-        <div class="max-w-7xl mx-auto px-4 py-12">
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Fraud Alert</h1>
+            <p class="text-sm text-gray-600 mb-8">Protect Yourself from Employment Scams</p>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+                <p class="font-bold text-red-900 mb-2">⚠️ CRITICAL WARNING</p>
+                <p class="text-red-900">
+                    Fraudulent recruiters are impersonating StartTekk and StarWorkforce to scam job seekers. Be vigilant and verify all communications. We will NEVER ask for upfront payments.
+                </p>
+            </div>
+
+            <div class="prose max-w-none space-y-6 text-gray-700">
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Common Employment Scams</h2>
+                    <p>Scammers may attempt to:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Request payment for job applications, background checks, or training</li>
+                        <li>Ask for sensitive personal information before an official offer</li>
+                        <li>Conduct interviews via instant messaging only (no video or phone)</li>
+                        <li>Send checks and ask you to wire money back</li>
+                        <li>Offer unrealistic salaries for minimal work</li>
+                        <li>Use unofficial email addresses (Gmail, Yahoo, etc.)</li>
+                        <li>Pressure you to act immediately</li>
+                        <li>Request bank account or credit card information</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Identify Legitimate StartTekk Communications</h2>
+                    <div class="bg-green-50 rounded-lg p-6 my-6">
+                        <p class="font-bold text-green-900 mb-4">✅ LEGITIMATE Indicators:</p>
+                        <ul class="space-y-2 text-green-900">
+                            <li>✅ Email from <strong>@startekk.net</strong> or <strong>@starworkforce.net</strong> domains ONLY</li>
+                            <li>✅ Official job postings on our website or LinkedIn</li>
+                            <li>✅ Professional interview process (phone, video, or in-person)</li>
+                            <li>✅ NO upfront fees or payments requested</li>
+                            <li>✅ Clear job description and requirements</li>
+                            <li>✅ Verifiable recruiter name and contact information</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-50 rounded-lg p-6 my-6">
+                        <p class="font-bold text-red-900 mb-4">🚨 FRAUDULENT Indicators:</p>
+                        <ul class="space-y-2 text-red-900">
+                            <li>❌ Email from Gmail, Yahoo, Outlook, or other free services</li>
+                            <li>❌ Requests for payment, bank info, or credit card details</li>
+                            <li>❌ Unsolicited job offers without application</li>
+                            <li>❌ Poor grammar, spelling errors, or unprofessional language</li>
+                            <li>❌ Pressure to act immediately or provide personal info</li>
+                            <li>❌ Interviews only via text message or instant chat</li>
+                            <li>❌ Offers that seem too good to be true</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Our Official Domains</h2>
+                    <p><strong>We ONLY use these official email domains:</strong></p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>@startekk.net</strong></li>
+                        <li><strong>@starworkforce.net</strong></li>
+                    </ul>
+                    <p class="mt-4">
+                        <strong>Any other email domain is NOT legitimate.</strong> If you receive a job offer or recruitment message from any other domain, it is a scam.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">What We Will NEVER Ask For</h2>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>❌ Upfront payment for any reason</li>
+                        <li>❌ Bank account or credit card information before hiring</li>
+                        <li>❌ Social Security Number before official offer</li>
+                        <li>❌ Money for background checks, training, or equipment</li>
+                        <li>❌ Personal financial information during initial contact</li>
+                        <li>❌ Payment to secure a job or interview</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Verify a Recruiter</h2>
+                    <p>If you're unsure whether a communication is legitimate:</p>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li><strong>Check the email domain:</strong> Must be @startekk.net or @starworkforce.net</li>
+                        <li><strong>Call us directly:</strong> (469) 713-3993 to verify the recruiter</li>
+                        <li><strong>Check our official job board:</strong> Visit startekk.net/careers or starworkforce.net/jobs</li>
+                        <li><strong>Look up the recruiter:</strong> Search LinkedIn for their profile</li>
+                        <li><strong>Don't trust caller ID:</strong> Scammers can spoof phone numbers</li>
+                    </ol>
+                    <div class="bg-blue-50 rounded-lg p-6 my-6">
+                        <p class="font-bold text-blue-900 mb-2">📞 Verification Hotline:</p>
+                        <p class="text-blue-900">
+                            <strong>Call (469) 713-3993</strong> to verify any recruiter or job offer claiming to be from StartTekk or StarWorkforce.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">If You've Been Targeted</h2>
+                    <p>If you believe you've encountered a fraudulent job posting or recruiter:</p>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li><strong>Do NOT provide any personal or financial information</strong></li>
+                        <li><strong>Do NOT send any money</strong></li>
+                        <li><strong>Stop all communication immediately</strong></li>
+                        <li><strong>Report to us:</strong> <a href="mailto:fraud@startekk.net" class="text-blue-600 hover:underline">fraud@startekk.net</a></li>
+                        <li><strong>Report to authorities:</strong>
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>FTC: <a href="https://reportfraud.ftc.gov" target="_blank" class="text-blue-600 hover:underline">reportfraud.ftc.gov</a></li>
+                                <li>FBI IC3: <a href="https://ic3.gov" target="_blank" class="text-blue-600 hover:underline">ic3.gov</a></li>
+                                <li>Local police department</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Report Fraud to StartTekk</h2>
+                    <p>Help us stop scammers by reporting fraudulent activity:</p>
+                    <div class="bg-gray-100 rounded-lg p-6 my-6">
+                        <p class="font-bold mb-2">Fraud Reporting Contact:</p>
+                        <ul class="space-y-2">
+                            <li><strong>Email:</strong> <a href="mailto:fraud@startekk.net" class="text-blue-600 hover:underline">fraud@startekk.net</a></li>
+                            <li><strong>Phone:</strong> (469) 713-3993</li>
+                            <li><strong>Mail:</strong> 5465 Legacy Drive Suite 650, Plano, TX 75024</li>
+                        </ul>
+                    </div>
+                    <p>
+                        <strong>Include:</strong> Email headers, screenshots, phone numbers, names used, and any other details.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Our Commitment</h2>
+                    <p>StartTekk and StarWorkforce are committed to:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Maintaining secure and transparent hiring practices</li>
+                        <li>Never charging candidates for any reason</li>
+                        <li>Protecting candidate privacy and security</li>
+                        <li>Working with authorities to combat fraud</li>
+                        <li>Educating job seekers about employment scams</li>
+                    </ul>
+                </section>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 my-8">
+                    <p class="font-bold text-yellow-900 mb-2">⚠️ Remember:</p>
+                    <p class="text-yellow-900">
+                        If something feels wrong, trust your instincts. Legitimate employers will NEVER ask for money upfront or pressure you to act immediately. When in doubt, call us at (469) 713-3993 to verify.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+                <a href="/index.html" class="text-emerald-600 hover:underline font-semibold">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-lg font-bold mb-4 text-green-400">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="/about.html" class="text-gray-300 hover:text-green-400 transition">About Us</a></li>
-                        <li><a href="/careers.html" class="text-gray-300 hover:text-green-400 transition">Careers</a></li>
-                        <li><a href="/contact.html" class="text-gray-300 hover:text-green-400 transition">Contact Us</a></li>
-                        <li><a href="/investor" class="text-gray-300 hover:text-green-400 transition">Investor Relations</a></li>
+                        <li><a href="/about.html" class="hover:text-green-400 transition">About</a></li>
+                        <li><a href="/career-accel.html" class="hover:text-green-400 transition">Careers</a></li>
+                        <li><a href="/contact.html" class="hover:text-green-400 transition">Contact</a></li>
+                        <li><a href="/investor/index.html" class="hover:text-green-400 transition">Investors</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">Products & Services</h3>
+                    <h3 class="text-lg font-bold mb-4 text-green-400">Products</h3>
                     <ul class="space-y-2">
-                        <li><a href="/investor/star-ai-cloud.html" class="text-gray-300 hover:text-green-400 transition">Star AI Cloud</a></li>
-                        <li><a href="/investor/star-ai-ediscovery.html" class="text-gray-300 hover:text-green-400 transition">Star AI eDiscovery</a></li>
-                        <li><a href="/investor/star-ai-finance.html" class="text-gray-300 hover:text-green-400 transition">Star AI Finance</a></li>
-                        <li><a href="/investor/star-automation.html" class="text-gray-300 hover:text-green-400 transition">Star Automation</a></li>
-                        <li><a href="/investor/qr-feedback.html" class="text-gray-300 hover:text-green-400 transition">QR Feedback</a></li>
-                        <li><a href="https://starworkforce.net" class="text-gray-300 hover:text-green-400 transition">Staffing Services</a></li>
+                        <li><a href="/star-ai-cloud.html" class="hover:text-green-400 transition">Star AI Cloud</a></li>
+                        <li><a href="/star-ai-ediscovery.html" class="hover:text-green-400 transition">Star AI eDiscovery</a></li>
+                        <li><a href="/qr-feedback.html" class="hover:text-green-400 transition">QR Feedback</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">Legal & Compliance</h3>
+                    <h3 class="text-lg font-bold mb-4 text-green-400">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="/legal/privacy-policy.html" class="text-gray-300 hover:text-green-400 transition">Privacy Policy</a></li>
-                        <li><a href="/legal/terms-of-service.html" class="text-gray-300 hover:text-green-400 transition">Terms of Service</a></li>
-                        <li><a href="/legal/cookie-policy.html" class="text-gray-300 hover:text-green-400 transition">Cookie Policy</a></li>
-                        <li><a href="/legal/do-not-sell.html" class="text-gray-300 hover:text-green-400 transition">Do Not Sell</a></li>
-                        <li><a href="/legal/ai-policy.html" class="text-gray-300 hover:text-green-400 transition">AI Policy</a></li>
-                        <li><a href="/legal/fraud-alert.html" class="text-gray-300 hover:text-green-400 transition">Fraud Alert</a></li>
-                        <li><a href="/legal/accessibility.html" class="text-gray-300 hover:text-green-400 transition">Accessibility</a></li>
+                        <li><a href="/blog.html" class="hover:text-green-400 transition">Blog</a></li>
+                        <li><a href="/case-studies.html" class="hover:text-green-400 transition">Case Studies</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-green-400 transition">Cost Calculator</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">Contact</h3>
-                    <div class="space-y-3 text-gray-300 text-sm">
-                        <p><strong>Phone:</strong><br><a href="tel:+14697133993" class="hover:text-green-400">(469) 713-3993</a></p>
-                        <p><strong>Email:</strong><br><a href="mailto:info@startekk.net" class="hover:text-green-400">info@startekk.net</a></p>
-                        <p><strong>Address:</strong><br>5465 Legacy Drive Suite 650<br>Plano, TX 75024</p>
-                    </div>
+                    <h3 class="text-lg font-bold mb-4 text-green-400">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/legal/privacy-policy.html" class="hover:text-green-400 transition">Privacy</a></li>
+                        <li><a href="/legal/terms-of-service.html" class="hover:text-green-400 transition">Terms</a></li>
+                        <li><a href="/legal/cookie-policy.html" class="hover:text-green-400 transition">Cookies</a></li>
+                        <li><a href="/legal/do-not-sell.html" class="hover:text-green-400 transition">CCPA</a></li>
+                        <li><a href="/legal/accessibility.html" class="hover:text-green-400 transition">Accessibility</a></li>
+                        <li><a href="/legal/fraud-alert.html" class="hover:text-green-400 transition">Fraud Alert</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-                    <p>&copy; 2025 StartTekk LLC & StarWorkforce Solutions. All rights reserved.</p>
-                </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 StartTekk, LLC. All rights reserved.</p>
+                <p class="mt-2 text-gray-500">5465 Legacy Drive Suite 650, Plano, TX 75024 | (469) 713-3993</p>
             </div>
         </div>
     </footer>
