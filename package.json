@@ -3,18 +3,10 @@
   "version": "1.0.0",
   "description": "Cost Calculator API endpoints for StartTekk",
   "type": "module",
-  "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'No build step required'",
-    "deploy": "vercel --prod"
-  },
   "dependencies": {
     "@vercel/postgres": "^0.5.1"
   },
-  "devDependencies": {
-    "vercel": "^32.0.0"
-  },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   }
 }
