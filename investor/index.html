@@ -3,257 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Invest in StartTekk - Series A funding opportunity. Profitable AI company seeking $2M to scale innovative AI-powered business solutions.">
-    <meta name="keywords" content="AI investment, Series A funding, startup investment, AI company investment, technology investment, profitable startup">
-    <title>Investor Relations | StartTekk - Series A Funding Opportunity</title>
+    <title>Investment Opportunities - AI Products | StartTekk</title>
+    <meta name="description" content="Explore StartTekk's AI-powered products: Cloud solutions, eDiscovery, finance automation, and more. Investment opportunities in cutting-edge technology.">
+    <meta name="keywords" content="AI products, cloud solutions, ediscovery, AI investment, tech startup, automation">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8BFZG3R9ZR');
+    </script>
 </head>
-<body class="bg-gray-50">
+<body class="font-sans bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
+                    <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-lime-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-lime-500 bg-clip-text text-transparent">
+                        StartTekk
+                    </span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="text-gray-700 hover:text-emerald-600 transition-colors">Home</a>
+                    <a href="/about.html" class="text-gray-700 hover:text-emerald-600 transition-colors">About</a>
+                    <a href="/services.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Services</a>
+                    <a href="/products.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Products</a>
+                    <a href="/case-studies.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Case Studies</a>
+                    <a href="/cost-calculator.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Calculator</a>
+                    <a href="/contact.html" class="bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Contact Us
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Home</a>
+                <a href="/about.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">About</a>
+                <a href="/services.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Services</a>
+                <a href="/products.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Products</a>
+                <a href="/case-studies.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Case Studies</a>
+                <a href="/cost-calculator.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Calculator</a>
+                <a href="/contact.html" class="block py-2 text-emerald-600 font-semibold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-green-600 to-green-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 py-20 text-center">
-            <h1 class="text-5xl font-bold mb-6">Invest in the Future of AI-Powered Business Solutions</h1>
-            <p class="text-2xl mb-8">Series A Funding Opportunity - $2M</p>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Join us in scaling innovative AI technologies that are transforming how businesses operate. We're a profitable company with proven products and strong market traction.</p>
-            <a href="#contact" class="bg-white text-green-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition inline-block">Request Information</a>
+    <section class="bg-gradient-to-br from-emerald-600 via-emerald-700 to-lime-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Investment Opportunities
+            </h1>
+            <p class="text-xl md:text-2xl text-emerald-100 mb-8 max-w-3xl mx-auto">
+                Explore our portfolio of AI-powered products revolutionizing industries from legal to finance
+            </p>
         </div>
-    </div>
+    </section>
 
-    <!-- Company Overview -->
-    <div class="max-w-7xl mx-auto px-4 py-16">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Invest in StartTekk?</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">We're not just another AI startup. We're a profitable company with multiple products in market, proven revenue streams, and a clear path to scale.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="text-4xl mb-4">💰</div>
-                <h3 class="text-2xl font-bold mb-3 text-gray-900">Profitable Operations</h3>
-                <p class="text-gray-600">Unlike most startups, we're already generating revenue and operating profitably. This investment accelerates growth, not survival.</p>
+    <!-- Products Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Product Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Seven innovative solutions powered by cutting-edge AI and cloud technology
+                </p>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="text-4xl mb-4">🚀</div>
-                <h3 class="text-2xl font-bold mb-3 text-gray-900">Multiple Products</h3>
-                <p class="text-gray-600">5 AI-powered products serving different markets - diversified revenue streams reduce risk and increase opportunity.</p>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="text-4xl mb-4">📈</div>
-                <h3 class="text-2xl font-bold mb-3 text-gray-900">Proven Market Fit</h3>
-                <p class="text-gray-600">Growing customer base across multiple industries demonstrates strong product-market fit and scalable demand.</p>
-            </div>
-        </div>
-
-        <!-- Product Portfolio -->
-        <div class="mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Our Product Portfolio</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-green-500">
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Star AI Cloud</h3>
-                    <p class="text-gray-600 mb-4">AI-powered cloud infrastructure automation reducing costs by up to 40% while improving performance.</p>
-                    <a href="/investor/star-ai-cloud.html" class="text-green-600 hover:text-green-700 font-semibold">Investment Details →</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Star AI eDiscovery</h3>
-                    <p class="text-gray-600 mb-4">Revolutionary AI-driven legal document analysis saving law firms 70% on discovery costs.</p>
-                    <a href="/investor/star-ai-ediscovery.html" class="text-green-600 hover:text-green-700 font-semibold">Investment Details →</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-purple-500">
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Star AI Finance</h3>
-                    <p class="text-gray-600 mb-4">AI-powered financial analytics providing real-time insights for smarter business decisions.</p>
-                    <a href="/investor/star-ai-finance.html" class="text-green-600 hover:text-green-700 font-semibold">Investment Details →</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-yellow-500">
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Star Automation</h3>
-                    <p class="text-gray-600 mb-4">Intelligent workflow automation that learns and adapts to business processes.</p>
-                    <a href="/investor/star-automation.html" class="text-green-600 hover:text-green-700 font-semibold">Investment Details →</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-pink-500">
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">QR Feedback</h3>
-                    <p class="text-gray-600 mb-4">AI-powered customer feedback analysis delivering actionable insights instantly.</p>
-                    <a href="/investor/qr-feedback.html" class="text-green-600 hover:text-green-700 font-semibold">Investment Details →</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-indigo-500">
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">StarWorkforce</h3>
-                    <p class="text-gray-600 mb-4">AI-enhanced staffing solutions connecting businesses with top talent globally.</p>
-                    <a href="/investor/starworkforce.html" class="text-green-600 hover:text-green-700 font-semibold">Investment Details →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Investment Opportunity -->
-        <div class="bg-gradient-to-r from-green-50 to-blue-50 p-12 rounded-2xl mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Series A Investment Opportunity</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Funding Details</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li><strong>Round:</strong> Series A</li>
-                        <li><strong>Target:</strong> $2,000,000</li>
-                        <li><strong>Use of Funds:</strong>
-                            <ul class="ml-6 mt-2 space-y-1">
-                                <li>• Product development & AI model enhancement (40%)</li>
-                                <li>• Sales & marketing expansion (30%)</li>
-                                <li>• Team growth (20%)</li>
-                                <li>• Infrastructure & operations (10%)</li>
-                            </ul>
+                <!-- Star AI Cloud -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-lime-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Star AI Cloud</h3>
+                    <p class="text-gray-700 mb-6">
+                        Enterprise cloud infrastructure with AI-powered optimization, auto-scaling, and cost management. Reduce cloud costs by up to 40%.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Multi-cloud support (AWS, Azure, GCP)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>AI-driven cost optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Real-time monitoring & alerts</span>
                         </li>
                     </ul>
+                    <a href="/products/star-ai-cloud.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Learn More →
+                    </a>
                 </div>
 
+                <!-- Star AI eDiscovery -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-lime-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Star AI eDiscovery</h3>
+                    <p class="text-gray-700 mb-6">
+                        Revolutionary legal document review platform. Process millions of documents 10x faster with AI-powered classification and summarization.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>AI document classification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Automated summarization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>85% cost reduction vs traditional review</span>
+                        </li>
+                    </ul>
+                    <a href="/products/star-ai-ediscovery.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Star AI Finance -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-lime-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Star AI Finance</h3>
+                    <p class="text-gray-700 mb-6">
+                        Intelligent financial automation platform. Automate AP/AR, expense management, and financial reporting with 99.9% accuracy.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Automated invoice processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Real-time expense tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>SOX compliance built-in</span>
+                        </li>
+                    </ul>
+                    <a href="/products/star-ai-finance.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Star Automation -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-lime-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Star Automation</h3>
+                    <p class="text-gray-700 mb-6">
+                        Enterprise RPA and workflow automation. Automate repetitive tasks, integrate systems, and reduce manual work by 70%.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Visual workflow builder</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>500+ pre-built integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Enterprise-grade security</span>
+                        </li>
+                    </ul>
+                    <a href="/products/star-automation.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- QR Feedback -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-lime-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">QR Feedback</h3>
+                    <p class="text-gray-700 mb-6">
+                        Modern customer feedback platform. Collect real-time feedback via QR codes, analyze sentiment, and improve customer satisfaction.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Contactless feedback collection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>AI sentiment analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Real-time dashboards</span>
+                        </li>
+                    </ul>
+                    <a href="/products/qr-feedback.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- STAR Workforce -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-700 to-yellow-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">STAR Workforce</h3>
+                    <p class="text-gray-700 mb-6">
+                        Elite IT staffing and consulting services. Build world-class teams with 30-52% cost savings across US, Canada, India, and Australia.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>150+ tech professionals</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>238+ technical roles available</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Global delivery models</span>
+                        </li>
+                    </ul>
+                    <a href="https://starworkforce.net" target="_blank" rel="noopener" class="inline-block bg-gradient-to-r from-purple-700 to-yellow-500 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                        Visit Site →
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-emerald-600 via-emerald-700 to-lime-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-emerald-100 mb-8">
+                Let's discuss how our AI-powered solutions can drive your growth
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact.html" class="bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
+                    Schedule Consultation
+                </a>
+                <a href="/products.html" class="bg-emerald-800 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-emerald-900 transition-colors inline-block">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Investment Highlights</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>✅ <strong>Profitable</strong> - Positive cash flow from operations</li>
-                        <li>✅ <strong>Growing Customer Base</strong> - Across multiple industries</li>
-                        <li>✅ <strong>Recurring Revenue</strong> - SaaS subscription model</li>
-                        <li>✅ <strong>Experienced Team</strong> - Deep AI/ML and business expertise</li>
-                        <li>✅ <strong>Clear Exit Strategy</strong> - Multiple acquisition targets interested</li>
+                    <h3 class="text-white font-semibold mb-4 text-lg">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+                        <li><a href="https://starworkforce.net/pages/jobs" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">Careers</a></li>
+                        <li><a href="/contact.html" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+                        <li><a href="/blog.html" class="hover:text-emerald-400 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-lg">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="hover:text-emerald-400 transition-colors">Software Development</a></li>
+                        <li><a href="/services.html" class="hover:text-emerald-400 transition-colors">Cloud Solutions</a></li>
+                        <li><a href="/services.html" class="hover:text-emerald-400 transition-colors">AI/ML Services</a></li>
+                        <li><a href="https://starworkforce.net" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">IT Staffing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-lg">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/products/star-ai-cloud.html" class="hover:text-emerald-400 transition-colors">Star AI Cloud</a></li>
+                        <li><a href="/products/star-ai-ediscovery.html" class="hover:text-emerald-400 transition-colors">Star AI eDiscovery</a></li>
+                        <li><a href="/products/star-ai-finance.html" class="hover:text-emerald-400 transition-colors">Star AI Finance</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-emerald-400 transition-colors">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-lg">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/legal/privacy-policy.html" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service.html" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="/legal/cookie-policy.html" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility.html" class="hover:text-emerald-400 transition-colors">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <!-- Market Opportunity -->
-        <div class="mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Market Opportunity</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-3xl font-bold text-green-600 mb-2">$500B+</h3>
-                    <p class="text-gray-600">Total Addressable Market (TAM) for AI enterprise solutions globally</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-3xl font-bold text-blue-600 mb-2">45% CAGR</h3>
-                    <p class="text-gray-600">AI market growth rate through 2030, fastest-growing tech sector</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-3xl font-bold text-purple-600 mb-2">Early Stage</h3>
-                    <p class="text-gray-600">We're positioned to capture significant market share as AI adoption accelerates</p>
-                </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 StartTekk, Inc. All rights reserved.</p>
+                <p class="mt-2">HQ: Plano, TX, USA | <a href="tel:+14697133993" class="hover:text-emerald-400 transition-colors">(469) 713-3993</a></p>
             </div>
-        </div>
-
-        <!-- FAQs -->
-        <div class="mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">What is the minimum investment?</h3>
-                    <p class="text-gray-600">We're accepting investments starting at $50,000. Detailed terms are available under NDA.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">What is the expected timeline?</h3>
-                    <p class="text-gray-600">We're actively raising and expect to close this round within 3-6 months. Early investors may receive preferential terms.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">What documents are available for review?</h3>
-                    <p class="text-gray-600">Upon signing an NDA, investors receive access to: pitch deck, financial projections, customer metrics, product roadmap, and due diligence materials.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">Who are your current customers?</h3>
-                    <p class="text-gray-600">We serve enterprise clients across legal, finance, healthcare, and technology sectors. Specific customer names available under NDA.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div id="contact" class="bg-gradient-to-r from-green-600 to-green-800 text-white p-12 rounded-2xl">
-            <h2 class="text-4xl font-bold mb-6 text-center">Ready to Learn More?</h2>
-            <p class="text-xl mb-8 text-center max-w-2xl mx-auto">Request our full investor deck and schedule a meeting with our leadership team.</p>
-            
-            <form class="max-w-2xl mx-auto bg-white p-8 rounded-lg">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Full Name *</label>
-                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Email *</label>
-                        <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Phone</label>
-                        <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Company/Organization</label>
-                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-                    </div>
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-gray-700 font-semibold mb-2">Investment Interest</label>
-                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-                        <option>Exploring opportunities</option>
-                        <option>Serious interest - want details</option>
-                        <option>Ready to invest - need due diligence materials</option>
-                    </select>
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-gray-700 font-semibold mb-2">Potential Investment Range</label>
-                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-                        <option>$50K - $100K</option>
-                        <option>$100K - $250K</option>
-                        <option>$250K - $500K</option>
-                        <option>$500K+</option>
-                    </select>
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-gray-700 font-semibold mb-2">Message</label>
-                    <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500"></textarea>
-                </div>
-
-                <div class="mb-6">
-                    <label class="flex items-start">
-                        <input type="checkbox" required class="mt-1 mr-3">
-                        <span class="text-gray-700 text-sm">I acknowledge that I will be required to sign an NDA before receiving detailed financial information and proprietary materials.</span>
-                    </label>
-                </div>
-
-                <button type="submit" class="w-full bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-green-700 transition">Request Investor Information</button>
-            </form>
-        </div>
-
-        <!-- Disclaimer -->
-        <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-500 p-6">
-            <p class="text-sm text-gray-700"><strong>Investment Disclaimer:</strong> This is not an offer to sell securities. Any investment opportunity will be made available only through appropriate legal documentation after proper due diligence. Past performance is not indicative of future results. Investment in early-stage companies involves significant risk including possible loss of principal. Please consult with your financial advisor before making any investment decision.</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="mb-2">&copy; 2025 StartTekk LLC. All rights reserved.</p>
-            <p class="text-sm text-gray-400">
-                <a href="/legal/privacy-policy.html" class="hover:text-green-400">Privacy Policy</a> |
-                <a href="/legal/terms-of-service.html" class="hover:text-green-400">Terms</a> |
-                <a href="/cdn-cgi/l/email-protection#7910171f16390a0d180b0d1c121257171c0d" class="hover:text-green-400">Contact</a>
-            </p>
-            <p class="text-sm text-gray-400 mt-4">5465 Legacy Drive Suite 650, Plano, TX 75024 | (469) 713-3993</p>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Form submission handler (you'll need to connect to your email service)
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We will contact you within 24 hours. An NDA wil
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
