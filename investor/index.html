@@ -27,58 +27,61 @@
 <body class="font-sans bg-gray-50">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Navigation -->
+    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                
-                <!-- Logo -->
-                <a href="/" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
-                    <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-lime-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <span class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-lime-500 bg-clip-text text-transparent">
-                        Startekk
-                    </span>
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="/" class="text-gray-700 hover:text-emerald-600 transition-colors">Home</a>
-                    <a href="/about.html" class="text-gray-700 hover:text-emerald-600 transition-colors">About</a>
-                    <a href="/services.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Services</a>
-                    <a href="/products.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Products</a>
-                    <a href="/case-studies.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Case Studies</a>
-                    <a href="/cost-calculator.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Calculator</a>
-                    <a href="/contact.html" class="bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                        Contact Us
-                    </a>
+                    <div class="text-xl font-bold text-white">Startekk</div>
                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
+                    <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
+                    <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
+                    <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
+                    <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
+                    <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t">
-            <div class="px-4 py-4 space-y-3">
-                <a href="/" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Home</a>
-                <a href="/about.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">About</a>
-                <a href="/services.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Services</a>
-                <a href="/products.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Products</a>
-                <a href="/case-studies.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Case Studies</a>
-                <a href="/cost-calculator.html" class="block py-2 text-gray-700 hover:text-emerald-600 transition-colors">Calculator</a>
-                <a href="/contact.html" class="block py-2 text-emerald-600 font-semibold">Contact Us</a>
-            </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 py-4">
+            <a href="/index.html" class="block py-2 text-white hover:text-lime-300">Home</a>
+            <a href="/about.html" class="block py-2 text-white hover:text-lime-300">About</a>
+            <a href="/products.html" class="block py-2 text-white hover:text-lime-300">Products</a>
+            <a href="/services.html" class="block py-2 text-white hover:text-lime-300">Services</a>
+            <a href="/pages/jobs.html" class="block py-2 text-white hover:text-lime-300">Jobs</a>
+            <a href="/investor/index.html" class="block py-2 text-white hover:text-lime-300">Investors</a>
+            <a href="/contact.html" class="block py-2 text-white hover:text-lime-300">Contact Us</a>
         </div>
     </nav>
+    
+    <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    });
+    </script>
 
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-emerald-600 via-emerald-700 to-lime-600 text-white py-20">
@@ -345,49 +348,65 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Company -->
                 <div>
-                    <h3 class="text-white font-semibold mb-4 text-lg">Company</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="/about.html" class="hover:text-emerald-400 transition-colors">About Us</a></li>
-                        <li><a href="https://starworkforce.net/pages/jobs" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">Careers</a></li>
-                        <li><a href="/contact.html" class="hover:text-emerald-400 transition-colors">Contact</a></li>
-                        <li><a href="/blog.html" class="hover:text-emerald-400 transition-colors">Blog</a></li>
+                        <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
+                        <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
+                        <li><a href="/case-studies.html" class="hover:text-lime-300">Case Studies</a></li>
+                        <li><a href="/pages/jobs.html" class="hover:text-lime-300">Jobs</a></li>
+                        <li><a href="/contact.html" class="hover:text-lime-300">Contact</a></li>
+                        <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 2: Products -->
                 <div>
-                    <h3 class="text-white font-semibold mb-4 text-lg">Services</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
                     <ul class="space-y-2">
-                        <li><a href="/services.html" class="hover:text-emerald-400 transition-colors">Software Development</a></li>
-                        <li><a href="/services.html" class="hover:text-emerald-400 transition-colors">Cloud Solutions</a></li>
-                        <li><a href="/services.html" class="hover:text-emerald-400 transition-colors">AI/ML Services</a></li>
-                        <li><a href="https://starworkforce.net" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">IT Staffing</a></li>
+                        <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
+                        <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
+                        <li><a href="/star-ai-finance.html" class="hover:text-lime-300">Star AI Finance</a></li>
+                        <li><a href="/star-automation.html" class="hover:text-lime-300">Star Automation</a></li>
+                        <li><a href="/qr-feedback.html" class="hover:text-lime-300">QR Feedback</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 3: Services -->
                 <div>
-                    <h3 class="text-white font-semibold mb-4 text-lg">Products</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="/products/star-ai-cloud.html" class="hover:text-emerald-400 transition-colors">Star AI Cloud</a></li>
-                        <li><a href="/products/star-ai-ediscovery.html" class="hover:text-emerald-400 transition-colors">Star AI eDiscovery</a></li>
-                        <li><a href="/products/star-ai-finance.html" class="hover:text-emerald-400 transition-colors">Star AI Finance</a></li>
-                        <li><a href="/cost-calculator.html" class="hover:text-emerald-400 transition-colors">Cost Calculator</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">AI & ML Services</a></li>
+                        <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 4: Legal -->
                 <div>
-                    <h3 class="text-white font-semibold mb-4 text-lg">Legal</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="/legal/privacy-policy.html" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
-                        <li><a href="/legal/terms-of-service.html" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
-                        <li><a href="/legal/cookie-policy.html" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
-                        <li><a href="/legal/accessibility.html" class="hover:text-emerald-400 transition-colors">Accessibility</a></li>
+                        <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
+                        <li><a href="/legal/cookie-policy.html" class="hover:text-lime-300">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility.html" class="hover:text-lime-300">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; 2024 Startekk, Inc. All rights reserved.</p>
-                <p class="mt-2">HQ: Plano, TX, USA | <a href="tel:+14697133993" class="hover:text-emerald-400 transition-colors">(469) 713-3993</a></p>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
+                <p class="mt-2 text-sm">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> | 
+                    5465 Legacy Drive Suite 650, Plano, TX 75024
+                </p>
             </div>
         </div>
     </footer>

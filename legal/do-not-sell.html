@@ -9,26 +9,61 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
 </head>
 <body class="bg-gray-50">
-    <nav class="sticky top-0 z-50 shadow-md" style="background-color: #047857;">
+        <!-- Navigation -->
+    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="/index.html" class="flex items-center space-x-3">
+                <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <span class="text-xl font-bold text-white">Startekk</span>
-                </a>
+                    <div class="text-xl font-bold text-white">Startekk</div>
+                </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/index.html" class="text-white hover:text-green-200 transition">Home</a>
-                    <a href="/about.html" class="text-white hover:text-green-200 transition">About</a>
-                    <a href="/products.html" class="text-white hover:text-green-200 transition">Products</a>
-                    <a href="/contact.html" class="text-white hover:text-green-200 transition">Contact</a>
+                    <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
+                    <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
+                    <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
+                    <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
+                    <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
+                    <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 py-4">
+            <a href="/index.html" class="block py-2 text-white hover:text-lime-300">Home</a>
+            <a href="/about.html" class="block py-2 text-white hover:text-lime-300">About</a>
+            <a href="/products.html" class="block py-2 text-white hover:text-lime-300">Products</a>
+            <a href="/services.html" class="block py-2 text-white hover:text-lime-300">Services</a>
+            <a href="/pages/jobs.html" class="block py-2 text-white hover:text-lime-300">Jobs</a>
+            <a href="/investor/index.html" class="block py-2 text-white hover:text-lime-300">Investors</a>
+            <a href="/contact.html" class="block py-2 text-white hover:text-lime-300">Contact Us</a>
+        </div>
     </nav>
+    
+    <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    });
+    </script>
 
     <div class="max-w-4xl mx-auto px-4 py-12">
         <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
@@ -141,49 +176,65 @@
         </div>
     </div>
 
-    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Company -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">Company</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="/about.html" class="hover:text-green-400 transition">About</a></li>
-                        <li><a href="/career-accel.html" class="hover:text-green-400 transition">Careers</a></li>
-                        <li><a href="/contact.html" class="hover:text-green-400 transition">Contact</a></li>
-                        <li><a href="/investor/index.html" class="hover:text-green-400 transition">Investors</a></li>
+                        <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
+                        <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
+                        <li><a href="/case-studies.html" class="hover:text-lime-300">Case Studies</a></li>
+                        <li><a href="/pages/jobs.html" class="hover:text-lime-300">Jobs</a></li>
+                        <li><a href="/contact.html" class="hover:text-lime-300">Contact</a></li>
+                        <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 2: Products -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">Products</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
                     <ul class="space-y-2">
-                        <li><a href="/star-ai-cloud.html" class="hover:text-green-400 transition">Star AI Cloud</a></li>
-                        <li><a href="/star-ai-ediscovery.html" class="hover:text-green-400 transition">Star AI eDiscovery</a></li>
-                        <li><a href="/qr-feedback.html" class="hover:text-green-400 transition">QR Feedback</a></li>
+                        <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
+                        <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
+                        <li><a href="/star-ai-finance.html" class="hover:text-lime-300">Star AI Finance</a></li>
+                        <li><a href="/star-automation.html" class="hover:text-lime-300">Star Automation</a></li>
+                        <li><a href="/qr-feedback.html" class="hover:text-lime-300">QR Feedback</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 3: Services -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">Resources</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="/blog.html" class="hover:text-green-400 transition">Blog</a></li>
-                        <li><a href="/case-studies.html" class="hover:text-green-400 transition">Case Studies</a></li>
-                        <li><a href="/cost-calculator.html" class="hover:text-green-400 transition">Cost Calculator</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">AI & ML Services</a></li>
+                        <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
                     </ul>
                 </div>
+                
+                <!-- Column 4: Legal -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">Legal</h3>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="/legal/privacy-policy.html" class="hover:text-green-400 transition">Privacy</a></li>
-                        <li><a href="/legal/terms-of-service.html" class="hover:text-green-400 transition">Terms</a></li>
-                        <li><a href="/legal/cookie-policy.html" class="hover:text-green-400 transition">Cookies</a></li>
-                        <li><a href="/legal/do-not-sell.html" class="hover:text-green-400 transition">CCPA</a></li>
-                        <li><a href="/legal/accessibility.html" class="hover:text-green-400 transition">Accessibility</a></li>
-                        <li><a href="/legal/fraud-alert.html" class="hover:text-green-400 transition">Fraud Alert</a></li>
+                        <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
+                        <li><a href="/legal/cookie-policy.html" class="hover:text-lime-300">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility.html" class="hover:text-lime-300">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
-                <p class="mt-2 text-gray-500">5465 Legacy Drive Suite 650, Plano, TX 75024 | (469) 713-3993</p>
+                <p class="mt-2 text-sm">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> | 
+                    5465 Legacy Drive Suite 650, Plano, TX 75024
+                </p>
             </div>
         </div>
     </footer>
