@@ -61,6 +61,14 @@ POST_TEMPLATE = '''<!DOCTYPE html>
     <meta property="og:description" content="{excerpt}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://startekk.net/blog/posts/{slug}.html">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){{dataLayer.push(arguments);}}
+        gtag('js', new Date());
+        gtag('config', 'G-8BFZG3R9ZR');
+    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23047857%27 stroke-width=%272%27><path stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M13 10V3L4 14h7v7l9-11h-7z%27/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
