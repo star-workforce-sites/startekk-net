@@ -1,43 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/pages/jobs",
-      "destination": "/pages/jobs.html",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/jobs/",
-      "destination": "/pages/jobs.html",
-      "permanent": true,
-      "statusCode": 301
-    }
-  ],
   "rewrites": [
     {
-      "source": "/jobs",
+      "source": "/pages/jobs",
       "destination": "/pages/jobs.html"
     },
     {
-      "source": "/api/calculator/:path*",
-      "destination": "/api/calculator/:path*"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        }
-      ]
+      "source": "/jobs",
+      "destination": "/pages/jobs.html"
     }
   ]
 }
