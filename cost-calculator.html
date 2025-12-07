@@ -380,7 +380,7 @@
 
             // Filter jobs
             const matches = allJobs.filter(job => 
-                job.title.toLowerCase().includes(searchTerm)
+                job.job_title.toLowerCase().includes(searchTerm)
             ).slice(0, 10); // Limit to 10 results
 
             if (matches.length > 0) {
@@ -394,7 +394,7 @@
         function displayAutocomplete(jobs) {
             autocompleteResults.innerHTML = jobs.map(job => `
                 <div class="autocomplete-item px-4 py-3 border-b border-gray-100 last:border-0" data-job-id="${job.id}">
-                    <p class="font-medium text-gray-900">${job.title}</p>
+                    <p class="font-medium text-gray-900">${job.job_title}</p>
                     <p class="text-sm text-gray-600">${job.category} ${job.seniority ? '• ' + job.seniority : ''}</p>
                 </div>
             `).join('');
@@ -544,7 +544,7 @@
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'calculate_savings', {
                     'event_category': 'calculator',
-                    'job_title': calculation.job.title,
+                    'job_title': calculation.job.job_title,
                     'annual_savings': calculation.savings.annual,
                     'location': calculation.inputs.location
                 });
