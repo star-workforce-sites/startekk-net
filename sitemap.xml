@@ -1,23 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://startekk.net/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-<url><loc>https://startekk.net/about.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/products.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/case-studies.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/cost-calculator.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/contact.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/career-accel.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/star-ai-cloud.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/star-ai-ediscovery.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/star-ai-finance.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/star-automation.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/qr-feedback.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://startekk.net/pages/jobs</loc><priority>0.7</priority><changefreq>daily</changefreq></url>
-<url><loc>https://startekk.net/legal/privacy-policy.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
-<url><loc>https://startekk.net/legal/terms-of-service.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
-<url><loc>https://startekk.net/legal/cookie-policy.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
-<url><loc>https://startekk.net/legal/accessibility.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
-<url><loc>https://startekk.net/legal/disclaimer.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
-<url><loc>https://startekk.net/legal/data-processing.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
-<url><loc>https://startekk.net/legal/copyright.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <!-- Main Pages -->
+  <url>
+    <loc>https://startekk.net/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/products.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/cost-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Product Pages -->
+  <url>
+    <loc>https://startekk.net/star-ai-cloud.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/star-ai-ediscovery.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/star-ai-finance.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/star-automation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/qr-feedback.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://startekk.net/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/blog/posts/how-ai-is-transforming-cloud-infrastructure-management.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/blog/posts/the-hidden-costs-of-ediscovery-and-how-ai-can-help.html</loc>
+    <lastmod>2024-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/blog/posts/why-smart-restaurants-are-switching-to-qr-feedback-systems.html</loc>
+    <lastmod>2024-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/blog/posts/offshore-vs-nearshore-vs-onshore-development-teams.html</loc>
+    <lastmod>2024-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/blog/posts/5-signs-your-business-needs-process-automation.html</loc>
+    <lastmod>2024-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Case Studies -->
+  <url>
+    <loc>https://startekk.net/case-studies.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Jobs -->
+  <url>
+    <loc>https://startekk.net/pages/jobs.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Investor -->
+  <url>
+    <loc>https://startekk.net/investor/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Legal -->
+  <url>
+    <loc>https://startekk.net/legal/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/legal/terms-of-service.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://startekk.net/legal/cookie-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

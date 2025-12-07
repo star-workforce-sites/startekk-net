@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Startekk | AI Insights & Technology Trends</title>
+    <title>Blog - AI Insights & Technology Trends | Startekk</title>
+    <meta name="description" content="Explore insights on AI, cloud computing, automation, and technology staffing from Startekk's team of experts.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23047857%27 stroke-width=%272%27><path stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M13 10V3L4 14h7v7l9-11h-7z%27/></svg>">
-    <meta name="description" content="Stay updated with the latest insights on AI, cloud automation, and business technology from Startekk experts.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
-
-<!-- Navigation -->
+    
     <!-- Navigation -->
     <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,65 +31,196 @@
                     <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
                     <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
                 </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 py-4">
-            <a href="/index.html" class="block py-2 text-white hover:text-lime-300">Home</a>
-            <a href="/about.html" class="block py-2 text-white hover:text-lime-300">About</a>
-            <a href="/products.html" class="block py-2 text-white hover:text-lime-300">Products</a>
-            <a href="/services.html" class="block py-2 text-white hover:text-lime-300">Services</a>
-            <a href="/pages/jobs.html" class="block py-2 text-white hover:text-lime-300">Jobs</a>
-            <a href="/investor/index.html" class="block py-2 text-white hover:text-lime-300">Investors</a>
-            <a href="/contact.html" class="block py-2 text-white hover:text-lime-300">Contact Us</a>
-        </div>
     </nav>
-    
-    <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    });
-    </script>
 
-<!-- Hero -->
-<section class="bg-gradient-to-r from-green-600 to-lime-500 text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-4">Startekk Blog</h1>
-        <p class="text-xl">AI insights, technology trends, and business transformation</p>
-    </div>
-</section>
+    <!-- Hero -->
+    <section style="background: linear-gradient(135deg, #047857 0%, #065f46 100%);" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold text-white mb-6">Startekk Blog</h1>
+            <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                Insights on AI, cloud computing, automation, and technology trends from our team of experts
+            </p>
+        </div>
+    </section>
 
-<!-- Blog Content -->
-<main class="max-w-7xl mx-auto px-4 py-16">
-    <div class="text-center py-20">
-        <div class="text-6xl mb-6">📝</div>
-        <h2 class="text-3xl font-bold mb-4">Blog Coming Soon</h2>
-        <p class="text-gray-600 mb-8">We're working on bringing you valuable insights about AI and business technology.</p>
-        <a href="/contact.html" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition inline-block">Contact Us</a>
-    </div>
-</main>
+    <!-- Categories -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="px-4 py-2 bg-emerald-600 text-white rounded-lg font-semibold">All Posts</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">AI & Cloud</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Legal Tech</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Customer Experience</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Staffing & Teams</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Automation</button>
+            </div>
+        </div>
+    </section>
 
-<!-- Footer -->
+    <!-- Blog Posts -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Post 1 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-emerald-600 to-lime-500 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-600 mb-3">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full font-semibold">AI & Cloud</span>
+                            <span>Nov 15, 2024</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="/blog/posts/how-ai-is-transforming-cloud-infrastructure-management.html" class="hover:text-emerald-600">
+                                How AI is Transforming Cloud Infrastructure Management
+                            </a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            Discover how artificial intelligence is revolutionizing the way businesses manage cloud infrastructure, reducing costs by up to 40% while improving performance.
+                        </p>
+                        <a href="/blog/posts/how-ai-is-transforming-cloud-infrastructure-management.html" class="text-emerald-600 font-semibold hover:text-emerald-700">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-500 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-600 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">Legal Tech</span>
+                            <span>Oct 28, 2024</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="/blog/posts/the-hidden-costs-of-ediscovery-and-how-ai-can-help.html" class="hover:text-emerald-600">
+                                The Hidden Costs of eDiscovery and How AI Can Help
+                            </a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            Legal teams spend millions on document review. Learn how AI-powered eDiscovery can reduce costs by 95% while improving accuracy and speed.
+                        </p>
+                        <a href="/blog/posts/the-hidden-costs-of-ediscovery-and-how-ai-can-help.html" class="text-emerald-600 font-semibold hover:text-emerald-700">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-600 mb-3">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full font-semibold">Customer Experience</span>
+                            <span>Sep 12, 2024</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="/blog/posts/why-smart-restaurants-are-switching-to-qr-feedback-systems.html" class="hover:text-emerald-600">
+                                Why Smart Restaurants Are Switching to QR Feedback Systems
+                            </a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            Traditional comment cards capture only 2-3% of diners. QR feedback systems are achieving 35%+ response rates and transforming customer insights.
+                        </p>
+                        <a href="/blog/posts/why-smart-restaurants-are-switching-to-qr-feedback-systems.html" class="text-emerald-600 font-semibold hover:text-emerald-700">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-600 mb-3">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full font-semibold">Staffing & Teams</span>
+                            <span>Aug 5, 2024</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="/blog/posts/offshore-vs-nearshore-vs-onshore-development-teams.html" class="hover:text-emerald-600">
+                                Offshore vs Nearshore vs Onshore Development Teams
+                            </a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            Choosing the right development team structure can save 30-50% on costs. Here's how to decide which model works best for your business.
+                        </p>
+                        <a href="/blog/posts/offshore-vs-nearshore-vs-onshore-development-teams.html" class="text-emerald-600 font-semibold hover:text-emerald-700">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-600 mb-3">
+                            <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full font-semibold">Automation</span>
+                            <span>Jul 20, 2024</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="/blog/posts/5-signs-your-business-needs-process-automation.html" class="hover:text-emerald-600">
+                                5 Signs Your Business Needs Process Automation
+                            </a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            Is your team drowning in repetitive tasks? These 5 warning signs indicate it's time to automate your business processes and free up your team.
+                        </p>
+                        <a href="/blog/posts/5-signs-your-business-needs-process-automation.html" class="text-emerald-600 font-semibold hover:text-emerald-700">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-br from-emerald-600 to-lime-500">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-white mb-8">
+                See how Startekk's AI-powered solutions can help you save costs and improve efficiency
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="/cost-calculator.html" class="px-8 py-3 bg-white text-emerald-600 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Calculate Savings
+                </a>
+                <a href="/contact.html" class="px-8 py-3 bg-emerald-700 text-white rounded-lg font-semibold hover:bg-emerald-800 transition">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Column 1: Company -->
                 <div>
                     <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
                     <ul class="space-y-2">
@@ -103,8 +232,6 @@
                         <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 2: Products -->
                 <div>
                     <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
                     <ul class="space-y-2">
@@ -116,8 +243,6 @@
                         <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 3: Services -->
                 <div>
                     <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
                     <ul class="space-y-2">
@@ -127,8 +252,6 @@
                         <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 4: Legal -->
                 <div>
                     <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
                     <ul class="space-y-2">
@@ -139,7 +262,6 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
                 <p class="mt-2 text-sm">

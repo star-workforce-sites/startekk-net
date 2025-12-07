@@ -1,6 +1,18 @@
+# Robots.txt for startekk.net
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
+# Sitemaps
 Sitemap: https://startekk.net/sitemap.xml
+
+# Disallow admin/temp areas (if any in future)
+Disallow: /admin/
+Disallow: /temp/
+Disallow: *.json$
+
+# Allow all important pages
+Allow: /blog/
+Allow: /products/
+Allow: /services/
+Allow: /investor/
+Allow: /legal/
