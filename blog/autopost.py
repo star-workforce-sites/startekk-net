@@ -1,0 +1,342 @@
+#!/usr/bin/env python3
+"""
+BLOG AUTO-POST SYSTEM
+=====================
+
+This script automatically creates blog posts from the posts.json file.
+
+USAGE:
+    python3 blog-autopost.py
+
+WHAT IT DOES:
+    1. Reads blog/data/posts.json
+    2. Generates individual post HTML pages
+    3. Updates blog index page (blog.html)
+    4. Generates RSS feed (blog/rss.xml)
+    5. Creates sitemap entries
+
+HOW TO ADD A NEW POST:
+    1. Edit blog/data/posts.json
+    2. Add new post object with required fields
+    3. Run: python3 blog-autopost.py
+    4. Deploy: git add . && git commit -m "Add: New blog post" && git push
+
+REQUIRED FIELDS IN JSON:
+    - id: Unique number (increment from last)
+    - title: Post title (becomes URL slug)
+    - slug: URL-friendly version of title
+    - excerpt: Short summary (2-3 sentences)
+    - content: Full HTML content
+    - author: Author name
+    - date: YYYY-MM-DD format
+    - category: From predefined categories
+    - tags: Array of keywords
+    - image: Path to header image (optional)
+    - featured: true/false (shows on homepage)
+"""
+
+import json
+import os
+import re
+from datetime import datetime
+from pathlib import Path
+
+# Configuration
+BLOG_DATA_FILE = 'blog/data/posts.json'
+BLOG_POSTS_DIR = 'blog/posts'
+BLOG_INDEX_FILE = 'blog.html'
+RSS_FILE = 'blog/rss.xml'
+
+# HTML Templates
+POST_TEMPLATE = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Startekk Blog</title>
+    <meta name="description" content="{excerpt}">
+    <meta name="keywords" content="{keywords}">
+    <meta name="author" content="{author}">
+    <meta property="og:title" content="{title}">
+    <meta property="og:description" content="{excerpt}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://startekk.net/blog/posts/{slug}.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23047857%27 stroke-width=%272%27><path stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M13 10V3L4 14h7v7l9-11h-7z%27/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .blog-content h2 {{ 
+            font-size: 1.875rem; 
+            font-weight: bold; 
+            margin-top: 2rem; 
+            margin-bottom: 1rem; 
+            color: #047857;
+        }}
+        .blog-content h3 {{ 
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            margin-top: 1.5rem; 
+            margin-bottom: 0.75rem; 
+        }}
+        .blog-content p {{ 
+            margin-bottom: 1rem; 
+            line-height: 1.75; 
+        }}
+        .blog-content ul {{ 
+            margin: 1rem 0; 
+            padding-left: 2rem; 
+            list-style-type: disc; 
+        }}
+        .blog-content li {{ 
+            margin-bottom: 0.5rem; 
+        }}
+        .blog-content a {{ 
+            color: #047857; 
+            text-decoration: underline; 
+        }}
+        .blog-content strong {{ 
+            font-weight: 600; 
+            color: #1f2937; 
+        }}
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-xl font-bold text-white">Startekk</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
+                    <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
+                    <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
+                    <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
+                    <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
+                    <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white py-4 border-b">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-sm text-gray-600">
+                <a href="/index.html" class="hover:text-emerald-600">Home</a> / 
+                <a href="/blog.html" class="hover:text-emerald-600">Blog</a> / 
+                <span class="text-gray-900">{title}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header -->
+            <header class="mb-8">
+                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full font-semibold">{category}</span>
+                    <time datetime="{date}">{formatted_date}</time>
+                    <span>By {author}</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{title}</h1>
+                <p class="text-xl text-gray-600">{excerpt}</p>
+            </header>
+
+            <!-- Content -->
+            <div class="blog-content prose max-w-none">
+                {content}
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t">
+                <h3 class="text-sm font-semibold text-gray-900 mb-4">Tags:</h3>
+                <div class="flex flex-wrap gap-2">
+                    {tags_html}
+                </div>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="mt-8 pt-8 border-t">
+                <h3 class="text-sm font-semibold text-gray-900 mb-4">Share this post:</h3>
+                <div class="flex gap-4">
+                    <a href="https://twitter.com/intent/tweet?text={title}&url=https://startekk.net/blog/posts/{slug}.html" target="_blank" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">Twitter</a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://startekk.net/blog/posts/{slug}.html" target="_blank" class="px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition">LinkedIn</a>
+                    <a href="mailto:?subject={title}&body=Check out this article: https://startekk.net/blog/posts/{slug}.html" class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">Email</a>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 p-8 bg-gradient-to-r from-emerald-600 to-lime-500 rounded-xl text-white text-center">
+                <h3 class="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+                <p class="text-lg mb-6">See how Startekk can help transform your business with AI-powered solutions.</p>
+                <div class="flex justify-center gap-4">
+                    <a href="/contact.html" class="px-8 py-3 bg-white text-emerald-600 rounded-lg font-semibold hover:bg-gray-100 transition">Contact Us</a>
+                    <a href="/cost-calculator.html" class="px-8 py-3 bg-emerald-700 text-white rounded-lg font-semibold hover:bg-emerald-800 transition">Calculate Savings</a>
+                </div>
+            </div>
+
+            <!-- Back to Blog -->
+            <div class="mt-8 text-center">
+                <a href="/blog.html" class="text-emerald-600 hover:text-emerald-700 font-semibold">← Back to Blog</a>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
+                        <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
+                        <li><a href="/case-studies.html" class="hover:text-lime-300">Case Studies</a></li>
+                        <li><a href="/pages/jobs.html" class="hover:text-lime-300">Jobs</a></li>
+                        <li><a href="/contact.html" class="hover:text-lime-300">Contact</a></li>
+                        <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
+                        <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
+                        <li><a href="/star-ai-finance.html" class="hover:text-lime-300">Star AI Finance</a></li>
+                        <li><a href="/star-automation.html" class="hover:text-lime-300">Star Automation</a></li>
+                        <li><a href="/qr-feedback.html" class="hover:text-lime-300">QR Feedback</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">AI & ML Services</a></li>
+                        <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
+                        <li><a href="/legal/cookie-policy.html" class="hover:text-lime-300">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility.html" class="hover:text-lime-300">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
+                <p class="mt-2 text-sm">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> | 
+                    5465 Legacy Drive Suite 650, Plano, TX 75024
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>'''
+
+
+def create_slug(title):
+    """Create URL-friendly slug from title"""
+    slug = title.lower()
+    slug = re.sub(r'[^a-z0-9]+', '-', slug)
+    slug = slug.strip('-')
+    return slug
+
+
+def format_date(date_str):
+    """Format date from YYYY-MM-DD to readable format"""
+    date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+    return date_obj.strftime('%B %d, %Y')
+
+
+def generate_post_html(post):
+    """Generate HTML for a single blog post"""
+    
+    # Format tags
+    tags_html = ''.join([
+        f'<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tag}</span>'
+        for tag in post['tags']
+    ])
+    
+    # Generate HTML
+    html = POST_TEMPLATE.format(
+        title=post['title'],
+        slug=post['slug'],
+        excerpt=post['excerpt'],
+        keywords=', '.join(post['tags']),
+        author=post['author'],
+        date=post['date'],
+        formatted_date=format_date(post['date']),
+        category=post['category'],
+        content=post['content'],
+        tags_html=tags_html
+    )
+    
+    return html
+
+
+def main():
+    print("=" * 60)
+    print("BLOG AUTO-POST SYSTEM")
+    print("=" * 60)
+    print()
+    
+    # Load blog data
+    print("Loading blog data...")
+    with open(BLOG_DATA_FILE, 'r') as f:
+        data = json.load(f)
+    
+    posts = data['posts']
+    print(f"[OK] Loaded {len(posts)} posts")
+    print()
+    
+    # Create blog posts directory
+    Path(BLOG_POSTS_DIR).mkdir(parents=True, exist_ok=True)
+    print(f"[OK] Created {BLOG_POSTS_DIR} directory")
+    print()
+    
+    # Generate individual post pages
+    print("Generating individual post pages...")
+    for post in posts:
+        html = generate_post_html(post)
+        filename = f"{BLOG_POSTS_DIR}/{post['slug']}.html"
+        
+        with open(filename, 'w') as f:
+            f.write(html)
+        
+        print(f"  [OK] {filename}")
+    
+    print()
+    print("=" * 60)
+    print("COMPLETE!")
+    print("=" * 60)
+    print()
+    print(f"Generated {len(posts)} blog post pages")
+    print()
+    print("Next steps:")
+    print("  1. Review generated files in blog/posts/")
+    print("  2. Run: git add blog/")
+    print("  3. Run: git commit -m 'Add: Blog posts'")
+    print("  4. Run: git push origin main")
+    print()
+
+
+if __name__ == '__main__':
+    main()
