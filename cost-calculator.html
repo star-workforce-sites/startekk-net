@@ -381,7 +381,7 @@
             // Filter jobs
             const matches = allJobs.filter(job => 
                 job.job_title.toLowerCase().includes(searchTerm)
-            ).slice(0, 10); // Limit to 10 results
+            ); // Show all matching results
 
             if (matches.length > 0) {
                 displayAutocomplete(matches);
