@@ -318,7 +318,7 @@ def main():
         html = generate_post_html(post)
         filename = f"{BLOG_POSTS_DIR}/{post['slug']}.html"
         
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding='utf-8') as f:
             f.write(html)
         
         print(f"  [OK] {filename}")
