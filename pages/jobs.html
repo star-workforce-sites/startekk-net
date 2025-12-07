@@ -216,7 +216,8 @@
             
             try {
                 const response = await fetch(`${API_URL}?${params}`);
-                const jobs = await response.json();
+                const data = await response.json();
+                const jobs = data.jobs || data;
                 
                 displayJobs(jobs);
             } catch (error) {
