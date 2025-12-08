@@ -4,65 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Outsourcing Cost Calculator | Compare Offshore Development Rates | Startekk</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23047857%27 stroke-width=%272%27><path stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M13 10V3L4 14h7v7l9-11h-7z%27/></svg>">
-    <meta name="description" content="Calculate offshore development cost savings instantly. Compare USA market rates vs Startekk rates for 238+ IT roles. See real ROI for your team.">
-    <meta name="keywords" content="offshore development cost calculator, IT outsourcing cost savings, compare offshore rates, development team cost calculator">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Cost Calculator - Offshore Development Savings">
-    <meta property="og:description" content="Calculate your savings with offshore development. 238+ job titles, instant ROI comparison.">
-    <meta property="og:type" content="website">
-    
+    <meta name="description" content="Calculate your savings with offshore development. Compare rates for 238+ IT roles across USA, Nearshore, and Offshore locations.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': { 600: '#047857', 700: '#065f46' },
+                        'lime': { 500: '#84CC16', 600: '#65a30d' }
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-8BFZG3R9ZR');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8BFZG3R9ZR');
     </script>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #047857 0%, #84CC16 100%);
-        }
-        .result-card {
-            transition: all 0.3s ease;
-        }
-        .result-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(4, 120, 87, 0.15);
-        }
-        .autocomplete-item {
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .autocomplete-item:hover {
-            background-color: #f3f4f6;
-        }
-        .loading-spinner {
-            border: 3px solid #f3f4f6;
-            border-top: 3px solid #047857;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
 </head>
 <body class="bg-gray-50">
-
     <!-- Navigation -->
-        <!-- Navigation -->
-    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
+    <nav class="bg-emerald-600 sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-3">
@@ -73,217 +40,174 @@
                     </div>
                     <div class="text-xl font-bold text-white">Startekk</div>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
                     <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
                     <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
                     <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
                     <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
                     <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
-                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
                 </div>
+                
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
+        
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 py-4">
-            <a href="/index.html" class="block py-2 text-white hover:text-lime-300">Home</a>
-            <a href="/about.html" class="block py-2 text-white hover:text-lime-300">About</a>
-            <a href="/products.html" class="block py-2 text-white hover:text-lime-300">Products</a>
-            <a href="/services.html" class="block py-2 text-white hover:text-lime-300">Services</a>
-            <a href="/pages/jobs.html" class="block py-2 text-white hover:text-lime-300">Jobs</a>
-            <a href="/investor/index.html" class="block py-2 text-white hover:text-lime-300">Investors</a>
-            <a href="/contact.html" class="block py-2 text-white hover:text-lime-300">Contact Us</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/index.html" class="block px-3 py-2 text-white hover:bg-emerald-600 rounded">Home</a>
+                <a href="/about.html" class="block px-3 py-2 text-white hover:bg-emerald-600 rounded">About</a>
+                <a href="/products.html" class="block px-3 py-2 text-white hover:bg-emerald-600 rounded">Products</a>
+                <a href="/services.html" class="block px-3 py-2 text-white hover:bg-emerald-600 rounded">Services</a>
+                <a href="/pages/jobs.html" class="block px-3 py-2 text-white hover:bg-emerald-600 rounded">Jobs</a>
+                <a href="/investor/index.html" class="block px-3 py-2 text-white hover:bg-emerald-600 rounded">Investors</a>
+                <a href="/contact.html" class="block px-3 py-2 text-white hover:bg-emerald-600 rounded">Contact Us</a>
+            </div>
         </div>
     </nav>
-    
-    <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    });
-    </script>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-12">
+    <div class="bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">IT Outsourcing Cost Calculator</h1>
-            <p class="text-xl text-emerald-50 max-w-3xl mx-auto">
-                Calculate your savings with offshore development. Compare rates for 238+ IT roles across USA, Nearshore, and Offshore locations.
-            </p>
+            <p class="text-xl md:text-2xl mb-2">Calculate your savings with offshore development. Compare rates for 238+ IT roles across USA, Nearshore, and Offshore locations.</p>
         </div>
-    </section>
+    </div>
 
     <!-- Calculator Section -->
-    <section class="py-12">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Calculate Your Savings</h2>
             
-            <!-- Calculator Form -->
-            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Calculate Your Savings</h2>
-                
-                <form id="calculatorForm" class="space-y-6">
-                    
-                    <!-- Job Title Search -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            Search Job Title
-                        </label>
-                        <div class="relative">
-                            <input 
-                                type="text" 
-                                id="jobSearch" 
-                                placeholder="e.g., Software Engineer, DevOps, QA Engineer..."
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
-                                autocomplete="off"
-                            >
-                            <div id="autocompleteResults" class="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 max-h-60 overflow-y-auto hidden z-10 shadow-lg"></div>
-                        </div>
-                        <p class="text-sm text-gray-500 mt-1">238 job titles available</p>
-                    </div>
+            <form id="calculator-form" class="space-y-6">
+                <!-- Job Title Search -->
+                <div>
+                    <label for="job-search" class="block text-sm font-semibold text-gray-900 mb-2">
+                        Search Job Title
+                    </label>
+                    <input 
+                        type="text" 
+                        id="job-search" 
+                        placeholder="Start typing (e.g., Software Engineer, Architect...)"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        autocomplete="off"
+                    />
+                    <div id="job-suggestions" class="hidden mt-2 border border-gray-200 rounded-lg shadow-lg bg-white max-h-64 overflow-y-auto"></div>
+                    <p class="mt-2 text-sm text-gray-600">238 job titles available</p>
+                </div>
 
-                    <!-- Selected Job Display -->
-                    <div id="selectedJobDisplay" class="hidden bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <p class="font-semibold text-emerald-900" id="selectedJobTitle"></p>
-                                <p class="text-sm text-emerald-700" id="selectedJobCategory"></p>
-                            </div>
-                            <button type="button" id="clearJob" class="text-emerald-700 hover:text-emerald-900">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+                <!-- Team Size -->
+                <div>
+                    <label for="team-size" class="block text-sm font-semibold text-gray-900 mb-2">
+                        Team Size
+                    </label>
+                    <input 
+                        type="number" 
+                        id="team-size" 
+                        min="1" 
+                        value="5"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    />
+                </div>
 
-                    <!-- Team Size -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            Team Size
-                        </label>
-                        <input 
-                            type="number" 
-                            id="teamSize" 
-                            min="1" 
-                            max="100" 
-                            value="5"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
-                            required
-                        >
-                    </div>
-
-                    <!-- Hours Per Week -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            Hours Per Week (per person)
-                        </label>
-                        <select 
-                            id="hoursPerWeek"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
-                        >
-                            <option value="40">40 hours (Full-time)</option>
-                            <option value="30">30 hours</option>
-                            <option value="20">20 hours (Part-time)</option>
-                        </select>
-                    </div>
-
-                    <!-- Location Selection -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            Compare Against
-                        </label>
-                        <select 
-                            id="location"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
-                        >
-                            <option value="usa-market">USA Market Rate</option>
-                            <option value="usa-startekk" selected>USA with Startekk</option>
-                            <option value="nearshore">Nearshore (Mexico/Canada)</option>
-                            <option value="india-offshore">India (Offshore)</option>
-                        </select>
-                    </div>
-
-                    <!-- Calculate Button -->
-                    <button 
-                        type="submit" 
-                        id="calculateBtn"
-                        class="w-full gradient-bg text-white font-semibold py-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center"
+                <!-- Hours Per Week -->
+                <div>
+                    <label for="hours-week" class="block text-sm font-semibold text-gray-900 mb-2">
+                        Hours Per Week (per person)
+                    </label>
+                    <select 
+                        id="hours-week"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                     >
-                        <span id="btnText">Calculate Savings</span>
-                        <div id="btnSpinner" class="loading-spinner ml-3 hidden"></div>
-                    </button>
-                </form>
-            </div>
-
-            <!-- Results Section -->
-            <div id="resultsSection" class="hidden space-y-6">
-                
-                <!-- Main Savings Card -->
-                <div class="bg-gradient-to-br from-emerald-700 to-lime-600 text-white rounded-xl shadow-lg p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-2">Your Annual Savings</h3>
-                    <p class="text-5xl font-bold mb-2" id="annualSavings">$0</p>
-                    <p class="text-emerald-100 text-lg" id="savingsPercentage">0% cost reduction</p>
-                    <p class="text-emerald-50 text-sm mt-4">5-Year Savings: <span class="font-bold" id="fiveYearSavings">$0</span></p>
+                        <option value="40" selected>40 hours (Full-time)</option>
+                        <option value="30">30 hours</option>
+                        <option value="20">20 hours (Part-time)</option>
+                    </select>
                 </div>
 
-                <!-- Comparison Cards -->
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="result-card bg-white rounded-xl shadow-lg p-6">
-                        <h4 class="text-lg font-semibold text-gray-900 mb-4">USA Market Rate</h4>
-                        <p class="text-3xl font-bold text-gray-900 mb-2" id="marketCost">$0</p>
-                        <p class="text-sm text-gray-600" id="marketDetails">Annual cost</p>
-                    </div>
-                    
-                    <div class="result-card bg-white rounded-xl shadow-lg p-6">
-                        <h4 class="text-lg font-semibold text-gray-900 mb-4">Your Selected Model</h4>
-                        <p class="text-3xl font-bold text-emerald-700 mb-2" id="selectedCost">$0</p>
-                        <p class="text-sm text-gray-600" id="selectedDetails">Annual cost</p>
-                    </div>
+                <!-- Compare Against -->
+                <div>
+                    <label for="location-select" class="block text-sm font-semibold text-gray-900 mb-2">
+                        Compare Against
+                    </label>
+                    <select 
+                        id="location-select"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    >
+                        <option value="market">USA Market Rate</option>
+                        <option value="onsite" selected>USA with Startekk</option>
+                        <option value="nearshore">Nearshore (Mexico/Canada)</option>
+                        <option value="offshore">India (Offshore)</option>
+                    </select>
                 </div>
 
-                <!-- All Options Comparison -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Compare All Options</h3>
-                    <div id="comparisonTable" class="space-y-3">
-                        <!-- Dynamically populated -->
-                    </div>
-                </div>
-
-                <!-- CTA -->
-                <div class="bg-gray-100 rounded-xl p-8 text-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Ready to start saving?</h3>
-                    <p class="text-gray-600 mb-6">Let's discuss how Startekk can help reduce your costs</p>
-                    <a href="/contact.html" class="inline-block gradient-bg text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity">
-                        Contact Us Today
-                    </a>
-                </div>
-            </div>
-
+                <button 
+                    type="submit"
+                    class="w-full bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-4 px-6 rounded-lg font-bold text-lg hover:shadow-lg transition-all"
+                >
+                    Calculate Savings
+                </button>
+            </form>
         </div>
-    </section>
+
+        <!-- Results Section -->
+        <div id="results-section" class="hidden mt-8 space-y-6">
+            <!-- Annual Savings Card -->
+            <div class="bg-gradient-to-r from-emerald-600 to-lime-500 rounded-xl shadow-xl p-8 text-white">
+                <h3 class="text-xl font-semibold mb-4">Your Annual Savings</h3>
+                <div class="text-5xl font-bold mb-2" id="annual-savings">$0</div>
+                <div class="text-xl mb-4" id="savings-percentage">0% cost reduction</div>
+                <div class="text-lg" id="five-year-savings">5-Year Savings: $0</div>
+            </div>
+
+            <!-- Rate Comparison -->
+            <div class="bg-white rounded-xl shadow-xl p-8">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-2 border-gray-200 rounded-lg p-6">
+                        <h4 class="text-sm font-semibold text-gray-600 mb-2">USA Market Rate</h4>
+                        <div class="text-3xl font-bold text-gray-900" id="market-rate">$0</div>
+                        <div class="text-sm text-gray-600 mt-1">Annual cost</div>
+                    </div>
+                    <div class="border-2 border-emerald-500 rounded-lg p-6 bg-emerald-50">
+                        <h4 class="text-sm font-semibold text-emerald-700 mb-2">Your Selected Model</h4>
+                        <div class="text-3xl font-bold text-emerald-700" id="selected-rate">$0</div>
+                        <div class="text-sm text-emerald-600 mt-1">Annual cost</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Options Comparison -->
+            <div class="bg-white rounded-xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Compare All Options</h3>
+                <div id="all-options" class="space-y-4">
+                    <!-- Generated dynamically -->
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="bg-gray-100 rounded-xl p-8 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to start saving?</h3>
+                <p class="text-gray-600 mb-6">Let's discuss how Startekk can help reduce your costs</p>
+                <a href="/contact.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-3 px-8 rounded-lg font-bold hover:shadow-lg transition-all">
+                    Contact Us Today
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
-        <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Column 1: Company -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
                     <ul class="space-y-2">
                         <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
                         <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
@@ -293,10 +217,8 @@
                         <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 2: Products -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
                     <ul class="space-y-2">
                         <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
                         <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
@@ -306,21 +228,17 @@
                         <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 3: Services -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
                     <ul class="space-y-2">
                         <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
                         <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
                         <li><a href="/services.html" class="hover:text-lime-300">AI & ML Services</a></li>
-                        <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
+                        <li><a href="https://starworkforce.net" class="hover:text-lime-300">Technology Staffing →</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 4: Legal -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
                         <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
                         <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
@@ -329,11 +247,10 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
-                <p class="mt-2 text-sm">
-                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> | 
+                <p>© 2025 Startekk, LLC. All rights reserved.</p>
+                <p class="mt-2">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> |
                     5465 Legacy Drive Suite 650, Plano, TX 75024
                 </p>
             </div>
@@ -341,226 +258,195 @@
     </footer>
 
     <script>
-        // API Configuration
-        const API_BASE = window.location.hostname === 'localhost' 
-            ? 'http://localhost:3000/api/calculator'
-            : '/api/calculator';
-
-        // State
+        // Global state
         let allJobs = [];
         let selectedJob = null;
 
         // Load all jobs on page load
         async function loadJobs() {
             try {
-                const response = await fetch(`${API_BASE}/jobs`);
-                const data = await response.json();
-                
-                if (data.success) {
-                    allJobs = data.jobs;
-                    console.log(`Loaded ${allJobs.length} jobs from database`);
-                }
+                const response = await fetch('/api/calculator/jobs');
+                if (!response.ok) throw new Error('Failed to load jobs');
+                allJobs = await response.json();
+                console.log(`Loaded ${allJobs.length} jobs`);
             } catch (error) {
                 console.error('Error loading jobs:', error);
-                showError('Failed to load job database. Please refresh the page.');
+                // Fallback: show error message
+                document.getElementById('job-search').placeholder = 'Error loading jobs. Please refresh the page.';
             }
         }
 
-        // Autocomplete search
-        const jobSearch = document.getElementById('jobSearch');
-        const autocompleteResults = document.getElementById('autocompleteResults');
+        // Search jobs as user types
+        const jobSearch = document.getElementById('job-search');
+        const jobSuggestions = document.getElementById('job-suggestions');
+        let searchTimeout;
 
-        jobSearch.addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase().trim();
+        jobSearch.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
             
-            if (searchTerm.length < 2) {
-                autocompleteResults.classList.add('hidden');
+            if (query.length < 2) {
+                jobSuggestions.classList.add('hidden');
                 return;
             }
 
-            // Filter jobs
-            const matches = allJobs.filter(job => 
-                job.job_title.toLowerCase().includes(searchTerm)
-            ); // Show all matching results
-
-            if (matches.length > 0) {
-                displayAutocomplete(matches);
-            } else {
-                autocompleteResults.classList.add('hidden');
-            }
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                searchJobs(query);
+            }, 300);
         });
 
-        // Display autocomplete results
-        function displayAutocomplete(jobs) {
-            autocompleteResults.innerHTML = jobs.map(job => `
-                <div class="autocomplete-item px-4 py-3 border-b border-gray-100 last:border-0" data-job-id="${job.id}">
-                    <p class="font-medium text-gray-900">${job.job_title}</p>
-                    <p class="text-sm text-gray-600">${job.category} ${job.seniority ? '• ' + job.seniority : ''}</p>
+        async function searchJobs(query) {
+            try {
+                const response = await fetch(`/api/calculator/search?q=${encodeURIComponent(query)}`);
+                if (!response.ok) throw new Error('Search failed');
+                
+                const results = await response.json();
+                displaySuggestions(results);
+            } catch (error) {
+                console.error('Search error:', error);
+                // Fallback to client-side search
+                const filtered = allJobs.filter(job => 
+                    job.job_title.toLowerCase().includes(query.toLowerCase())
+                ).slice(0, 20);
+                displaySuggestions(filtered);
+            }
+        }
+
+        function displaySuggestions(jobs) {
+            if (jobs.length === 0) {
+                jobSuggestions.innerHTML = '<div class="p-4 text-gray-500">No jobs found</div>';
+                jobSuggestions.classList.remove('hidden');
+                return;
+            }
+
+            jobSuggestions.innerHTML = jobs.map(job => `
+                <div class="p-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0" data-job-id="${job.id}">
+                    <div class="font-semibold text-gray-900">${job.job_title}</div>
+                    <div class="text-sm text-gray-600">${job.category || ''} ${job.seniority ? '• ' + job.seniority : ''}</div>
                 </div>
             `).join('');
-            
-            autocompleteResults.classList.remove('hidden');
+
+            jobSuggestions.classList.remove('hidden');
 
             // Add click handlers
-            document.querySelectorAll('.autocomplete-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const jobId = parseInt(this.dataset.jobId);
-                    selectJob(jobId);
+            jobSuggestions.querySelectorAll('[data-job-id]').forEach(el => {
+                el.addEventListener('click', () => {
+                    const jobId = parseInt(el.dataset.jobId);
+                    selectedJob = jobs.find(j => j.id === jobId);
+                    jobSearch.value = selectedJob.job_title;
+                    jobSuggestions.classList.add('hidden');
                 });
             });
         }
 
-        // Select a job
-        function selectJob(jobId) {
-            selectedJob = allJobs.find(job => job.id === jobId);
-            
-            if (selectedJob) {
-                // Update display
-                document.getElementById('selectedJobTitle').textContent = selectedJob.title;
-                document.getElementById('selectedJobCategory').textContent = 
-                    `${selectedJob.category} ${selectedJob.seniority ? '• ' + selectedJob.seniority : ''}`;
-                
-                document.getElementById('selectedJobDisplay').classList.remove('hidden');
-                autocompleteResults.classList.add('hidden');
-                jobSearch.value = selectedJob.title;
-            }
-        }
-
-        // Clear job selection
-        document.getElementById('clearJob').addEventListener('click', function() {
-            selectedJob = null;
-            document.getElementById('selectedJobDisplay').classList.add('hidden');
-            jobSearch.value = '';
-            jobSearch.focus();
-        });
-
-        // Close autocomplete when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!jobSearch.contains(e.target) && !autocompleteResults.contains(e.target)) {
-                autocompleteResults.classList.add('hidden');
+        // Close suggestions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!jobSearch.contains(e.target) && !jobSuggestions.contains(e.target)) {
+                jobSuggestions.classList.add('hidden');
             }
         });
 
-        // Form submission
-        document.getElementById('calculatorForm').addEventListener('submit', async function(e) {
+        // Calculate savings
+        document.getElementById('calculator-form').addEventListener('submit', async (e) => {
             e.preventDefault();
 
             if (!selectedJob) {
                 alert('Please select a job title');
-                jobSearch.focus();
                 return;
             }
 
-            // Show loading state
-            const btn = document.getElementById('calculateBtn');
-            const btnText = document.getElementById('btnText');
-            const btnSpinner = document.getElementById('btnSpinner');
-            
-            btn.disabled = true;
-            btnText.textContent = 'Calculating...';
-            btnSpinner.classList.remove('hidden');
+            const teamSize = parseInt(document.getElementById('team-size').value);
+            const hoursPerWeek = parseInt(document.getElementById('hours-week').value);
+            const location = document.getElementById('location-select').value;
 
-            try {
-                const response = await fetch(`${API_BASE}/calculate`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        jobId: selectedJob.id,
-                        location: document.getElementById('location').value,
-                        teamSize: parseInt(document.getElementById('teamSize').value),
-                        hoursPerWeek: parseInt(document.getElementById('hoursPerWeek').value)
-                    })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    displayResults(data.calculation, data.comparison);
-                } else {
-                    showError(data.error || 'Calculation failed');
-                }
-
-            } catch (error) {
-                console.error('Calculation error:', error);
-                showError('Failed to calculate savings. Please try again.');
-            } finally {
-                // Reset button state
-                btn.disabled = false;
-                btnText.textContent = 'Calculate Savings';
-                btnSpinner.classList.add('hidden');
-            }
+            calculateAndDisplay(selectedJob, teamSize, hoursPerWeek, location);
         });
 
-        // Display results
-        function displayResults(calculation, comparison) {
-            // Update main savings card
-            document.getElementById('annualSavings').textContent = 
-                `$${calculation.savings.annual.toLocaleString()}`;
-            document.getElementById('savingsPercentage').textContent = 
-                `${calculation.savings.percentage}% cost reduction`;
-            document.getElementById('fiveYearSavings').textContent = 
-                `$${calculation.savings.fiveYear.toLocaleString()}`;
+        function calculateAndDisplay(job, teamSize, hoursPerWeek, location) {
+            const rates = {
+                market: job.usa_market_rate,
+                onsite: job.usa_startekk_onsite,
+                nearshore: job.canada_rate_nearshore,
+                offshore: job.india_rate_offshore
+            };
 
-            // Update comparison cards
-            document.getElementById('marketCost').textContent = 
-                `$${calculation.costs.marketTotal.toLocaleString()}`;
-            document.getElementById('marketDetails').textContent = 
-                `${calculation.inputs.teamSize} people × ${calculation.inputs.hoursPerWeek} hrs/week`;
+            const selectedRate = rates[location];
+            const marketRate = rates.market;
 
-            document.getElementById('selectedCost').textContent = 
-                `$${calculation.costs.total.toLocaleString()}`;
-            document.getElementById('selectedDetails').textContent = 
-                `${calculation.inputs.location} • Annual cost`;
+            // Calculate costs
+            const hoursPerYear = hoursPerWeek * 52;
+            const marketAnnual = marketRate * hoursPerYear * teamSize;
+            const selectedAnnual = selectedRate * hoursPerYear * teamSize;
+            const annualSavings = marketAnnual - selectedAnnual;
+            const savingsPercent = (annualSavings / marketAnnual * 100).toFixed(1);
+            const fiveYearSavings = annualSavings * 5;
 
-            // Build comparison table
-            const comparisonTable = document.getElementById('comparisonTable');
-            comparisonTable.innerHTML = Object.entries(comparison).map(([key, data]) => `
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                    <div>
-                        <p class="font-semibold text-gray-900">${data.location}</p>
-                        <p class="text-sm text-gray-600">$${data.rate}/hour</p>
+            // Display results
+            document.getElementById('annual-savings').textContent = formatCurrency(annualSavings);
+            document.getElementById('savings-percentage').textContent = `${savingsPercent}% cost reduction`;
+            document.getElementById('five-year-savings').textContent = `5-Year Savings: ${formatCurrency(fiveYearSavings)}`;
+            document.getElementById('market-rate').textContent = formatCurrency(marketAnnual);
+            document.getElementById('selected-rate').textContent = formatCurrency(selectedAnnual);
+
+            // Display all options
+            const options = [
+                { label: 'USA Market Rate', value: marketRate, key: 'market' },
+                { label: 'USA with Startekk', value: rates.onsite, key: 'onsite' },
+                { label: 'Nearshore (Mexico/Canada)', value: rates.nearshore, key: 'nearshore' },
+                { label: 'India (Offshore)', value: rates.offshore, key: 'offshore' }
+            ];
+
+            document.getElementById('all-options').innerHTML = options.map(opt => {
+                const annual = opt.value * hoursPerYear * teamSize;
+                const savings = marketAnnual - annual;
+                const percent = (savings / marketAnnual * 100).toFixed(1);
+                const isSelected = opt.key === location;
+
+                return `
+                    <div class="p-4 rounded-lg ${isSelected ? 'bg-emerald-50 border-2 border-emerald-500' : 'bg-gray-50 border border-gray-200'}">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-semibold text-gray-900">${opt.label} ${isSelected ? '(Selected)' : ''}</div>
+                                <div class="text-sm text-gray-600">$${opt.value.toFixed(2)}/hr per person</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold ${isSelected ? 'text-emerald-700' : 'text-gray-900'}">${formatCurrency(annual)}</div>
+                                <div class="text-sm ${isSelected ? 'text-emerald-600' : 'text-gray-600'}">
+                                    ${savings > 0 ? `Save ${formatCurrency(savings)} (${percent}%)` : 'Reference rate'}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-right">
-                        <p class="font-bold text-gray-900">$${data.annualCost.toLocaleString()}</p>
-                        <p class="text-sm ${data.savings > 0 ? 'text-emerald-600' : 'text-gray-500'}">
-                            ${data.savings > 0 ? `Save $${data.savings.toLocaleString()} (${data.savingsPercentage}%)` : 'Baseline'}
-                        </p>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
 
-            // Show results section
-            document.getElementById('resultsSection').classList.remove('hidden');
-            
-            // Scroll to results
-            document.getElementById('resultsSection').scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start' 
+            // Show results
+            document.getElementById('results-section').classList.remove('hidden');
+            document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Track in GA
+            gtag('event', 'calculate_savings', {
+                'job_title': job.job_title,
+                'location': location,
+                'annual_savings': annualSavings
             });
-
-            // Track calculation in GA
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'calculate_savings', {
-                    'event_category': 'calculator',
-                    'job_title': calculation.job.job_title,
-                    'annual_savings': calculation.savings.annual,
-                    'location': calculation.inputs.location
-                });
-            }
         }
 
-        // Show error message
-        function showError(message) {
-            alert(message);
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            }).format(amount);
         }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
 
         // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            loadJobs();
-        });
+        loadJobs();
     </script>
-
 </body>
 </html>

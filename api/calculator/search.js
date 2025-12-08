@@ -1,9 +1,9 @@
 // ========================================================================
-// API ENDPOINT: Get All Jobs with NEW column names
+// API ENDPOINT: Search Jobs
 // ========================================================================
-// File: api/calculator/jobs.js
-// Purpose: Return all job titles with 4-tier rate structure
-// Database: Updated with canada_rate_nearshore column
+// File: api/calculator/search.js
+// Purpose: Search job titles with autocomplete
+// Database: Updated column names
 // ========================================================================
 
 import { sql } from '@vercel/postgres';
@@ -22,8 +22,16 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
   
+  const { q } = req.query;
+  
+  if (!q || q.length < 2) {
+    return res.status(400).json({ 
+      error: 'Query parameter required (minimum 2 characters)' 
+    });
+  }
+  
   try {
-    // Query with NEW column names after migration
+    // Search with NEW column names
     const { rows } = await sql`
       SELECT 
         id,
@@ -35,14 +43,16 @@ export default async function handler(req, res) {
         category,
         seniority
       FROM job_rates 
+      WHERE job_title ILIKE ${`%${q}%`}
       ORDER BY job_title ASC
+      LIMIT 20
     `;
     
     res.status(200).json(rows);
   } catch (error) {
-    console.error('Database error:', error);
+    console.error('Search error:', error);
     res.status(500).json({ 
-      error: 'Database error',
+      error: 'Search error',
       message: error.message 
     });
   }
