@@ -101,6 +101,7 @@
                     />
                     <div id="job-suggestions" class="hidden absolute left-0 right-0 mt-2 border border-gray-200 rounded-lg shadow-lg bg-white max-h-64 overflow-y-auto z-50"></div>
                     <p class="mt-2 text-sm text-gray-600" id="jobs-count">Loading jobs...</p>
+                    <input type="hidden" id="selected-job-id" />
                 </div>
 
                 <!-- Team Size -->
@@ -150,6 +151,7 @@
 
                 <button 
                     type="submit"
+                    id="calculate-btn"
                     class="w-full bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-4 px-6 rounded-lg font-bold text-lg hover:shadow-lg transition-all"
                 >
                     Calculate Savings
@@ -186,9 +188,7 @@
             <!-- All Options Comparison -->
             <div class="bg-white rounded-xl shadow-xl p-8">
                 <h3 class="text-2xl font-bold text-gray-900 mb-6">Compare All Options</h3>
-                <div id="all-options" class="space-y-4">
-                    <!-- Generated dynamically -->
-                </div>
+                <div id="all-options" class="space-y-4"></div>
             </div>
 
             <!-- CTA -->
@@ -261,7 +261,6 @@
         // Global state
         let allJobs = [];
         let selectedJob = null;
-        let useDirectDatabaseAccess = false;
 
         // Tier labels (CORRECTED)
         const TIER_LABELS = {
@@ -274,7 +273,6 @@
         // Load all jobs on page load
         async function loadJobs() {
             try {
-                // Try API first
                 const response = await fetch('/api/calculator/jobs');
                 if (!response.ok) throw new Error('API not available');
                 
@@ -282,40 +280,12 @@
                 if (!jobs || jobs.length === 0) throw new Error('No jobs returned');
                 
                 allJobs = jobs;
-                console.log(`✅ Loaded ${allJobs.length} jobs from API`);
+                console.log(`✅ Loaded ${allJobs.length} jobs`);
                 document.getElementById('jobs-count').textContent = `${allJobs.length} job titles available`;
-                useDirectDatabaseAccess = false;
                 
             } catch (error) {
-                console.warn('⚠️ API not available, using direct database access');
-                
-                // Fallback: Use @vercel/postgres directly
-                try {
-                    const { sql } = await import('https://esm.sh/@vercel/postgres');
-                    const { rows } = await sql`
-                        SELECT 
-                            id,
-                            job_title,
-                            usa_market_rate,
-                            usa_startekk_onsite,
-                            canada_rate_nearshore,
-                            india_rate_offshore,
-                            category,
-                            seniority
-                        FROM job_rates 
-                        ORDER BY job_title ASC
-                    `;
-                    
-                    allJobs = rows;
-                    console.log(`✅ Loaded ${allJobs.length} jobs from database`);
-                    document.getElementById('jobs-count').textContent = `${allJobs.length} job titles available`;
-                    useDirectDatabaseAccess = true;
-                    
-                } catch (dbError) {
-                    console.error('❌ Could not load jobs:', dbError);
-                    document.getElementById('jobs-count').textContent = 'Error loading jobs. Please refresh the page.';
-                    document.getElementById('job-search').placeholder = 'Error loading jobs...';
-                }
+                console.error('Error loading jobs:', error);
+                document.getElementById('jobs-count').textContent = 'Error loading jobs. Please refresh the page.';
             }
         }
 
@@ -329,7 +299,6 @@
             
             if (query.length < 2) {
                 jobSuggestions.classList.add('hidden');
-                selectedJob = null;
                 return;
             }
 
@@ -339,10 +308,8 @@
             }, 300);
         });
 
-        async function searchJobs(query) {
+        function searchJobs(query) {
             const queryLower = query.toLowerCase();
-            
-            // Client-side search (works with both API and direct DB)
             const filtered = allJobs.filter(job => 
                 job.job_title.toLowerCase().includes(queryLower)
             ).slice(0, 20);
@@ -356,8 +323,6 @@
                 jobSuggestions.classList.remove('hidden');
                 return;
             }
-
-            // Suggestions already positioned by CSS (relative parent)
 
             jobSuggestions.innerHTML = jobs.map(job => `
                 <div class="p-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0" data-job-id="${job.id}">
@@ -374,8 +339,9 @@
                     const jobId = parseInt(el.dataset.jobId);
                     selectedJob = jobs.find(j => j.id === jobId);
                     jobSearch.value = selectedJob.job_title;
+                    document.getElementById('selected-job-id').value = selectedJob.id;
                     jobSuggestions.classList.add('hidden');
-                    console.log('Selected job:', selectedJob);
+                    console.log('✅ Selected job:', selectedJob.job_title);
                 });
             });
         }
@@ -387,12 +353,24 @@
             }
         });
 
-        // Calculate savings
-        document.getElementById('calculator-form').addEventListener('submit', async (e) => {
+        // Calculate savings - FIXED VERSION
+        document.getElementById('calculator-form').addEventListener('submit', (e) => {
             e.preventDefault();
+            
+            console.log('🔘 Calculate button clicked');
+            
+            // If no job selected from suggestions, try to find match by text
+            if (!selectedJob) {
+                const searchText = jobSearch.value.trim();
+                if (searchText) {
+                    selectedJob = allJobs.find(j => 
+                        j.job_title.toLowerCase() === searchText.toLowerCase()
+                    );
+                }
+            }
 
             if (!selectedJob) {
-                alert('Please select a job title from the suggestions');
+                alert('Please select a job title from the suggestions list');
                 jobSearch.focus();
                 return;
             }
@@ -400,29 +378,42 @@
             const teamSize = parseInt(document.getElementById('team-size').value);
             const hoursPerWeek = parseInt(document.getElementById('hours-week').value);
             const location = document.getElementById('location-select').value;
+            
+            console.log('📊 Calculating:', {
+                job: selectedJob.job_title,
+                team: teamSize,
+                hours: hoursPerWeek,
+                location: location
+            });
 
             calculateAndDisplay(selectedJob, teamSize, hoursPerWeek, location);
         });
 
         function calculateAndDisplay(job, teamSize, hoursPerWeek, location) {
-            // Map database columns to tier keys (CORRECTED)
+            console.log('💰 Starting calculation...');
+            
+            // Map database columns to tier keys with parseFloat
             const rates = {
-                customer: job.usa_market_rate,           // Onsite - USA Customer
-                startekk: job.usa_startekk_onsite,       // Onsite - USA with Startekk
-                nearshore: job.canada_rate_nearshore,    // Nearshore Mexico/Canada
-                offshore: job.india_rate_offshore        // Offshore - India
+                customer: parseFloat(job.usa_market_rate),
+                startekk: parseFloat(job.usa_startekk_onsite),
+                nearshore: parseFloat(job.canada_rate_nearshore),
+                offshore: parseFloat(job.india_rate_offshore)
             };
+            
+            console.log('💵 Rates:', rates);
 
             const selectedRate = rates[location];
-            const customerRate = rates.customer; // Customer rate is the baseline
+            const customerRate = rates.customer;
 
             // Calculate costs
             const hoursPerYear = hoursPerWeek * 52;
             const customerAnnual = customerRate * hoursPerYear * teamSize;
             const selectedAnnual = selectedRate * hoursPerYear * teamSize;
             const annualSavings = customerAnnual - selectedAnnual;
-            const savingsPercent = (annualSavings / customerAnnual * 100).toFixed(1);
+            const savingsPercent = ((annualSavings / customerAnnual) * 100).toFixed(1);
             const fiveYearSavings = annualSavings * 5;
+
+            console.log('✅ Calculated savings:', formatCurrency(annualSavings));
 
             // Update selected label
             document.getElementById('selected-label').textContent = TIER_LABELS[location];
@@ -434,7 +425,7 @@
             document.getElementById('market-rate').textContent = formatCurrency(customerAnnual);
             document.getElementById('selected-rate').textContent = formatCurrency(selectedAnnual);
 
-            // Display all options (CORRECTED LABELS)
+            // Display all options
             const options = [
                 { label: TIER_LABELS.customer, value: rates.customer, key: 'customer' },
                 { label: TIER_LABELS.startekk, value: rates.startekk, key: 'startekk' },
@@ -445,7 +436,7 @@
             document.getElementById('all-options').innerHTML = options.map(opt => {
                 const annual = opt.value * hoursPerYear * teamSize;
                 const savings = customerAnnual - annual;
-                const percent = (savings / customerAnnual * 100).toFixed(1);
+                const percent = ((savings / customerAnnual) * 100).toFixed(1);
                 const isSelected = opt.key === location;
 
                 return `
@@ -478,6 +469,8 @@
                     'annual_savings': annualSavings
                 });
             }
+            
+            console.log('✅ Results displayed');
         }
 
         function formatCurrency(amount) {
@@ -489,11 +482,15 @@
         }
 
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+        }
 
         // Initialize
+        console.log('🚀 Initializing calculator...');
         loadJobs();
     </script>
 </body>
