@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Outsourcing Cost Calculator | Compare Offshore Development Rates | Startekk</title>
     <meta name="description" content="Calculate your savings with offshore development. Compare rates for 238+ IT roles across USA, Nearshore, and Offshore locations.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2384CC16' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2384CC16' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -100,7 +105,6 @@
                         autocomplete="off"
                     />
                     <div id="job-suggestions" class="hidden absolute left-0 right-0 mt-2 border border-gray-200 rounded-lg shadow-lg bg-white max-h-64 overflow-y-auto z-50"></div>
-                    <p class="mt-2 text-sm text-gray-600" id="jobs-count">Loading jobs...</p>
                     <input type="hidden" id="selected-job-id" />
                 </div>
 
@@ -195,7 +199,9 @@
             <div class="bg-gray-100 rounded-xl p-8 text-center">
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to start saving?</h3>
                 <p class="text-gray-600 mb-6">Let's discuss how Startekk can help reduce your costs</p>
-                <a href="/contact.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-3 px-8 rounded-lg font-bold hover:shadow-lg transition-all">
+                <a href="/contact.html" 
+                   onclick="if(typeof gtag !== 'undefined'){gtag('event', 'click', {'event_category': 'CTA','event_label': 'Contact Us Today - Calculator Results','value': 1});}"
+                   class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-3 px-8 rounded-lg font-bold hover:shadow-lg transition-all">
                     Contact Us Today
                 </a>
             </div>
@@ -281,11 +287,9 @@
                 
                 allJobs = jobs;
                 console.log(`✅ Loaded ${allJobs.length} jobs`);
-                document.getElementById('jobs-count').textContent = `${allJobs.length} job titles available`;
                 
             } catch (error) {
                 console.error('Error loading jobs:', error);
-                document.getElementById('jobs-count').textContent = 'Error loading jobs. Please refresh the page.';
             }
         }
 
@@ -444,6 +448,7 @@
                         <div class="flex justify-between items-center">
                             <div>
                                 <div class="font-semibold text-gray-900">${opt.label} ${isSelected ? '✓' : ''}</div>
+                                <div class="text-sm text-gray-600">${job.job_title}${job.seniority ? ' - ' + job.seniority : ''}</div>
                                 <div class="text-sm text-gray-600">$${opt.value.toFixed(2)}/hr per person</div>
                             </div>
                             <div class="text-right">
