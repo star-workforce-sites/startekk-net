@@ -1,11 +1,5 @@
-// ========================================================================
-// API ENDPOINT: Search Jobs
-// ========================================================================
-// File: api/calculator/search.js
-// Purpose: Search job titles with autocomplete
-// Database: Updated column names
-// ========================================================================
-
+// API Endpoint: /api/calculator/search.js
+// Search jobs with NEW column names after database migration
 import { sql } from '@vercel/postgres';
 
 export default async function handler(req, res) {
@@ -31,7 +25,7 @@ export default async function handler(req, res) {
   }
   
   try {
-    // Search with NEW column names
+    // Search with NEW column names (after migration)
     const { rows } = await sql`
       SELECT 
         id,
@@ -48,9 +42,11 @@ export default async function handler(req, res) {
       LIMIT 20
     `;
     
+    console.log(`🔍 Search "${q}" found ${rows.length} results`);
     res.status(200).json(rows);
+    
   } catch (error) {
-    console.error('Search error:', error);
+    console.error('❌ Search error:', error);
     res.status(500).json({ 
       error: 'Search error',
       message: error.message 

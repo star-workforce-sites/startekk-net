@@ -1,11 +1,5 @@
-// ========================================================================
-// API ENDPOINT: Get All Jobs with NEW column names
-// ========================================================================
-// File: api/calculator/jobs.js
-// Purpose: Return all job titles with 4-tier rate structure
-// Database: Updated with canada_rate_nearshore column
-// ========================================================================
-
+// API Endpoint: /api/calculator/jobs.js
+// Returns all jobs with NEW column names after database migration
 import { sql } from '@vercel/postgres';
 
 export default async function handler(req, res) {
@@ -23,7 +17,7 @@ export default async function handler(req, res) {
   }
   
   try {
-    // Query with NEW column names after migration
+    // Query with NEW column names (after migration)
     const { rows } = await sql`
       SELECT 
         id,
@@ -38,9 +32,11 @@ export default async function handler(req, res) {
       ORDER BY job_title ASC
     `;
     
+    console.log(`✅ Loaded ${rows.length} jobs`);
     res.status(200).json(rows);
+    
   } catch (error) {
-    console.error('Database error:', error);
+    console.error('❌ Database error:', error);
     res.status(500).json({ 
       error: 'Database error',
       message: error.message 
