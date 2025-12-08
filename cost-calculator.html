@@ -88,7 +88,7 @@
             
             <form id="calculator-form" class="space-y-6">
                 <!-- Job Title Search -->
-                <div>
+                <div class="relative">
                     <label for="job-search" class="block text-sm font-semibold text-gray-900 mb-2">
                         Search Job Title
                     </label>
@@ -99,7 +99,7 @@
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                         autocomplete="off"
                     />
-                    <div id="job-suggestions" class="hidden mt-2 border border-gray-200 rounded-lg shadow-lg bg-white max-h-64 overflow-y-auto z-50 absolute w-auto"></div>
+                    <div id="job-suggestions" class="hidden absolute left-0 right-0 mt-2 border border-gray-200 rounded-lg shadow-lg bg-white max-h-64 overflow-y-auto z-50"></div>
                     <p class="mt-2 text-sm text-gray-600" id="jobs-count">Loading jobs...</p>
                 </div>
 
@@ -357,12 +357,7 @@
                 return;
             }
 
-            // Calculate position for suggestions
-            const searchRect = jobSearch.getBoundingClientRect();
-            jobSuggestions.style.width = searchRect.width + 'px';
-            jobSuggestions.style.left = '0';
-            jobSuggestions.style.top = '100%';
-            jobSuggestions.style.position = 'absolute';
+            // Suggestions already positioned by CSS (relative parent)
 
             jobSuggestions.innerHTML = jobs.map(job => `
                 <div class="p-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0" data-job-id="${job.id}">
