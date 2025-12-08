@@ -99,8 +99,8 @@
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                         autocomplete="off"
                     />
-                    <div id="job-suggestions" class="hidden mt-2 border border-gray-200 rounded-lg shadow-lg bg-white max-h-64 overflow-y-auto"></div>
-                    <p class="mt-2 text-sm text-gray-600">238 job titles available</p>
+                    <div id="job-suggestions" class="hidden mt-2 border border-gray-200 rounded-lg shadow-lg bg-white max-h-64 overflow-y-auto z-50 absolute w-auto"></div>
+                    <p class="mt-2 text-sm text-gray-600" id="jobs-count">Loading jobs...</p>
                 </div>
 
                 <!-- Team Size -->
@@ -141,10 +141,10 @@
                         id="location-select"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                     >
-                        <option value="market">USA Market Rate</option>
-                        <option value="onsite" selected>USA with Startekk</option>
-                        <option value="nearshore">Nearshore (Mexico/Canada)</option>
-                        <option value="offshore">India (Offshore)</option>
+                        <option value="customer">Onsite - USA Customer</option>
+                        <option value="startekk" selected>Onsite - USA with Startekk</option>
+                        <option value="nearshore">Nearshore Mexico/Canada</option>
+                        <option value="offshore">Offshore - India</option>
                     </select>
                 </div>
 
@@ -171,12 +171,12 @@
             <div class="bg-white rounded-xl shadow-xl p-8">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="border-2 border-gray-200 rounded-lg p-6">
-                        <h4 class="text-sm font-semibold text-gray-600 mb-2">USA Market Rate</h4>
+                        <h4 class="text-sm font-semibold text-gray-600 mb-2">Onsite - USA Customer</h4>
                         <div class="text-3xl font-bold text-gray-900" id="market-rate">$0</div>
                         <div class="text-sm text-gray-600 mt-1">Annual cost</div>
                     </div>
                     <div class="border-2 border-emerald-500 rounded-lg p-6 bg-emerald-50">
-                        <h4 class="text-sm font-semibold text-emerald-700 mb-2">Your Selected Model</h4>
+                        <h4 class="text-sm font-semibold text-emerald-700 mb-2" id="selected-label">Your Selected Model</h4>
                         <div class="text-3xl font-bold text-emerald-700" id="selected-rate">$0</div>
                         <div class="text-sm text-emerald-600 mt-1">Annual cost</div>
                     </div>
@@ -261,18 +261,61 @@
         // Global state
         let allJobs = [];
         let selectedJob = null;
+        let useDirectDatabaseAccess = false;
+
+        // Tier labels (CORRECTED)
+        const TIER_LABELS = {
+            customer: 'Onsite - USA Customer',
+            startekk: 'Onsite - USA with Startekk',
+            nearshore: 'Nearshore Mexico/Canada',
+            offshore: 'Offshore - India'
+        };
 
         // Load all jobs on page load
         async function loadJobs() {
             try {
+                // Try API first
                 const response = await fetch('/api/calculator/jobs');
-                if (!response.ok) throw new Error('Failed to load jobs');
-                allJobs = await response.json();
-                console.log(`Loaded ${allJobs.length} jobs`);
+                if (!response.ok) throw new Error('API not available');
+                
+                const jobs = await response.json();
+                if (!jobs || jobs.length === 0) throw new Error('No jobs returned');
+                
+                allJobs = jobs;
+                console.log(`✅ Loaded ${allJobs.length} jobs from API`);
+                document.getElementById('jobs-count').textContent = `${allJobs.length} job titles available`;
+                useDirectDatabaseAccess = false;
+                
             } catch (error) {
-                console.error('Error loading jobs:', error);
-                // Fallback: show error message
-                document.getElementById('job-search').placeholder = 'Error loading jobs. Please refresh the page.';
+                console.warn('⚠️ API not available, using direct database access');
+                
+                // Fallback: Use @vercel/postgres directly
+                try {
+                    const { sql } = await import('https://esm.sh/@vercel/postgres');
+                    const { rows } = await sql`
+                        SELECT 
+                            id,
+                            job_title,
+                            usa_market_rate,
+                            usa_startekk_onsite,
+                            canada_rate_nearshore,
+                            india_rate_offshore,
+                            category,
+                            seniority
+                        FROM job_rates 
+                        ORDER BY job_title ASC
+                    `;
+                    
+                    allJobs = rows;
+                    console.log(`✅ Loaded ${allJobs.length} jobs from database`);
+                    document.getElementById('jobs-count').textContent = `${allJobs.length} job titles available`;
+                    useDirectDatabaseAccess = true;
+                    
+                } catch (dbError) {
+                    console.error('❌ Could not load jobs:', dbError);
+                    document.getElementById('jobs-count').textContent = 'Error loading jobs. Please refresh the page.';
+                    document.getElementById('job-search').placeholder = 'Error loading jobs...';
+                }
             }
         }
 
@@ -286,6 +329,7 @@
             
             if (query.length < 2) {
                 jobSuggestions.classList.add('hidden');
+                selectedJob = null;
                 return;
             }
 
@@ -296,20 +340,14 @@
         });
 
         async function searchJobs(query) {
-            try {
-                const response = await fetch(`/api/calculator/search?q=${encodeURIComponent(query)}`);
-                if (!response.ok) throw new Error('Search failed');
-                
-                const results = await response.json();
-                displaySuggestions(results);
-            } catch (error) {
-                console.error('Search error:', error);
-                // Fallback to client-side search
-                const filtered = allJobs.filter(job => 
-                    job.job_title.toLowerCase().includes(query.toLowerCase())
-                ).slice(0, 20);
-                displaySuggestions(filtered);
-            }
+            const queryLower = query.toLowerCase();
+            
+            // Client-side search (works with both API and direct DB)
+            const filtered = allJobs.filter(job => 
+                job.job_title.toLowerCase().includes(queryLower)
+            ).slice(0, 20);
+            
+            displaySuggestions(filtered);
         }
 
         function displaySuggestions(jobs) {
@@ -318,6 +356,13 @@
                 jobSuggestions.classList.remove('hidden');
                 return;
             }
+
+            // Calculate position for suggestions
+            const searchRect = jobSearch.getBoundingClientRect();
+            jobSuggestions.style.width = searchRect.width + 'px';
+            jobSuggestions.style.left = '0';
+            jobSuggestions.style.top = '100%';
+            jobSuggestions.style.position = 'absolute';
 
             jobSuggestions.innerHTML = jobs.map(job => `
                 <div class="p-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0" data-job-id="${job.id}">
@@ -335,6 +380,7 @@
                     selectedJob = jobs.find(j => j.id === jobId);
                     jobSearch.value = selectedJob.job_title;
                     jobSuggestions.classList.add('hidden');
+                    console.log('Selected job:', selectedJob);
                 });
             });
         }
@@ -351,7 +397,8 @@
             e.preventDefault();
 
             if (!selectedJob) {
-                alert('Please select a job title');
+                alert('Please select a job title from the suggestions');
+                jobSearch.focus();
                 return;
             }
 
@@ -363,56 +410,60 @@
         });
 
         function calculateAndDisplay(job, teamSize, hoursPerWeek, location) {
+            // Map database columns to tier keys (CORRECTED)
             const rates = {
-                market: job.usa_market_rate,
-                onsite: job.usa_startekk_onsite,
-                nearshore: job.canada_rate_nearshore,
-                offshore: job.india_rate_offshore
+                customer: job.usa_market_rate,           // Onsite - USA Customer
+                startekk: job.usa_startekk_onsite,       // Onsite - USA with Startekk
+                nearshore: job.canada_rate_nearshore,    // Nearshore Mexico/Canada
+                offshore: job.india_rate_offshore        // Offshore - India
             };
 
             const selectedRate = rates[location];
-            const marketRate = rates.market;
+            const customerRate = rates.customer; // Customer rate is the baseline
 
             // Calculate costs
             const hoursPerYear = hoursPerWeek * 52;
-            const marketAnnual = marketRate * hoursPerYear * teamSize;
+            const customerAnnual = customerRate * hoursPerYear * teamSize;
             const selectedAnnual = selectedRate * hoursPerYear * teamSize;
-            const annualSavings = marketAnnual - selectedAnnual;
-            const savingsPercent = (annualSavings / marketAnnual * 100).toFixed(1);
+            const annualSavings = customerAnnual - selectedAnnual;
+            const savingsPercent = (annualSavings / customerAnnual * 100).toFixed(1);
             const fiveYearSavings = annualSavings * 5;
+
+            // Update selected label
+            document.getElementById('selected-label').textContent = TIER_LABELS[location];
 
             // Display results
             document.getElementById('annual-savings').textContent = formatCurrency(annualSavings);
             document.getElementById('savings-percentage').textContent = `${savingsPercent}% cost reduction`;
             document.getElementById('five-year-savings').textContent = `5-Year Savings: ${formatCurrency(fiveYearSavings)}`;
-            document.getElementById('market-rate').textContent = formatCurrency(marketAnnual);
+            document.getElementById('market-rate').textContent = formatCurrency(customerAnnual);
             document.getElementById('selected-rate').textContent = formatCurrency(selectedAnnual);
 
-            // Display all options
+            // Display all options (CORRECTED LABELS)
             const options = [
-                { label: 'USA Market Rate', value: marketRate, key: 'market' },
-                { label: 'USA with Startekk', value: rates.onsite, key: 'onsite' },
-                { label: 'Nearshore (Mexico/Canada)', value: rates.nearshore, key: 'nearshore' },
-                { label: 'India (Offshore)', value: rates.offshore, key: 'offshore' }
+                { label: TIER_LABELS.customer, value: rates.customer, key: 'customer' },
+                { label: TIER_LABELS.startekk, value: rates.startekk, key: 'startekk' },
+                { label: TIER_LABELS.nearshore, value: rates.nearshore, key: 'nearshore' },
+                { label: TIER_LABELS.offshore, value: rates.offshore, key: 'offshore' }
             ];
 
             document.getElementById('all-options').innerHTML = options.map(opt => {
                 const annual = opt.value * hoursPerYear * teamSize;
-                const savings = marketAnnual - annual;
-                const percent = (savings / marketAnnual * 100).toFixed(1);
+                const savings = customerAnnual - annual;
+                const percent = (savings / customerAnnual * 100).toFixed(1);
                 const isSelected = opt.key === location;
 
                 return `
                     <div class="p-4 rounded-lg ${isSelected ? 'bg-emerald-50 border-2 border-emerald-500' : 'bg-gray-50 border border-gray-200'}">
                         <div class="flex justify-between items-center">
                             <div>
-                                <div class="font-semibold text-gray-900">${opt.label} ${isSelected ? '(Selected)' : ''}</div>
+                                <div class="font-semibold text-gray-900">${opt.label} ${isSelected ? '✓' : ''}</div>
                                 <div class="text-sm text-gray-600">$${opt.value.toFixed(2)}/hr per person</div>
                             </div>
                             <div class="text-right">
                                 <div class="text-2xl font-bold ${isSelected ? 'text-emerald-700' : 'text-gray-900'}">${formatCurrency(annual)}</div>
                                 <div class="text-sm ${isSelected ? 'text-emerald-600' : 'text-gray-600'}">
-                                    ${savings > 0 ? `Save ${formatCurrency(savings)} (${percent}%)` : 'Reference rate'}
+                                    ${savings > 0 ? `Save ${formatCurrency(savings)} (${percent}%)` : 'Baseline'}
                                 </div>
                             </div>
                         </div>
@@ -425,11 +476,13 @@
             document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
             // Track in GA
-            gtag('event', 'calculate_savings', {
-                'job_title': job.job_title,
-                'location': location,
-                'annual_savings': annualSavings
-            });
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'calculate_savings', {
+                    'job_title': job.job_title,
+                    'location': location,
+                    'annual_savings': annualSavings
+                });
+            }
         }
 
         function formatCurrency(amount) {
