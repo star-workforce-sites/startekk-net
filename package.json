@@ -4,7 +4,8 @@
   "description": "Cost Calculator API endpoints for StartTekk",
   "type": "module",
   "dependencies": {
-    "@vercel/postgres": "^0.5.1"
+    "@vercel/postgres": "^0.5.1",
+    "nodemailer": "^7.0.11"
   },
   "engines": {
     "node": "24.x"
