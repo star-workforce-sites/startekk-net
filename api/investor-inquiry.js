@@ -1,5 +1,6 @@
 // API Endpoint: /api/investor-inquiry.js
 // Handles investor inquiry form submissions via Google SMTP
+// Matches investor-contact-V3-FINAL.html form fields
 
 import nodemailer from 'nodemailer';
 
@@ -9,254 +10,135 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
     
-    const { name, email, phone, product, investment_amount, investment_type, message, recaptcha } = req.body;
+    const { name, email, phone, company, interests, message, recaptchaToken } = req.body;
     
-    // Validate required fields
-    if (!name || !email || !product || !investment_amount || !investment_type || !message) {
-        return res.status(400).json({ error: 'Missing required fields' });
+    // Validate required fields (only name, email, message are required)
+    if (!name || !email || !message) {
+        return res.status(400).json({ 
+            error: 'Missing required fields',
+            required: ['name', 'email', 'message'],
+            received: { name, email, message }
+        });
     }
     
-    // Verify reCAPTCHA
-    try {
-        const recaptchaVerify = await fetch(
-            'https://www.google.com/recaptcha/api/siteverify',
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `secret=${process.env.RECAPTCHA_SECRET_KEY_STARTEKK}&response=${recaptcha}`
+    // Verify reCAPTCHA v3
+    if (recaptchaToken) {
+        try {
+            const recaptchaVerify = await fetch(
+                'https://www.google.com/recaptcha/api/siteverify',
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `secret=${process.env.RECAPTCHA_SECRET_KEY_STARTEKK}&response=${recaptchaToken}`
+                }
+            );
+            
+            const recaptchaResult = await recaptchaVerify.json();
+            
+            if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
+                return res.status(400).json({ 
+                    error: 'reCAPTCHA verification failed',
+                    score: recaptchaResult.score 
+                });
             }
-        );
-        
-        const recaptchaResult = await recaptchaVerify.json();
-        if (!recaptchaResult.success) {
-            return res.status(400).json({ error: 'reCAPTCHA verification failed' });
+        } catch (error) {
+            console.error('reCAPTCHA verification error:', error);
+            // Continue anyway - don't block legitimate users
         }
-    } catch (error) {
-        console.error('reCAPTCHA verification error:', error);
-        return res.status(500).json({ error: 'reCAPTCHA verification error' });
     }
     
-    // Create transporter using Google Workspace SMTP (StartTekk workspace)
+    // Create email transporter with Google SMTP
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
-        secure: false, // Use STARTTLS
+        secure: false,
         auth: {
-            user: process.env.GOOGLE_SMTP_USER_STARTEKK, // investors@startekk.net
-            pass: process.env.GOOGLE_SMTP_PASSWORD_STARTEKK // App-specific password
+            user: process.env.GOOGLE_SMTP_USER_STARTEKK,
+            pass: process.env.GOOGLE_SMTP_PASSWORD_STARTEKK
         }
     });
     
-    // Email content
-    const productLabels = {
-        'star-ai-cloud': 'Star AI Cloud',
-        'star-ai-ediscovery': 'Star AI eDiscovery',
-        'star-ai-finance': 'Star AI Finance',
-        'qr-feedback': 'QR Feedback',
-        'star-workforce': 'Star Workforce',
-        'career-accel': 'Career Accel Platform',
-        'overall': 'Overall Company Investment'
-    };
-    
-    const amountLabels = {
-        'under-100k': 'Under $100K',
-        '100k-250k': '$100K - $250K',
-        '250k-500k': '$250K - $500K',
-        '500k-1m': '$500K - $1M',
-        '1m-5m': '$1M - $5M',
-        '5m-plus': '$5M+'
-    };
-    
-    const typeLabels = {
-        'equity': 'Equity Investment',
-        'convertible': 'Convertible Note',
-        'debt': 'Debt Financing',
-        'strategic': 'Strategic Partnership',
-        'other': 'Other'
-    };
-    
-    const htmlContent = `
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #047857 0%, #84CC16 100%); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-        .content { background: #f9f9f9; padding: 30px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 8px 8px; }
-        .field { margin-bottom: 15px; }
-        .label { font-weight: bold; color: #047857; }
-        .value { margin-top: 5px; }
-        .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 12px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1 style="margin: 0;">🚀 New Investor Inquiry</h1>
-            <p style="margin: 5px 0 0 0;">Startekk Investor Relations</p>
-        </div>
-        <div class="content">
-            <div class="field">
-                <div class="label">Contact Information:</div>
-                <div class="value">
-                    <strong>Name:</strong> ${name}<br>
-                    <strong>Email:</strong> <a href="mailto:${email}">${email}</a><br>
-                    <strong>Phone:</strong> ${phone}
-                </div>
-            </div>
-            
-            <div class="field">
-                <div class="label">Investment Details:</div>
-                <div class="value">
-                    <strong>Product Interest:</strong> ${productLabels[product]}<br>
-                    <strong>Investment Amount:</strong> ${amountLabels[investment_amount]}<br>
-                    <strong>Investment Type:</strong> ${typeLabels[investment_type]}
-                </div>
-            </div>
-            
-            <div class="field">
-                <div class="label">Message:</div>
-                <div class="value" style="white-space: pre-wrap; background: white; padding: 15px; border-radius: 4px; border: 1px solid #ddd;">${message}</div>
-            </div>
-            
-            <div class="field">
-                <div class="label">Submission Details:</div>
-                <div class="value">
-                    <strong>Date:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })} CST<br>
-                    <strong>Source:</strong> startekk.net/investor/contact.html
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <p>This inquiry was submitted through the Startekk Investor Relations contact form.</p>
-            <p>Please respond within 24-48 hours.</p>
-        </div>
-    </div>
-</body>
-</html>
-    `;
-    
-    const textContent = `
-NEW INVESTOR INQUIRY - Startekk
-
-CONTACT INFORMATION:
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-
-INVESTMENT DETAILS:
-Product Interest: ${productLabels[product]}
-Investment Amount: ${amountLabels[investment_amount]}
-Investment Type: ${typeLabels[investment_type]}
-
-MESSAGE:
-${message}
-
-SUBMISSION DETAILS:
-Date: ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })} CST
-Source: startekk.net/investor/contact.html
-
----
-Please respond within 24-48 hours.
-    `;
-    
     try {
-        // Send email to investor relations team
-        await transporter.sendMail({
-            from: `"Startekk Investor Relations" <${process.env.GOOGLE_SMTP_USER_STARTEKK}>`,
+        // Email to investor team
+        const investorEmail = {
+            from: process.env.GOOGLE_SMTP_USER_STARTEKK,
             to: 'investors@startekk.net',
             replyTo: email,
-            subject: `New Investor Inquiry - ${productLabels[product]} - ${name}`,
-            text: textContent,
-            html: htmlContent
-        });
-        
-        // Send confirmation email to inquirer
-        await transporter.sendMail({
-            from: `"Startekk Investor Relations" <${process.env.GOOGLE_SMTP_USER_STARTEKK}>`,
-            to: email,
-            subject: 'Thank You for Your Investment Inquiry - Startekk',
+            subject: `Investor Inquiry from ${name}`,
             html: `
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #047857 0%, #84CC16 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
-        .content { background: #f9f9f9; padding: 30px; border: 1px solid #ddd; border-top: none; }
-        .footer { background: #047857; color: white; padding: 20px; text-align: center; border-radius: 0 0 8px 8px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1 style="margin: 0;">Thank You, ${name}!</h1>
-        </div>
-        <div class="content">
-            <p>We've received your investor inquiry for <strong>${productLabels[product]}</strong>.</p>
-            
-            <p>Our investor relations team will review your information and reach out to you within 24-48 hours with:</p>
-            <ul>
-                <li>Our investor deck and financial information</li>
-                <li>Details about the investment opportunity</li>
-                <li>Next steps in the process</li>
-            </ul>
-            
-            <p>In the meantime, if you have any questions, feel free to contact us:</p>
-            <p>
-                <strong>Phone:</strong> <a href="tel:+14697133993">(469) 713-3993</a><br>
-                <strong>Email:</strong> <a href="mailto:investors@startekk.net">investors@startekk.net</a>
-            </p>
-            
-            <p>We look forward to discussing this opportunity with you!</p>
-            
-            <p style="margin-top: 30px;">
-                Best regards,<br>
-                <strong>Startekk Investor Relations Team</strong>
-            </p>
-        </div>
-        <div class="footer">
-            <p style="margin: 0;">© 2025 Startekk, LLC | 5465 Legacy Drive Suite 650, Plano, TX 75024</p>
-        </div>
-    </div>
-</body>
-</html>
-            `,
-            text: `
-Thank You for Your Investment Inquiry!
-
-Dear ${name},
-
-We've received your investor inquiry for ${productLabels[product]}.
-
-Our investor relations team will review your information and reach out to you within 24-48 hours with:
-- Our investor deck and financial information
-- Details about the investment opportunity
-- Next steps in the process
-
-In the meantime, if you have any questions, feel free to contact us:
-Phone: (469) 713-3993
-Email: investors@startekk.net
-
-We look forward to discussing this opportunity with you!
-
-Best regards,
-Startekk Investor Relations Team
-
-© 2025 Startekk, LLC
-5465 Legacy Drive Suite 650, Plano, TX 75024
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <div style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%); padding: 30px; text-align: center;">
+                        <h1 style="color: white; margin: 0;">New Investor Inquiry</h1>
+                    </div>
+                    
+                    <div style="padding: 30px; background: #f9fafb;">
+                        <h2 style="color: #047857; border-bottom: 2px solid #84CC16; padding-bottom: 10px;">Contact Information</h2>
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+                        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+                        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+                        <p><strong>Interests:</strong> ${interests || 'General Inquiry'}</p>
+                        
+                        <h2 style="color: #047857; border-bottom: 2px solid #84CC16; padding-bottom: 10px; margin-top: 30px;">Message</h2>
+                        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #84CC16;">
+                            ${message.replace(/\n/g, '<br>')}
+                        </div>
+                        
+                        <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
+                            Submitted: ${new Date().toLocaleString()}<br>
+                            From: <a href="https://startekk.net/investor/contact">startekk.net/investor/contact</a>
+                        </p>
+                    </div>
+                </div>
             `
-        });
+        };
         
-        // Log success
-        console.log('✅ Investor inquiry email sent:', {
-            name,
-            email,
-            product: productLabels[product],
-            timestamp: new Date().toISOString()
-        });
+        // Confirmation email to user
+        const confirmationEmail = {
+            from: process.env.GOOGLE_SMTP_USER_STARTEKK,
+            to: email,
+            subject: 'Thank you for your inquiry - Startekk',
+            html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <div style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%); padding: 30px; text-align: center;">
+                        <h1 style="color: white; margin: 0;">Thank You, ${name}!</h1>
+                    </div>
+                    
+                    <div style="padding: 30px; background: #f9fafb;">
+                        <p style="font-size: 18px; color: #047857;">We've received your inquiry.</p>
+                        
+                        <p>Thank you for your interest in Startekk. Our investor relations team has received your message and will review it carefully.</p>
+                        
+                        <div style="background: #ecfdf5; border-left: 4px solid #84CC16; padding: 20px; margin: 20px 0; border-radius: 4px;">
+                            <h3 style="color: #047857; margin-top: 0;">What happens next?</h3>
+                            <ul style="color: #065f46; line-height: 1.8;">
+                                <li>Our team will review your inquiry within 24-48 hours</li>
+                                <li>If there's a good fit, we'll schedule a call to discuss further</li>
+                                <li>We'll reach out to you at <strong>${email}</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <p>In the meantime, feel free to explore:</p>
+                        <ul style="line-height: 1.8;">
+                            <li><a href="https://startekk.net/investor" style="color: #047857;">Investor Overview</a> - Our products, metrics, and vision</li>
+                            <li><a href="https://startekk.net/products" style="color: #047857;">Products</a> - Explore our AI-powered solutions</li>
+                            <li><a href="https://startekk.net/case-studies" style="color: #047857;">Case Studies</a> - See our impact</li>
+                        </ul>
+                        
+                        <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
+                            <strong>Startekk, LLC</strong><br>
+                            5465 Legacy Drive Suite 650<br>
+                            Plano, TX 75024<br>
+                            <a href="tel:+14697133993" style="color: #047857;">(469) 713-3993</a>
+                        </p>
+                    </div>
+                </div>
+            `
+        };
+        
+        // Send both emails
+        await transporter.sendMail(investorEmail);
+        await transporter.sendMail(confirmationEmail);
         
         return res.status(200).json({ 
             success: true,
@@ -264,10 +146,10 @@ Startekk Investor Relations Team
         });
         
     } catch (error) {
-        console.error('❌ Email sending error:', error);
+        console.error('Email sending error:', error);
         return res.status(500).json({ 
-            error: 'Failed to send email. Please try again or contact us directly at investors@startekk.net',
-            details: process.env.NODE_ENV === 'development' ? error.message : undefined
+            error: 'Failed to send email',
+            details: error.message 
         });
     }
 }
