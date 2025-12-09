@@ -3,17 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star AI Cloud - Intelligent Cloud Automation | Startekk</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23047857%27 stroke-width=%272%27><path stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M13 10V3L4 14h7v7l9-11h-7z%27/></svg>">
-    <meta name="description" content="Get instant, AI-powered cloud automation guidance for AWS, Azure, and GCP. Ask in plain English, get step-by-step instructions.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+    <title>Star AI Cloud - Multi-Cloud Cost Optimization | Startekk</title>
+    <meta name="description" content="AI-powered multi-cloud cost optimization that actually knows your infrastructure. ChatGPT can't see your AWS bills. We can. Save 30-40% on cloud costs.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2384CC16' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': { 600: '#047857', 700: '#065f46' },
+                        'lime': { 500: '#84CC16', 600: '#65a30d' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8BFZG3R9ZR');
+      
+      // Track section views
+      function trackSection(sectionName) {
+          gtag('event', 'section_view', {'section_name': sectionName});
+      }
+      
+      // Track CTA clicks
+      function trackCTA(location, text) {
+          gtag('event', 'cta_click', {'cta_location': location, 'cta_text': text});
+      }
+    </script>
+    
+    <style>
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideDown 0.3s ease-out;
+        }
+        .sticky-cta.visible {
+            display: block;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        .comparison-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Sticky CTA (appears after scroll) -->
+    <div id="sticky-cta" class="sticky-cta">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span class="font-semibold text-gray-900">Star AI Cloud - Save 30-40% on Cloud Costs</span>
+            </div>
+            <a href="#pricing" onclick="trackCTA('sticky', 'Start Free Trial')" class="px-6 py-2 rounded-lg font-semibold text-white" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                Start Free Trial
+            </a>
+        </div>
+    </div>
 
-<!-- Navigation -->
     <!-- Navigation -->
-    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
+    <nav class="bg-emerald-600 sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-3">
@@ -24,300 +98,752 @@
                     </div>
                     <div class="text-xl font-bold text-white">Startekk</div>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
                     <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
                     <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
                     <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
-                    <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
                     <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
-                    <a href="/contact.html?product=star-ai-cloud" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
                 </div>
             </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 py-4">
-            <a href="/index.html" class="block py-2 text-white hover:text-lime-300">Home</a>
-            <a href="/about.html" class="block py-2 text-white hover:text-lime-300">About</a>
-            <a href="/products.html" class="block py-2 text-white hover:text-lime-300">Products</a>
-            <a href="/services.html" class="block py-2 text-white hover:text-lime-300">Services</a>
-            <a href="/pages/jobs.html" class="block py-2 text-white hover:text-lime-300">Jobs</a>
-            <a href="/investor/index.html" class="block py-2 text-white hover:text-lime-300">Investors</a>
-            <a href="/contact.html?product=star-ai-cloud" class="block py-2 text-white hover:text-lime-300">Contact Us</a>
         </div>
     </nav>
-    
-    <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    });
-    </script>
 
-<!-- Hero -->
-<section class="bg-gradient-to-r from-green-600 to-lime-500 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h1 class="text-5xl font-bold mb-6">Star AI Cloud</h1>
-                <p class="text-2xl mb-8">Your AI-Powered Cloud Automation Advisor</p>
-                <p class="text-lg mb-8">Ask questions in plain English and get instant, step-by-step automation guidance for AWS, Azure, and GCP.</p>
-                <p class="text-white text-lg mb-6">Need developers to customize Star AI Cloud? Use our Cost Calculator to estimate implementation costs and discover potential savings of 30-50% with our global team.</p>
-                <p class="text-white text-lg mb-6">Need developers to customize Star AI Cloud? Use our Cost Calculator to estimate implementation costs and discover potential savings of 30-50% with our global team.</p>
-                <p class="text-white text-lg mb-6">Need developers to customize Star AI Cloud? Use our Cost Calculator to estimate implementation costs and discover potential savings of 30-50% with our global team.</p>
-                <div class="flex gap-4">
-                </div>
-                <div class="flex items-center justify-center gap-6 text-white text-sm mt-6">
-                    <span>✓ No credit card required</span>
-                    <span>•</span>
-                    <span>✓ Connect in 2 minutes</span>
-                    <span>•</span>
-                    <span>✓ ROI guarantee</span>
-                </div>
-                <div class="hidden">
-                    <a href="/contact.html?product=star-ai-cloud" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Start Free 7-Day Trial</a>
-                    <a href="/cost-calculator.html" class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition">See Your Savings</a>
-                </div>
-            </div>
-            <div class="text-6xl text-center">☁️</div>
-        </div>
-    </div>
-</section>
-    <!-- ChatGPT Comparison Callout -->
-    <section class="py-8 bg-yellow-50 border-t-4 border-yellow-400">
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Generic AI Tools Fall Short for Cloud Optimization</h3>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-                    ChatGPT, Claude, and Gemini are powerful for learning cloud concepts—but they're blind to your actual infrastructure. They can't see what you're spending, what's underutilized, or where waste is hiding.
-                </p>
-                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">❌ ChatGPT/Claude</h4>
-                        <p class="text-sm text-gray-600">Generic advice without seeing your actual costs, usage, or resources</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border-2 border-emerald-600">
-                        <h4 class="font-bold text-emerald-600 mb-2">✅ Star AI Cloud</h4>
-                        <p class="text-sm text-gray-600">Live data from YOUR AWS/Azure/GCP accounts with exact dollar savings</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">📊 The Difference</h4>
-                        <p class="text-sm text-gray-600"><strong>30-40% more savings</strong> vs. manual ChatGPT prompting</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Features -->
-<section class="max-w-7xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="text-3xl mb-4">🗣️</div>
-            <h3 class="font-bold mb-2">Plain English Queries</h3>
-            <p class="text-gray-600 text-sm">Ask in natural language, no complex syntax required</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="text-3xl mb-4">☁️</div>
-            <h3 class="font-bold mb-2">Multi-Cloud Support</h3>
-            <p class="text-gray-600 text-sm">AWS, Azure, and Google Cloud Platform</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="text-3xl mb-4">📋</div>
-            <h3 class="font-bold mb-2">Step-by-Step Guides</h3>
-            <p class="text-gray-600 text-sm">Detailed instructions with best practices</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="text-3xl mb-4">⚡</div>
-            <h3 class="font-bold mb-2">Instant Responses</h3>
-            <p class="text-gray-600 text-sm">Get answers in seconds, not hours</p>
-        </div>
-    </div>
-</section>
-    <!-- ChatGPT Comparison Callout -->
-    <section class="py-8 bg-yellow-50 border-t-4 border-yellow-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Generic AI Tools Fall Short for Cloud Optimization</h3>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-                    ChatGPT, Claude, and Gemini are powerful for learning cloud concepts—but they're blind to your actual infrastructure. They can't see what you're spending, what's underutilized, or where waste is hiding.
-                </p>
-                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">❌ ChatGPT/Claude</h4>
-                        <p class="text-sm text-gray-600">Generic advice without seeing your actual costs, usage, or resources</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border-2 border-emerald-600">
-                        <h4 class="font-bold text-emerald-600 mb-2">✅ Star AI Cloud</h4>
-                        <p class="text-sm text-gray-600">Live data from YOUR AWS/Azure/GCP accounts with exact dollar savings</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">📊 The Difference</h4>
-                        <p class="text-sm text-gray-600"><strong>30-40% more savings</strong> vs. manual ChatGPT prompting</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Use Cases -->
-<section class="bg-gray-100 py-16">
-    <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Common Use Cases</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="font-bold text-lg mb-3">Infrastructure Automation</h3>
-                <p class="text-gray-600">Automate server provisioning, scaling, and management across multiple cloud providers.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="font-bold text-lg mb-3">CI/CD Pipelines</h3>
-                <p class="text-gray-600">Build and optimize continuous integration and deployment workflows.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="font-bold text-lg mb-3">Cost Optimization</h3>
-                <p class="text-gray-600">Identify and implement cost-saving strategies for cloud resources.</p>
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- ChatGPT Comparison Callout -->
-    <section class="py-8 bg-yellow-50 border-t-4 border-yellow-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Generic AI Tools Fall Short for Cloud Optimization</h3>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-                    ChatGPT, Claude, and Gemini are powerful for learning cloud concepts—but they're blind to your actual infrastructure. They can't see what you're spending, what's underutilized, or where waste is hiding.
-                </p>
-                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">❌ ChatGPT/Claude</h4>
-                        <p class="text-sm text-gray-600">Generic advice without seeing your actual costs, usage, or resources</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border-2 border-emerald-600">
-                        <h4 class="font-bold text-emerald-600 mb-2">✅ Star AI Cloud</h4>
-                        <p class="text-sm text-gray-600">Live data from YOUR AWS/Azure/GCP accounts with exact dollar savings</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">📊 The Difference</h4>
-                        <p class="text-sm text-gray-600"><strong>30-40% more savings</strong> vs. manual ChatGPT prompting</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Pricing -->
-<section class="max-w-7xl mx-auto px-4 py-16">
-    <div class="bg-gradient-to-r from-green-600 to-lime-500 text-white p-12 rounded-lg text-center">
-        <h2 class="text-3xl font-bold mb-4">Reduce Cloud Management Costs by 50%</h2>
-        <p class="text-xl mb-8">Replace expensive DevOps hours with AI-powered automation guidance</p>
-        <a href="/contact.html?product=star-ai-cloud" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block">Request a Demo</a>
-    </div>
-</section>
-    <!-- ChatGPT Comparison Callout -->
-    <section class="py-8 bg-yellow-50 border-t-4 border-yellow-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Generic AI Tools Fall Short for Cloud Optimization</h3>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-                    ChatGPT, Claude, and Gemini are powerful for learning cloud concepts—but they're blind to your actual infrastructure. They can't see what you're spending, what's underutilized, or where waste is hiding.
-                </p>
-                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">❌ ChatGPT/Claude</h4>
-                        <p class="text-sm text-gray-600">Generic advice without seeing your actual costs, usage, or resources</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border-2 border-emerald-600">
-                        <h4 class="font-bold text-emerald-600 mb-2">✅ Star AI Cloud</h4>
-                        <p class="text-sm text-gray-600">Live data from YOUR AWS/Azure/GCP accounts with exact dollar savings</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-bold text-emerald-600 mb-2">📊 The Difference</h4>
-                        <p class="text-sm text-gray-600"><strong>30-40% more savings</strong> vs. manual ChatGPT prompting</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Footer -->
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Column 1: Company -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
-                        <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
-                        <li><a href="/case-studies.html" class="hover:text-lime-300">Case Studies</a></li>
-                        <li><a href="/pages/jobs.html" class="hover:text-lime-300">Jobs</a></li>
-                        <li><a href="/contact.html?product=star-ai-cloud" class="hover:text-lime-300">Contact</a></li>
-                        <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
-                    </ul>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">AI-Powered Multi-Cloud Cost Optimization<br>That Actually Knows Your Infrastructure</h1>
+                <p class="text-xl md:text-2xl mb-8">ChatGPT can't see your AWS bills. We can.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="#pricing" onclick="trackCTA('hero', 'Start Free 7-Day Trial')" class="px-8 py-4 bg-white text-emerald-600 rounded-lg font-bold text-lg hover:shadow-xl transition-all">
+                        Start Free 7-Day Trial
+                    </a>
+                    <a href="#how-it-works" class="px-8 py-4 bg-emerald-700 text-white rounded-lg font-bold text-lg hover:bg-emerald-800 transition-all">
+                        See How It Works
+                    </a>
                 </div>
                 
-                <!-- Column 2: Products -->
+                <div class="flex items-center justify-center space-x-6 text-sm">
+                    <span class="flex items-center"><span class="mr-2">✓</span> No Credit Card</span>
+                    <span class="flex items-center"><span class="mr-2">✓</span> 2-Minute Setup</span>
+                    <span class="flex items-center"><span class="mr-2">✓</span> ROI Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Problem - ChatGPT vs Star AI Cloud -->
+    <div class="py-20 bg-white" id="problem">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Why Generic AI Can't Optimize Your Cloud Costs</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">ChatGPT, Claude, and Gemini give generic advice. We give you specific savings opportunities.</p>
+            
+            <!-- Comparison Table -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                <table class="w-full comparison-table">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="p-4 text-left">Your Question</th>
+                            <th class="p-4 text-left">ChatGPT's Answer</th>
+                            <th class="p-4 text-left bg-emerald-600">Star AI Cloud's Answer</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-900">
+                        <tr>
+                            <td class="font-semibold">"How can I reduce my EC2 costs?"</td>
+                            <td class="text-gray-600">
+                                "Consider using Reserved Instances, Spot Instances, or right-sizing your instances based on utilization..."
+                                <div class="text-sm text-red-600 mt-2">❌ Generic advice, no data</div>
+                            </td>
+                            <td class="bg-emerald-50">
+                                "You have 12 m5.2xlarge instances running 24/7 with 23% average CPU. Switch to m5.xlarge = <strong>$3,840/mo savings</strong>. Here's the Terraform code..."
+                                <div class="text-sm text-emerald-600 mt-2">✅ Specific + Actionable + Code</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">"Why did my S3 bill spike?"</td>
+                            <td class="text-gray-600">
+                                "Check for increased requests, data transfer, or storage growth. Review CloudWatch metrics..."
+                                <div class="text-sm text-red-600 mt-2">❌ Vague troubleshooting steps</div>
+                            </td>
+                            <td class="bg-emerald-50">
+                                "Your <code>logs-2024-*</code> buckets jumped to 840GB (was 120GB). 98% is CloudTrail logs. Enable S3 Intelligent-Tiering = <strong>$2,100/mo savings</strong>. Applied in 1-click."
+                                <div class="text-sm text-emerald-600 mt-2">✅ Root cause + Solution + Automation</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">"Should I buy Reserved Instances?"</td>
+                            <td class="text-gray-600">
+                                "RIs offer 30-70% savings for predictable workloads. Calculate your usage patterns and commitment level..."
+                                <div class="text-sm text-red-600 mt-2">❌ Requires manual analysis</div>
+                            </td>
+                            <td class="bg-emerald-50">
+                                "Yes. Your prod-db (db.r5.4xlarge) has run 24/7 for 8 months. 1-year RI = <strong>$9,600/mo savings</strong> (47% off). Buy now: [One-click RI purchase]"
+                                <div class="text-sm text-emerald-600 mt-2">✅ Decision made + ROI calculated</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Star AI Cloud Sees Your Real Infrastructure:</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="text-3xl mb-2">✅</div>
+                        <div class="font-semibold">Actual Usage Patterns</div>
+                        <div class="text-sm text-gray-600 mt-1">Real CPU, memory, network data</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="text-3xl mb-2">✅</div>
+                        <div class="font-semibold">Current Spending</div>
+                        <div class="text-sm text-gray-600 mt-1">Every line item from your bill</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="text-3xl mb-2">✅</div>
+                        <div class="font-semibold">Resource Relationships</div>
+                        <div class="text-sm text-gray-600 mt-1">What talks to what, dependencies</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="text-3xl mb-2">✅</div>
+                        <div class="font-semibold">Historical Trends</div>
+                        <div class="text-sm text-gray-600 mt-1">6 months of pattern analysis</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="py-20 bg-emerald-50" id="how-it-works">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">How Star AI Cloud Works: AI That Sees Your Real Infrastructure</h2>
+            <p class="text-xl text-center text-gray-600 mb-16">Connect once. Save forever.</p>
+            
+            <div class="space-y-16">
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <div class="w-24 h-24 bg-emerald-600 rounded-full flex items-center justify-center text-white text-4xl font-bold mx-auto mb-4">1</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Connect Your Cloud Accounts</h3>
+                        <p class="text-gray-600 mb-4">Takes 2 minutes via OAuth</p>
+                    </div>
+                    <div class="md:w-2/3 bg-white rounded-lg p-8 shadow-lg">
+                        <h4 class="font-bold text-lg mb-4">What We Access (Read-Only):</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2">✓</span>
+                                <span><strong>Billing Data:</strong> Cost Explorer, detailed line items, usage reports</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2">✓</span>
+                                <span><strong>Resource Metadata:</strong> Instance types, sizes, regions, tags</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2">✓</span>
+                                <span><strong>CloudWatch Metrics:</strong> CPU, memory, network utilization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2">✓</span>
+                                <span><strong>Resource Groups:</strong> Tags, environments, ownership</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-emerald-50 rounded border border-emerald-200">
+                            <div class="font-semibold text-emerald-900 mb-1">🔒 Security Promise:</div>
+                            <div class="text-sm text-emerald-800">Read-only access. We NEVER modify, start, stop, or delete resources. SOC 2 Type II certified.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <div class="w-24 h-24 bg-emerald-600 rounded-full flex items-center justify-center text-white text-4xl font-bold mx-auto mb-4">2</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">AI Analyzes Your Infrastructure</h3>
+                        <p class="text-gray-600 mb-4">Automatic nightly scans at 2 AM</p>
+                    </div>
+                    <div class="md:w-2/3 bg-white rounded-lg p-8 shadow-lg">
+                        <h4 class="font-bold text-lg mb-4">What Our AI Does Every Night:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2 text-xl">🔍</span>
+                                <div>
+                                    <strong>Waste Detection:</strong> Idle resources, oversized instances, unused IPs/volumes
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2 text-xl">📊</span>
+                                <div>
+                                    <strong>Usage Pattern Analysis:</strong> Peaks, valleys, consistent 24/7, bursty workloads
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2 text-xl">💰</span>
+                                <div>
+                                    <strong>Savings Opportunities:</strong> RI/SP recommendations, right-sizing, storage tiering
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-600 mr-2 text-xl">⚠️</span>
+                                <div>
+                                    <strong>Anomaly Alerts:</strong> Unusual cost spikes, new expensive resources
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <div class="w-24 h-24 bg-emerald-600 rounded-full flex items-center justify-center text-white text-4xl font-bold mx-auto mb-4">3</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Receive Actionable Recommendations</h3>
+                        <p class="text-gray-600 mb-4">Daily digest via email or Slack</p>
+                    </div>
+                    <div class="md:w-2/3 bg-white rounded-lg p-8 shadow-lg border-2 border-emerald-500">
+                        <div class="text-xs font-bold text-emerald-600 mb-2">SAMPLE MORNING DIGEST - SENT 8:00 AM</div>
+                        <div class="mb-4">
+                            <div class="font-bold text-lg mb-2">☀️ Good Morning! You have 3 new savings opportunities:</div>
+                            <div class="space-y-3">
+                                <div class="p-3 bg-emerald-50 rounded border-l-4 border-emerald-500">
+                                    <div class="font-semibold">💰 High Priority: Right-size prod-web-*</div>
+                                    <div class="text-sm text-gray-700 mt-1">14 m5.2xlarge instances running at 12% CPU. Downsize to m5.xlarge.</div>
+                                    <div class="text-emerald-700 font-bold mt-1">Savings: $5,040/month</div>
+                                    <button class="mt-2 px-4 py-1 bg-emerald-600 text-white rounded text-sm">Apply Now (with approval)</button>
+                                </div>
+                                <div class="p-3 bg-blue-50 rounded border-l-4 border-blue-500">
+                                    <div class="font-semibold">🗄️ Medium: Move old S3 data to Glacier</div>
+                                    <div class="text-sm text-gray-700 mt-1">backup-2023-* buckets (240GB) haven't been accessed in 9 months.</div>
+                                    <div class="text-blue-700 font-bold mt-1">Savings: $1,680/month</div>
+                                    <button class="mt-2 px-4 py-1 bg-blue-600 text-white rounded text-sm">Review & Apply</button>
+                                </div>
+                                <div class="p-3 bg-gray-50 rounded border-l-4 border-gray-400">
+                                    <div class="font-semibold">🔄 Low: Delete 8 unused Elastic IPs</div>
+                                    <div class="text-sm text-gray-700 mt-1">Not attached to any instances for 60+ days.</div>
+                                    <div class="text-gray-700 font-bold mt-1">Savings: $24/month</div>
+                                    <button class="mt-2 px-4 py-1 bg-gray-600 text-white rounded text-sm">Auto-Clean</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600 pt-3 border-t">
+                            <strong>Total Monthly Savings:</strong> $6,744 | <strong>Annual:</strong> $80,928
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="py-20 bg-white" id="features">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">Powerful Features for Cloud Cost Optimization</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🔗</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Live Cloud Account Integration</h3>
+                    <p class="text-gray-600 mb-4">Connect AWS, Azure, GCP via OAuth. Real-time data sync every 6 hours. Multi-account support.</p>
+                    <div class="p-3 bg-blue-50 rounded text-sm text-blue-900">
+                        <strong>Why it matters:</strong> We see your actual infrastructure, not assumptions. Recommendations are based on YOUR data.
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Automated Daily Scans</h3>
+                    <p class="text-gray-600 mb-4">Nightly infrastructure analysis at 2 AM. Pattern recognition across 6 months of history. Anomaly detection.</p>
+                    <div class="p-3 bg-blue-50 rounded text-sm text-blue-900">
+                        <strong>Why it matters:</strong> Set it and forget it. Wake up to savings opportunities, not surprises on your bill.
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Validation Engine</h3>
+                    <p class="text-gray-600 mb-4">Every recommendation tested for safety. Impact analysis before changes. Rollback procedures included.</p>
+                    <div class="p-3 bg-blue-50 rounded text-sm text-blue-900">
+                        <strong>Why it matters:</strong> We never recommend changes that could break production. Safety first, savings second.
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Real-Time Cost Dashboard</h3>
+                    <p class="text-gray-600 mb-4">Live spend tracking by service, team, environment. Budget alerts. Forecast next month's bill.</p>
+                    <div class="p-3 bg-blue-50 rounded text-sm text-blue-900">
+                        <strong>Why it matters:</strong> Know exactly where money goes. No waiting for end-of-month bill shock.
+                    </div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Slack Integration</h3>
+                    <p class="text-gray-600 mb-4">Daily digests in your team channel. Critical alerts (cost spikes). One-click approvals.</p>
+                    <div class="p-3 bg-blue-50 rounded text-sm text-blue-900">
+                        <strong>Why it matters:</strong> Optimization happens where you work. No context switching to another dashboard.
+                    </div>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow border-2 border-emerald-500">
+                    <div class="text-xs font-bold text-emerald-600 mb-2">MOST POPULAR</div>
+                    <div class="text-4xl mb-4">🛠️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Terraform Code Generator</h3>
+                    <p class="text-gray-600 mb-4">Auto-generate IaC for every recommendation. Apply via CI/CD. Audit trail built-in.</p>
+                    <div class="p-3 bg-blue-50 rounded text-sm text-blue-900">
+                        <strong>Why it matters:</strong> No manual clicking in AWS Console. Changes are versioned, reviewed, repeatable.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Table: Generic AI vs Star AI Cloud -->
+    <div class="py-20 bg-gray-900 text-white" id="comparison">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">Generic AI vs Star AI Cloud</h2>
+            <p class="text-xl text-center text-gray-300 mb-12">See why connected AI beats generic chatbots</p>
+            
+            <div class="bg-white text-gray-900 rounded-xl overflow-hidden shadow-2xl">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-4 text-left font-bold">Capability</th>
+                            <th class="p-4 text-center font-bold">ChatGPT/Claude/Gemini<br><span class="text-sm font-normal text-gray-600">(Free)</span></th>
+                            <th class="p-4 text-center font-bold bg-emerald-600 text-white">Star AI Cloud<br><span class="text-sm font-normal">($99/mo)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="p-4">See your actual AWS/Azure/GCP bills</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4">Analyze real CloudWatch metrics</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4">Specific savings $ amounts</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4">Auto-generate Terraform code</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4">Daily automated scans</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4">One-click apply recommendations</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4">Slack/email integration</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4">Safety validation & rollback</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4">ROI guarantee</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4">Cost forecasting</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4">Multi-account support</td>
+                            <td class="p-4 text-center text-2xl">❌</td>
+                            <td class="p-4 text-center text-2xl bg-emerald-50">✅</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50 font-bold text-lg">
+                            <td class="p-4">Cost</td>
+                            <td class="p-4 text-center">$0 (but not useful for real infra)</td>
+                            <td class="p-4 text-center bg-emerald-50">$99/mo (pays for itself in 1 day)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-xl text-gray-300 mb-6">Generic AI gives advice. Star AI Cloud gives results.</p>
+                <a href="#pricing" class="inline-block px-8 py-4 bg-emerald-600 text-white rounded-lg font-bold text-lg hover:bg-emerald-700 transition-all">
+                    Start Saving Today →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="py-20 bg-white" id="pricing">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">All plans include 7-day free trial. No credit card required.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Starter -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+                    <div class="text-4xl font-bold text-emerald-600 mb-4">$99<span class="text-lg text-gray-600">/mo</span></div>
+                    <p class="text-gray-600 mb-6">Good for: Small teams, 1-2 AWS accounts, up to $10K/mo cloud spend</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>1 cloud account (AWS, Azure, OR GCP)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Daily scans & recommendations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Email digests</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Cost dashboard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Terraform code generation</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <span class="mr-2">−</span>
+                            <span>Slack integration</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <span class="mr-2">−</span>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+                    <a href="#" onclick="trackCTA('pricing', 'Starter Plan')" class="block w-full text-center px-6 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300 transition-all">
+                        Start Free Trial
+                    </a>
+                </div>
+                
+                <!-- Professional (Most Popular) -->
+                <div class="bg-white rounded-xl shadow-2xl p-8 border-4 border-emerald-600 transform scale-105 relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white px-6 py-1 rounded-full font-bold text-sm">
+                        MOST POPULAR
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
+                    <div class="text-4xl font-bold text-emerald-600 mb-4">$199<span class="text-lg text-gray-600">/mo</span></div>
+                    <p class="text-gray-600 mb-6">Good for: Growing teams, 3-10 accounts, up to $50K/mo cloud spend</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Up to 10 cloud accounts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>All Starter features</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span><strong>Slack integration</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>One-click apply (with approval)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Team collaboration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Advanced forecasting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Priority email support</span>
+                        </li>
+                    </ul>
+                    <a href="#" onclick="trackCTA('pricing', 'Professional Plan')" class="block w-full text-center px-6 py-3 text-white rounded-lg font-semibold hover:shadow-xl transition-all" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        Start Free Trial
+                    </a>
+                </div>
+                
+                <!-- Enterprise -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                    <div class="text-4xl font-bold text-emerald-600 mb-4">$499<span class="text-lg text-gray-600">/mo</span></div>
+                    <p class="text-gray-600 mb-6">Good for: Large orgs, 10+ accounts, $50K+ cloud spend</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Unlimited cloud accounts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>All Professional features</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span><strong>Dedicated success manager</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Custom integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>SLA guarantee (99.9% uptime)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>Annual billing (save 20%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-600 mr-2">✓</span>
+                            <span>24/7 phone support</span>
+                        </li>
+                    </ul>
+                    <a href="/contact.html" onclick="trackCTA('pricing', 'Enterprise Plan')" class="block w-full text-center px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+            
+            <!-- ROI Guarantee -->
+            <div class="bg-emerald-50 rounded-xl p-8 border-2 border-emerald-200 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-emerald-900 mb-4 text-center">💰 Our ROI Guarantee</h3>
+                <p class="text-lg text-emerald-800 text-center mb-4">
+                    If Star AI Cloud doesn't find at least <strong>10x your subscription cost</strong> in savings within 90 days, we'll refund 100% of your money.
+                </p>
+                <p class="text-center text-emerald-700">
+                    Example: $199/mo Professional plan = we guarantee to find $1,990/mo in savings, or you get a full refund.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">What Our Customers Say</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">SC</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-900">Sarah Chen</div>
+                            <div class="text-sm text-gray-600">DevOps Lead @ TechFlow</div>
+                        </div>
+                    </div>
+                    <div class="text-yellow-500 mb-3">★★★★★</div>
+                    <p class="text-gray-700 mb-4">
+                        "Star AI Cloud found $47K/year in savings in the first week. It caught oversized RDS instances we didn't even know were running. Paid for itself immediately."
+                    </p>
+                    <div class="text-sm text-emerald-600 font-semibold">
+                        Saved $47,000/year • ROI in 6 days
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-emerald-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">MR</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-900">Michael Rodriguez</div>
+                            <div class="text-sm text-gray-600">CTO @ DataSync Solutions</div>
+                        </div>
+                    </div>
+                    <div class="text-yellow-500 mb-3">★★★★★</div>
+                    <p class="text-gray-700 mb-4">
+                        "We cut our AWS bill by 38% in 3 months. The Terraform code generation is game-changing—no more manual console work. Everything is auditable and repeatable."
+                    </p>
+                    <div class="text-sm text-emerald-600 font-semibold">
+                        Reduced spend 38% • Automated 100% of changes
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">JP</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-900">Jennifer Park</div>
+                            <div class="text-sm text-gray-600">Cloud Architect @ FinServe Inc</div>
+                        </div>
+                    </div>
+                    <div class="text-yellow-500 mb-3">★★★★★</div>
+                    <p class="text-gray-700 mb-4">
+                        "The daily Slack digests are perfect. My team actually reads them. We've optimized things we'd been ignoring for months. ROI in 6 weeks."
+                    </p>
+                    <div class="text-sm text-emerald-600 font-semibold">
+                        ROI achieved in 6 weeks • Team adoption 100%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-6">
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">How is this different from AWS Cost Explorer or Azure Cost Management?</summary>
+                    <p class="mt-4 text-gray-600">AWS Cost Explorer shows you WHAT you spent. Star AI Cloud tells you HOW to save. We provide specific, actionable recommendations with dollar amounts, Terraform code, and one-click apply. Native tools require manual analysis.</p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Is my data secure?</summary>
+                    <p class="mt-4 text-gray-600">Yes. We use read-only OAuth access (we can't modify your resources). Data is encrypted in transit (TLS 1.3) and at rest (AES-256). We're SOC 2 Type II certified. We never share your data with third parties.</p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Will this work for multi-cloud environments?</summary>
+                    <p class="mt-4 text-gray-600">Yes! Professional and Enterprise plans support AWS, Azure, and GCP simultaneously. We analyze each cloud separately and identify cross-cloud opportunities (e.g., moving workloads to cheaper clouds).</p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">How long does setup take?</summary>
+                    <p class="mt-4 text-gray-600">2 minutes. You connect your cloud account via OAuth, and we start scanning immediately. First recommendations appear within 24 hours after the initial scan completes.</p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Do you automatically make changes to my infrastructure?</summary>
+                    <p class="mt-4 text-gray-600">NO. We NEVER make changes without your explicit approval. You review every recommendation, then choose to apply it manually or use our one-click apply (with approval workflow). You're always in control.</p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">What about the ROI guarantee?</summary>
+                    <p class="mt-4 text-gray-600">We guarantee to find at least 10x your subscription cost in savings within 90 days, or we refund 100% of your money. For example, if you're on the $199/mo plan, we guarantee to find $1,990/mo in savings opportunities.</p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Do you offer custom plans for large enterprises?</summary>
+                    <p class="mt-4 text-gray-600">Yes! Enterprise customers with complex needs can get custom pricing, dedicated support, custom integrations, and volume discounts. Contact our sales team for a tailored quote.</p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Can Star AI Cloud integrate with our CI/CD pipeline?</summary>
+                    <p class="mt-4 text-gray-600">Yes! Professional and Enterprise plans include API access. You can integrate our recommendations into your GitOps workflow, auto-create PRs for savings opportunities, and include cost optimization in your deployment pipeline.</p>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="py-20 bg-gradient-to-r from-emerald-600 to-lime-500 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Save 30-40% on Cloud Costs?</h2>
+            <p class="text-xl mb-8">Join 200+ companies already optimizing with Star AI Cloud</p>
+            
+            <div class="grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto">
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
+                    <div class="text-4xl font-bold mb-2">$2.4M+</div>
+                    <div class="text-sm">Total Savings Delivered</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">4,200+</div>
+                    <div class="text-sm">Optimizations Applied</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">30-40%</div>
+                    <div class="text-sm">Average Cost Reduction</div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                <a href="#pricing" onclick="trackCTA('final', 'Start Free 7-Day Trial')" class="px-10 py-4 bg-white text-emerald-600 rounded-lg font-bold text-xl hover:shadow-2xl transition-all">
+                    Start Free 7-Day Trial
+                </a>
+                <a href="/contact.html" class="px-10 py-4 bg-emerald-700 text-white rounded-lg font-bold text-xl hover:bg-emerald-800 transition-all">
+                    Talk to Sales
+                </a>
+            </div>
+            
+            <p class="text-sm">No credit card required • 2-minute setup • Cancel anytime</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
+                        <li><a href="/case-studies.html" class="hover:text-lime-300">Case Studies</a></li>
+                        <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
+                        <li><a href="/contact.html" class="hover:text-lime-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
                     <ul class="space-y-2">
                         <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
                         <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
                         <li><a href="/star-ai-finance.html" class="hover:text-lime-300">Star AI Finance</a></li>
-                        <li><a href="/star-automation.html" class="hover:text-lime-300">Star Automation</a></li>
                         <li><a href="/qr-feedback.html" class="hover:text-lime-300">QR Feedback</a></li>
-                        <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 3: Services -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
-                        <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
-                        <li><a href="/services.html" class="hover:text-lime-300">AI & ML Services</a></li>
-                        <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
+                        <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
+                        <li><a href="https://starworkforce.net" class="hover:text-lime-300">Star Workforce</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 4: Legal -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
                         <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
                         <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
-                        <li><a href="/legal/cookie-policy.html" class="hover:text-lime-300">Cookie Policy</a></li>
-                        <li><a href="/legal/accessibility.html" class="hover:text-lime-300">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
-                <p class="mt-2 text-sm">
-                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> | 
+                <p>© 2025 Startekk, LLC. All rights reserved.</p>
+                <p class="mt-2">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> |
                     5465 Legacy Drive Suite 650, Plano, TX 75024
                 </p>
             </div>
         </div>
     </footer>
 
+    <!-- Sticky CTA Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const stickyCTA = document.getElementById('sticky-cta');
+            if (window.scrollY > 800) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
