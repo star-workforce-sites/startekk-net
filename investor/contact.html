@@ -35,7 +35,7 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation (same as other pages) -->
+    <!-- Navigation -->
     <nav class="bg-emerald-600 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -77,7 +77,7 @@
                 Interested in investing in Startekk? Fill out this form and our investor relations team will contact you within 24-48 hours.
             </p>
 
-            <form id="investor-form" method="POST" action="https://formspree.io/f/YOUR_FORMSPREE_ID" class="space-y-6">
+            <form id="investor-form" class="space-y-6">
                 <!-- Name -->
                 <div>
                     <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">
@@ -209,6 +209,7 @@
                 <!-- Submit Button -->
                 <button 
                     type="submit"
+                    id="submit-btn"
                     class="w-full bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-4 px-6 rounded-lg font-bold text-lg hover:shadow-lg transition-all"
                 >
                     Submit Investor Inquiry
@@ -220,6 +221,22 @@
                     All inquiries are confidential.
                 </p>
             </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="success-message" class="hidden mt-8 p-6 bg-green-50 border border-green-200 rounded-lg">
+                <h3 class="text-lg font-bold text-green-900 mb-2">✅ Thank You!</h3>
+                <p class="text-green-800">
+                    Your investor inquiry has been submitted successfully. Our team will review your information and contact you within 24-48 hours.
+                </p>
+            </div>
+
+            <!-- Error Message (hidden by default) -->
+            <div id="error-message" class="hidden mt-8 p-6 bg-red-50 border border-red-200 rounded-lg">
+                <h3 class="text-lg font-bold text-red-900 mb-2">❌ Error</h3>
+                <p class="text-red-800" id="error-text">
+                    There was an error submitting your inquiry. Please try again or contact us directly at investors@startekk.net
+                </p>
+            </div>
         </div>
 
         <!-- Additional Info -->
@@ -255,7 +272,7 @@
         </div>
     </div>
 
-    <!-- Footer (same as other pages) -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-gray-400">
@@ -269,17 +286,74 @@
     </footer>
 
     <script>
-        // Track form submission in GA
-        document.getElementById('investor-form').addEventListener('submit', function() {
-            if (typeof gtag !== 'undefined') {
-                const product = document.getElementById('product').value;
-                const amount = document.getElementById('investment-amount').value;
-                
-                gtag('event', 'form_submit', {
-                    'event_category': 'Investor Inquiry',
-                    'event_label': product,
-                    'value': 1
+        // Form submission handler
+        document.getElementById('investor-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('success-message');
+            const errorMsg = document.getElementById('error-message');
+            const form = document.getElementById('investor-form');
+            
+            // Verify reCAPTCHA
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+                alert('Please complete the reCAPTCHA verification.');
+                return;
+            }
+            
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone') || 'Not provided',
+                product: formData.get('product'),
+                investment_amount: formData.get('investment_amount'),
+                investment_type: formData.get('investment_type'),
+                message: formData.get('message'),
+                recaptcha: recaptchaResponse
+            };
+            
+            try {
+                // Send to API endpoint
+                const response = await fetch('/api/investor-inquiry', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
                 });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Show success message
+                    form.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                    
+                    // Track in GA
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submit', {
+                            'event_category': 'Investor Inquiry',
+                            'event_label': data.product,
+                            'value': 1
+                        });
+                    }
+                } else {
+                    throw new Error(result.error || 'Submission failed');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                errorMsg.classList.remove('hidden');
+                document.getElementById('error-text').textContent = 
+                    error.message || 'There was an error submitting your inquiry. Please try again or contact us directly at investors@startekk.net';
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Investor Inquiry';
             }
         });
     </script>
