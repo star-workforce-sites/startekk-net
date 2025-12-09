@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Investors - Startekk</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2384CC16' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
     
-    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2384CC16' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,8 +21,8 @@
         }
     </script>
     
-    <!-- Google reCAPTCHA v2 - REAL SITE KEY -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le3qSUsAAAAAHveu_GlIkVxIOGU1k16HljlE0OH"></script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
@@ -123,9 +121,11 @@
                     <textarea name="message" required rows="5" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Tell us more about your inquiry..."></textarea>
                 </div>
 
-                <!-- reCAPTCHA - REAL SITE KEY -->
-                <div>
-                    <div class="g-recaptcha" data-sitekey="6Le3qSUsAAAAAHveu_GlIkVxIOGU1k16HljlE0OH"></div>
+                <!-- reCAPTCHA v3 Badge Notice -->
+                <div class="text-xs text-gray-500">
+                    This site is protected by reCAPTCHA and the Google
+                    <a href="https://policies.google.com/privacy" class="text-emerald-600 hover:underline">Privacy Policy</a> and
+                    <a href="https://policies.google.com/terms" class="text-emerald-600 hover:underline">Terms of Service</a> apply.
                 </div>
 
                 <!-- Submit -->
@@ -157,8 +157,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <div>
-                        <h4 class="font-bold text-red-900">Error Sending Message</h4>
-                        <p class="text-red-700" id="error-text">Please try again or email us directly.</p>
+                        <h4 class="font-bold text-red-900">Error</h4>
+                        <p class="text-red-700" id="error-text"></p>
                     </div>
                 </div>
             </div>
@@ -209,65 +209,53 @@
             const successMsg = document.getElementById('success-message');
             const errorMsg = document.getElementById('error-message');
             
-            // Hide previous messages
             successMsg.classList.add('hidden');
             errorMsg.classList.add('hidden');
             
-            // Verify reCAPTCHA
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (!recaptchaResponse) {
-                errorMsg.classList.remove('hidden');
-                document.getElementById('error-text').textContent = 'Please complete the reCAPTCHA verification.';
-                return;
-            }
-            
-            // Disable submit button
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            
-            // Collect form data
-            const formData = new FormData(this);
-            const interests = [];
-            document.querySelectorAll('input[name="interest"]:checked').forEach(cb => {
-                interests.push(cb.value);
-            });
-            
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone') || 'Not provided',
-                company: formData.get('company') || 'Not provided',
-                interests: interests.join(', ') || 'General Inquiry',
-                message: formData.get('message'),
-                recaptchaToken: recaptchaResponse
-            };
+            submitBtn.textContent = 'Verifying...';
             
             try {
-                // Send to API endpoint
+                // Execute reCAPTCHA v3
+                const token = await grecaptcha.execute('6Le3qSUsAAAAAHveu_GlIkVxIOGU1k16HljlE0OH', {action: 'submit'});
+                
+                submitBtn.textContent = 'Sending...';
+                
+                // Collect form data
+                const formData = new FormData(this);
+                const interests = [];
+                document.querySelectorAll('input[name="interest"]:checked').forEach(cb => {
+                    interests.push(cb.value);
+                });
+                
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone') || 'Not provided',
+                    company: formData.get('company') || 'Not provided',
+                    interests: interests.join(', ') || 'General Inquiry',
+                    message: formData.get('message'),
+                    recaptchaToken: token
+                };
+                
+                // Send to API
                 const response = await fetch('/api/investor-inquiry.js', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
                 
                 const result = await response.json();
                 
                 if (response.ok && result.success) {
-                    // Show success message
                     successMsg.classList.remove('hidden');
-                    
-                    // Reset form
                     this.reset();
-                    grecaptcha.reset();
                     
                     // Track with GA
                     gtag('event', 'investor_inquiry_submit', {
                         'interests': data.interests
                     });
                     
-                    // Scroll to success message
                     successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 } else {
                     throw new Error(result.error || 'Failed to send message');
@@ -277,7 +265,6 @@
                 errorMsg.classList.remove('hidden');
                 document.getElementById('error-text').textContent = error.message || 'Please try again or email us at investors@startekk.net';
             } finally {
-                // Re-enable submit button
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
             }
