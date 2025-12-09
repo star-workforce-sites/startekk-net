@@ -4,16 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Powered Products | Startekk</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23047857%27 stroke-width=%272%27><path stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M13 10V3L4 14h7v7l9-11h-7z%27/></svg>">
-    <meta name="description" content="Explore Startekk's suite of AI-powered business solutions: Cloud Automation, Legal eDiscovery, and QR Feedback systems.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+    <meta name="description" content="AI-powered business solutions including Star AI Cloud, eDiscovery, Finance, Automation, QR Feedback, and Career services.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2384CC16' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': { 600: '#047857', 700: '#065f46' },
+                        'lime': { 500: '#84CC16', 600: '#65a30d' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8BFZG3R9ZR');
+    </script>
 </head>
 <body class="bg-gray-50">
-
-<!-- Navigation -->
     <!-- Navigation -->
-    <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
+    <nav class="bg-emerald-600 sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-3">
@@ -24,193 +45,253 @@
                     </div>
                     <div class="text-xl font-bold text-white">Startekk</div>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
                     <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
                     <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
                     <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
                     <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
                     <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
-                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
                 </div>
             </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 py-4">
-            <a href="/index.html" class="block py-2 text-white hover:text-lime-300">Home</a>
-            <a href="/about.html" class="block py-2 text-white hover:text-lime-300">About</a>
-            <a href="/products.html" class="block py-2 text-white hover:text-lime-300">Products</a>
-            <a href="/services.html" class="block py-2 text-white hover:text-lime-300">Services</a>
-            <a href="/pages/jobs.html" class="block py-2 text-white hover:text-lime-300">Jobs</a>
-            <a href="/investor/index.html" class="block py-2 text-white hover:text-lime-300">Investors</a>
-            <a href="/contact.html" class="block py-2 text-white hover:text-lime-300">Contact Us</a>
         </div>
     </nav>
-    
-    <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    });
-    </script>
 
-<!-- Hero Section -->
-<section class="bg-gradient-to-r from-green-600 to-lime-500 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-5xl font-bold mb-6">AI-Powered Business Solutions</h1>
-        <p class="text-xl mb-8">Transform your operations with intelligent automation and insights</p>
-    </div>
-</section>
-
-<!-- Products Grid -->
-<section class="max-w-7xl mx-auto px-4 py-16">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Star AI Cloud -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="bg-gradient-to-r from-green-600 to-lime-500 p-6 text-white">
-                <h2 class="text-2xl font-bold mb-2">Star AI Cloud</h2>
-                <p class="text-green-100">Intelligent Cloud Automation</p>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 mb-4">Get step-by-step automation guidance for AWS, Azure, and GCP. Ask questions in plain English and receive instant, AI-powered instructions.</p>
-                <ul class="space-y-2 mb-6 text-sm text-gray-600">
-                    <li>✅ Multi-cloud support</li>
-                    <li>✅ Plain English queries</li>
-                    <li>✅ Step-by-step guides</li>
-                    <li>✅ Best practices included</li>
-                </ul>
-                <a href="/star-ai-cloud.html" class="block w-full bg-green-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-700 transition">Learn More</a>
-            </div>
-        </div>
-
-        <!-- Star AI eDiscovery -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="bg-gradient-to-r from-blue-600 to-cyan-500 p-6 text-white">
-                <h2 class="text-2xl font-bold mb-2">Star AI eDiscovery</h2>
-                <p class="text-blue-100">Cost-Effective Legal Discovery</p>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 mb-4">AI-powered legal document discovery at $0.10 per document. Keyword search across emails, PDFs, and Word documents with precision.</p>
-                <ul class="space-y-2 mb-6 text-sm text-gray-600">
-                    <li>✅ $0.10 per document</li>
-                    <li>✅ AI-powered search</li>
-                    <li>✅ Multiple file formats</li>
-                    <li>✅ Secure & compliant</li>
-                </ul>
-                <a href="/star-ai-ediscovery.html" class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Learn More</a>
-            </div>
-        </div>
-
-        <!-- QR Feedback -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="bg-gradient-to-r from-purple-600 to-pink-500 p-6 text-white">
-                <h2 class="text-2xl font-bold mb-2">QR Feedback</h2>
-                <p class="text-purple-100">Real-Time Customer Insights</p>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 mb-4">Contactless customer feedback collection with QR codes. Get real-time analytics and automated response management.</p>
-                <ul class="space-y-2 mb-6 text-sm text-gray-600">
-                    <li>✅ Contactless surveys</li>
-                    <li>✅ Real-time analytics</li>
-                    <li>✅ Automated responses</li>
-                    <li>✅ Custom branding</li>
-                </ul>
-                <a href="/qr-feedback.html" class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-purple-700 transition">Learn More</a>
-            </div>
-        </div>
-
-        <!-- Star AI Finance -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="bg-gradient-to-r from-amber-600 to-orange-500 p-6 text-white">
-                <h2 class="text-2xl font-bold mb-2">Star AI Finance</h2>
-                <p class="text-amber-100">Financial Automation</p>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 mb-4">AI-powered financial automation and contract analysis. Streamline accounting, compliance, and decision-making processes.</p>
-                <ul class="space-y-2 mb-6 text-sm text-gray-600">
-                    <li>✅ Contract analysis</li>
-                    <li>✅ Financial forecasting</li>
-                    <li>✅ Compliance automation</li>
-                    <li>✅ Risk assessment</li>
-                </ul>
-                <a href="/star-ai-finance.html" class="block w-full bg-amber-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-amber-700 transition">Learn More</a>
-            </div>
-        </div>
-
-        <!-- Star Automation -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="bg-gradient-to-r from-indigo-600 to-blue-500 p-6 text-white">
-                <h2 class="text-2xl font-bold mb-2">Star Automation</h2>
-                <p class="text-indigo-100">RPA & IPA Solutions</p>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 mb-4">Robotic Process Automation (RPA) and Intelligent Process Automation (IPA) for streamlining business operations.</p>
-                <ul class="space-y-2 mb-6 text-sm text-gray-600">
-                    <li>✅ Process automation</li>
-                    <li>✅ Workflow optimization</li>
-                    <li>✅ AI-powered decisions</li>
-                    <li>✅ Legacy system integration</li>
-                </ul>
-                <a href="/star-automation.html" class="block w-full bg-indigo-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">Learn More</a>
-            </div>
-        </div>
-
-        <!-- StarWorkforce Services -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="bg-gradient-to-r from-purple-900 to-purple-700 p-6 text-white">
-                <h2 class="text-2xl font-bold mb-2">StarWorkforce Services</h2>
-                <p class="text-yellow-300">IT Staffing & Consulting</p>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 mb-4">Elite IT staffing solutions with onsite, onshore, nearshore, and offshore teams. AI and traditional IT talent.</p>
-                <ul class="space-y-2 mb-6 text-sm text-gray-600">
-                    <li>✅ IT Staffing</li>
-                    <li>✅ Consulting Services</li>
-                    <li>✅ Managed Teams</li>
-                    <li>✅ Global Coverage</li>
-                </ul>
-                <a href="https://starworkforce.net" class="block w-full bg-purple-900 text-white text-center py-3 rounded-lg font-semibold hover:bg-purple-800 transition">Learn More</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="bg-gray-100 py-16">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-        <p class="text-xl text-gray-600 mb-8">Schedule a free consultation to discuss how our AI-powered solutions can help your organization.</p>
-        <div class="flex justify-center gap-4">
-            <a href="/contact.html" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">Contact Us</a>
-            <a href="/cost-calculator.html" class="border-2 border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition">Calculate Savings</a>
+    <!-- Hero -->
+    <div class="bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">AI-Powered Business Solutions</h1>
+            <p class="text-xl md:text-2xl">Transform your operations with intelligent automation and insights</p>
         </div>
     </div>
-</section>
 
-<!-- Footer -->
+    <!-- Products Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Star AI Cloud -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">Star AI Cloud</h2>
+                <p class="text-lg text-emerald-600 mb-4">Intelligent Cloud Automation</p>
+                <p class="text-gray-600 mb-6">Get step-by-step automation guidance for AWS, Azure, and GCP. Ask questions in plain English and receive instant, AI-powered instructions.</p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Multi-cloud support</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Plain English queries</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Step-by-step guides</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Best practices included</span>
+                    </li>
+                </ul>
+                <a href="/star-ai-cloud.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Star AI eDiscovery -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">Star AI eDiscovery</h2>
+                <p class="text-lg text-emerald-600 mb-4">Cost-Effective Legal Discovery</p>
+                <p class="text-gray-600 mb-6">AI-powered legal document discovery at $0.10 per document. Keyword search across emails, PDFs, and Word documents with precision.</p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>$0.10 per document</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>AI-powered search</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Multiple file formats</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Secure & compliant</span>
+                    </li>
+                </ul>
+                <a href="/star-ai-ediscovery.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- QR Feedback -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">QR Feedback</h2>
+                <p class="text-lg text-emerald-600 mb-4">Real-Time Customer Insights</p>
+                <p class="text-gray-600 mb-6">Contactless customer feedback collection with QR codes. Get real-time analytics and automated response management.</p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Contactless surveys</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Real-time analytics</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Automated responses</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Custom branding</span>
+                    </li>
+                </ul>
+                <a href="/qr-feedback.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Star AI Finance -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">Star AI Finance</h2>
+                <p class="text-lg text-emerald-600 mb-4">Financial Automation</p>
+                <p class="text-gray-600 mb-6">AI-powered financial automation and contract analysis. Streamline accounting, compliance, and decision-making processes.</p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Contract analysis</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Financial forecasting</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Compliance automation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Risk assessment</span>
+                    </li>
+                </ul>
+                <a href="/star-ai-finance.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Star Automation -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">Star Automation</h2>
+                <p class="text-lg text-emerald-600 mb-4">RPA & IPA Solutions</p>
+                <p class="text-gray-600 mb-6">Robotic Process Automation (RPA) and Intelligent Process Automation (IPA) for streamlining business operations.</p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Process automation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Workflow optimization</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>AI-powered decisions</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Legacy system integration</span>
+                    </li>
+                </ul>
+                <a href="/star-automation.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- StarWorkforce Services -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">StarWorkforce Services</h2>
+                <p class="text-lg text-emerald-600 mb-4">IT Staffing & Consulting</p>
+                <p class="text-gray-600 mb-6">Elite IT staffing solutions with onsite, onshore, nearshore, and offshore teams. AI and traditional IT talent.</p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>IT Staffing</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Consulting Services</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Managed Teams</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-600 mr-2">✅</span>
+                        <span>Global Coverage</span>
+                    </li>
+                </ul>
+                <a href="https://starworkforce.net" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Career Accel Platform - NEW -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border-2 border-blue-500">
+                <div class="text-xs font-bold text-blue-600 mb-2">NEW - LAUNCHING JAN 2026</div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">Career Accel Platform</h2>
+                <p class="text-lg text-blue-600 mb-4">AI-Powered Career Services</p>
+                <p class="text-gray-600 mb-6">Strategic resume distribution and career acceleration for IT professionals. Get noticed by top recruiters with AI-optimized applications.</p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2">✅</span>
+                        <span>Resume distribution</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2">✅</span>
+                        <span>ATS optimization</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2">✅</span>
+                        <span>Dedicated recruiter</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2">✅</span>
+                        <span>Interview prep</span>
+                    </li>
+                </ul>
+                <a href="https://www.starworkforcesolutions.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    Learn More →
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-emerald-50 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-gray-600 mb-8">Schedule a free consultation to discuss how our AI-powered solutions can help your organization.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact.html" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-8 py-4 rounded-lg font-bold hover:shadow-lg transition-all">
+                    Contact Us
+                </a>
+                <a href="/cost-calculator.html" class="inline-block bg-white border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg font-bold hover:bg-emerald-50 transition-all">
+                    Calculate Savings
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Column 1: Company -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
                     <ul class="space-y-2">
                         <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
                         <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
@@ -220,34 +301,29 @@
                         <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 2: Products -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
                     <ul class="space-y-2">
                         <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
                         <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
                         <li><a href="/star-ai-finance.html" class="hover:text-lime-300">Star AI Finance</a></li>
                         <li><a href="/star-automation.html" class="hover:text-lime-300">Star Automation</a></li>
                         <li><a href="/qr-feedback.html" class="hover:text-lime-300">QR Feedback</a></li>
+                        <li><a href="https://www.starworkforcesolutions.com" class="hover:text-lime-300">Career Accel</a></li>
                         <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 3: Services -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
                     <ul class="space-y-2">
                         <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
                         <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
                         <li><a href="/services.html" class="hover:text-lime-300">AI & ML Services</a></li>
-                        <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
+                        <li><a href="https://starworkforce.net" class="hover:text-lime-300">Technology Staffing →</a></li>
                     </ul>
                 </div>
-                
-                <!-- Column 4: Legal -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
                         <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
                         <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
@@ -256,16 +332,14 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
-                <p class="mt-2 text-sm">
-                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> | 
+                <p>© 2025 Startekk, LLC. All rights reserved.</p>
+                <p class="mt-2">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> |
                     5465 Legacy Drive Suite 650, Plano, TX 75024
                 </p>
             </div>
         </div>
     </footer>
-
 </body>
 </html>
