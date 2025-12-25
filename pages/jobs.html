@@ -463,20 +463,23 @@
 
         // Render jobs
         function renderJobs(filteredJobs = jobs) {
-            const container = document.getElementById('job-listings');
+        // Sort by posted date (newest first)
+        const sortedJobs = [...filteredJobs].sort((a, b) => new Date(b.posted) - new Date(a.posted));
+        
+        const container = document.getElementById('job-listings');
             const noResults = document.getElementById('no-results');
             const jobCount = document.getElementById('job-count');
             
-            jobCount.textContent = filteredJobs.length;
+            jobCount.textContent = sortedJobs.length;
             
-            if (filteredJobs.length === 0) {
+            if (sortedJobs.length === 0) {
                 container.innerHTML = '';
                 noResults.classList.remove('hidden');
                 return;
             }
             
             noResults.classList.add('hidden');
-            container.innerHTML = filteredJobs.map(job => `
+            container.innerHTML = sortedJobs.map(job => `
                 <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                         <div class="flex-1">
@@ -508,7 +511,9 @@
                         </div>
                     </div>
                     
-                    <p class="text-gray-700 mb-4">${job.description}</p>
+                    <div class="text-gray-700 mb-4 prose prose-sm max-w-none">
+                        <p class="whitespace-pre-line">${job.description}</p>
+                    </div>
                     
                     <div class="mb-4">
                         <h4 class="font-semibold text-gray-900 mb-2">Key Requirements:</h4>
