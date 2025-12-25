@@ -583,8 +583,7 @@
             document.getElementById('edit-posted').value = job.posted;
             document.getElementById('edit-description').value = job.description;
             const reqArray = job.requirements || [];
-            document.getElementById('edit-requirements').value = reqArray.join('
-');
+            document.getElementById('edit-requirements').value = reqArray.join('\n');
             const techArray = job.techStack || job.tech || [];
             document.getElementById('edit-techstack').value = techArray.join(', ');
             
