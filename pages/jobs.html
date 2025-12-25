@@ -274,8 +274,13 @@
     </footer>
 
     <script>
-        // Sample job data (in production, fetch from API)
-        const jobs = [
+        // Load jobs from localStorage (posted via admin panel)
+        // Falls back to sample data if localStorage is empty
+        let jobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
+        
+        // If no jobs in localStorage, use sample data as fallback
+        if (jobs.length === 0) {
+            jobs = [
             {
                 id: 1,
                 title: 'Senior Full Stack Engineer',
@@ -433,6 +438,28 @@
                 tech: ['Python', 'SQL', 'Airflow', 'Snowflake', 'dbt']
             }
         ];
+        
+        // Save sample data to localStorage if it was empty (first time load)
+        localStorage.setItem('startekk_jobs', JSON.stringify(jobs));
+        }
+        
+        // Function to sync jobs from localStorage (call when admin updates jobs)
+        function syncJobsFromStorage() {
+            const storedJobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
+            if (storedJobs.length > 0) {
+                jobs = storedJobs;
+                renderJobs();
+                document.getElementById('job-count').textContent = jobs.length;
+            }
+        }
+        
+        // Listen for localStorage changes (when admin panel updates jobs in another tab)
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'startekk_jobs') {
+                syncJobsFromStorage();
+            }
+        });
+
 
         // Render jobs
         function renderJobs(filteredJobs = jobs) {
