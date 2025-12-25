@@ -324,8 +324,30 @@
         </div>
     </div>
 
+    <!-- Notification Container -->
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999; max-width: 400px;"></div>
+
     <script>
         const ADMIN_PASSWORD = 'startekk2025';
+
+        // ===== NOTIFICATION SYSTEM =====
+        const notificationStyles = `<style>
+.notification{background:linear-gradient(135deg,#047857 0%,#84CC16 100%);color:white;padding:16px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-bottom:12px;animation:slideIn 0.3s ease-out;cursor:pointer;transition:all 0.3s ease}
+.notification:hover{transform:translateX(-5px);box-shadow:0 6px 16px rgba(0,0,0,0.2)}
+.notification.error{background:linear-gradient(135deg,#DC2626 0%,#EF4444 100%)}
+.notification-header{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px;margin-bottom:4px}
+.notification-icon{width:24px;height:24px;flex-shrink:0}
+.notification-message{font-size:14px;opacity:0.95;line-height:1.4}
+.notification.closing{animation:slideOut 0.3s ease-in forwards}
+@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes slideOut{from{transform:translateX(0);opacity:1}to{transform:translateX(400px);opacity:0}}
+</style>`;
+        document.head.insertAdjacentHTML('beforeend',notificationStyles);
+        const icons={success:'<svg class="notification-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',error:'<svg class="notification-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>'};
+        function showNotification(options){const{type='success',title,message='',duration=4000}=options;const container=document.getElementById('notification-container');const notification=document.createElement('div');notification.className=`notification ${type}`;notification.innerHTML=`<div class="notification-header">${icons[type]}<span>${title}</span></div>${message?`<div class="notification-message">${message}</div>`:''}`;notification.onclick=()=>{notification.classList.add('closing');setTimeout(()=>notification.remove(),300)};container.appendChild(notification);if(duration>0)setTimeout(()=>{notification.classList.add('closing');setTimeout(()=>notification.remove(),300)},duration)}
+        function showSuccess(title,message){return showNotification({type:'success',title,message})}
+        function showError(title,message){return showNotification({type:'error',title,message})}
+
 
         // PRE-LOADED JOBS FROM PUBLIC PAGE
         const DEFAULT_JOBS = [
@@ -492,7 +514,7 @@
                 loadJobs();
                 loadApplications();
             } else {
-                alert('Invalid credentials');
+                showError('Login Failed', 'Invalid email or password.');
             }
         }
 
@@ -514,6 +536,7 @@
 
         function loadJobs() {
             const jobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
+            jobs.sort((a, b) => new Date(b.posted) - new Date(a.posted)); // Sort by date (newest first)
             document.getElementById('job-count').textContent = jobs.length;
             
             const tbody = document.getElementById('jobs-tbody');
@@ -592,7 +615,7 @@
             loadJobs();
             closeEditModal();
             
-            alert('Job updated successfully!');
+            showSuccess('Job Updated!', 'Changes saved successfully.');
         });
 
         function deleteJob(index) {
@@ -716,7 +739,7 @@
             const applications = JSON.parse(localStorage.getItem('startekk_applications') || '[]');
             
             if (applications.length === 0) {
-                alert('No applications to export');
+                showError('No Data', 'There are no applications to export.');
                 return;
             }
             
@@ -783,7 +806,7 @@
                     loadJobs();
                     closeAddModal();
                     
-                    alert(`✅ Job added successfully!\n\n"${newJob.title}" is now live on the job board.`);
+                    showSuccess('Job Added Successfully!', `"${newJob.title}" is now live on the job board.`);
                 });
             }
         });
