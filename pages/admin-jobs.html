@@ -549,11 +549,13 @@
         }
 
         function loadJobs() {
-            const jobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
+            let jobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
 
             // Migrate old salary format to new format
+            let migrated = false;
             jobs = jobs.map(job => {
                 if (job.salary && !job.salaryType) {
+                    migrated = true;
                     return {
                         ...job,
                         salaryType: 'custom',
@@ -562,6 +564,11 @@
                 }
                 return job;
             });
+            
+            // Save migrated data back to localStorage
+            if (migrated) {
+                localStorage.setItem('startekk_jobs', JSON.stringify(jobs));
+            }
 
             jobs.sort((a, b) => new Date(b.posted) - new Date(a.posted)); // Sort by date (newest first)
             document.getElementById('job-count').textContent = jobs.length;
@@ -586,7 +593,17 @@
                         <span class="px-2 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-800">${job.category}</span>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${job.location}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${job.salary}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${(() => {
+                        if (!job.salaryType) return job.salary || 'N/A';
+                        const map = {
+                            'market': '$ Market Rate',
+                            'competitive': '$ Competitive',
+                            'commission': '$ Salary + Commission',
+                            'not-disclosed': 'Not Disclosed',
+                            'custom': job.salaryCustom || job.salary || 'N/A'
+                        };
+                        return map[job.salaryType] || 'N/A';
+                    })()}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${job.posted}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <button onclick="editJob(${index})" class="text-emerald-600 hover:text-emerald-900 mr-3">Edit</button>
