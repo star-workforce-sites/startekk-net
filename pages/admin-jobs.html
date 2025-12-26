@@ -615,15 +615,15 @@
                     })()}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${job.posted}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <button onclick="editJob(${index})" class="text-emerald-600 hover:text-emerald-900 mr-3">Edit</button>
-                        <button onclick="deleteJob(${index})" class="text-red-600 hover:text-red-900">Delete</button>
+                        <button onclick="editJob(${job.id})" class="text-emerald-600 hover:text-emerald-900 mr-3">Edit</button>
+                        <button onclick="deleteJob(${job.id})" class="text-red-600 hover:text-red-900">Delete</button>
                     </td>
                 `;
                 tbody.appendChild(row);
             });
         }
 
-        function editJob(index) {
+        function editJob(jobId) {
             let jobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
 
             // Migrate old salary format to new format
@@ -638,9 +638,13 @@
                 return job;
             });
 
-            const job = jobs[index];
+            const job = jobs.find(j => j.id === jobId);
+            if (!job) {
+                alert('Job not found!');
+                return;
+            }
             
-            document.getElementById('edit-index').value = index;
+            document.getElementById('edit-index').value = jobId;  // Store job ID, not array index
             document.getElementById('edit-title').value = job.title;
             document.getElementById('edit-category').value = job.category;
             document.getElementById('edit-location').value = job.location;
@@ -680,7 +684,7 @@
         document.getElementById('edit-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const index = parseInt(document.getElementById('edit-index').value);
+            const jobId = parseInt(document.getElementById('edit-index').value);
             let jobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
 
             // Migrate old salary format to new format
@@ -695,9 +699,15 @@
                 return job;
             });
 
+            // Find the job by ID
+            const jobIndex = jobs.findIndex(j => j.id === jobId);
+            if (jobIndex === -1) {
+                alert('Job not found!');
+                return;
+            }
             
-            jobs[index] = {
-                id: jobs[index].id,
+            jobs[jobIndex] = {
+                id: jobId,  // Keep the same ID
                 title: document.getElementById('edit-title').value,
                 category: document.getElementById('edit-category').value,
                 location: document.getElementById('edit-location').value,
@@ -719,7 +729,7 @@
             showSuccess('Job Updated!', 'Changes saved successfully.');
         });
 
-        function deleteJob(index) {
+        function deleteJob(jobId) {
             if (confirm('Are you sure you want to delete this job? This will remove it from the public job board.')) {
                 let jobs = JSON.parse(localStorage.getItem('startekk_jobs') || '[]');
 
@@ -735,9 +745,12 @@
                 return job;
             });
 
-                jobs.splice(index, 1);
+                // Find and remove job by ID
+                jobs = jobs.filter(j => j.id !== jobId);
                 localStorage.setItem('startekk_jobs', JSON.stringify(jobs));
                 loadJobs();
+                
+                showSuccess('Job Deleted!', 'Job removed from the job board.');
             }
         }
 
