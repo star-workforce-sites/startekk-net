@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebuix — AI-Only Job Board | A StartTekk Product</title>
+    <meta name="description" content="Rebuix is StartTekk's AI-only job board. Every listing is verified for genuine AI relevance — Machine Learning, LLM, GenAI, MLOps, and NLP roles only. Browse free. Post jobs from $99. No AI-washing.">
+    <meta name="keywords" content="AI job board, AI jobs, machine learning jobs, LLM jobs, GenAI careers, MLOps jobs, NLP jobs, verified AI roles, artificial intelligence jobs, AI engineer careers, StartTekk">
+    <meta name="author" content="StartTekk, LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.startekk.net/products/rebuix">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rebuix — AI-Only Job Board | A StartTekk Product">
+    <meta property="og:description" content="Every listing on Rebuix is scored and verified for genuine AI relevance. Machine Learning, LLM, GenAI, MLOps, and NLP jobs — no AI-washing, no noise.">
+    <meta property="og:url" content="https://www.startekk.net/products/rebuix">
+    <meta property="og:site_name" content="StartTekk">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rebuix — AI-Only Job Board | StartTekk">
+    <meta name="twitter:description" content="Browse verified AI, ML, LLM, and GenAI jobs. Every listing scored for genuine relevance. Free for job seekers.">
+
+    <!-- Favicon (exact match from products.html) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2384CC16' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+
+    <!-- Tailwind CDN (exact match from products.html) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': { 600: '#047857', 700: '#065f46' },
+                        'lime': { 500: '#84CC16', 600: '#65a30d' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Analytics (exact match from products.html) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8BFZG3R9ZR');
+    </script>
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Rebuix",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.rebuix.com",
+      "description": "Rebuix is an AI-only job board built by StartTekk that verifies every listing for genuine AI relevance. Covers Machine Learning, LLM, GenAI, MLOps, and NLP roles.",
+      "offers": [
+        { "@type": "Offer", "name": "Free Job Listing", "price": "0", "priceCurrency": "USD", "description": "7-day free job listing for employers" },
+        { "@type": "Offer", "name": "Standard Job Listing", "price": "99", "priceCurrency": "USD", "description": "30-day standard listing with company logo and analytics" },
+        { "@type": "Offer", "name": "Featured Job Listing", "price": "199", "priceCurrency": "USD", "description": "30-day featured listing pinned at top of all results" }
+      ],
+      "creator": {
+        "@type": "Organization",
+        "name": "StartTekk, LLC",
+        "url": "https://www.startekk.net",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5465 Legacy Drive Suite 650",
+          "addressLocality": "Plano",
+          "addressRegion": "TX",
+          "postalCode": "75024",
+          "addressCountry": "US"
+        }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.startekk.net" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.startekk.net/products" },
+        { "@type": "ListItem", "position": 3, "name": "Rebuix", "item": "https://www.startekk.net/products/rebuix" }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Rebuix?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rebuix is an AI-only job board built by StartTekk that verifies every listing for genuine AI relevance — covering Machine Learning, LLM, GenAI, MLOps, and NLP roles." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Rebuix free for job seekers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Job seekers browse and apply for free. Employers pay to post starting at $0 (7-day listing), $99 (30-day standard), or $199 (30-day featured)." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Rebuix verify AI job listings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Every job is scored on a 100-point AI relevance model: title match (40%), keyword density (30%), explicit AI skills (20%), team and product context (10%). Only jobs scoring 65% or higher are published." }
+        },
+        {
+          "@type": "Question",
+          "name": "Who built Rebuix?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rebuix was built and is maintained by StartTekk, LLC, a dual-brand AI technology and IT staffing company headquartered in Plano, Texas." }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation (copied exactly from products.html) -->
+    <nav class="bg-emerald-600 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-xl font-bold text-white">Startekk</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
+                    <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
+                    <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
+                    <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
+                    <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
+                    <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex text-sm text-gray-500" aria-label="Breadcrumb">
+                <a href="/index.html" class="hover:text-emerald-600 transition-colors">Home</a>
+                <span class="mx-2 text-gray-300">›</span>
+                <a href="/products.html" class="hover:text-emerald-600 transition-colors">Products</a>
+                <span class="mx-2 text-gray-300">›</span>
+                <span class="text-emerald-600 font-medium">Rebuix</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero (same gradient as products.html hero) -->
+    <div class="bg-gradient-to-r from-emerald-600 to-lime-500 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block bg-white bg-opacity-20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4">
+                A StartTekk Product &nbsp;·&nbsp; Launched 2025
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Rebuix — The AI-Only Job Board</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Every listing is verified for genuine AI relevance. Machine Learning, LLM, GenAI, MLOps, and NLP roles only. No AI-washing. No noise.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://www.rebuix.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-emerald-700 px-8 py-4 rounded-lg font-bold hover:shadow-lg transition-all">
+                    Browse AI Jobs →
+                </a>
+                <a href="https://www.rebuix.com/post-job" target="_blank" rel="noopener noreferrer" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-emerald-700 transition-all">
+                    Post a Job
+                </a>
+            </div>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl font-bold">100%</div>
+                    <div class="text-sm opacity-80 mt-1">AI-Verified Listings</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold">65%+</div>
+                    <div class="text-sm opacity-80 mt-1">Relevance Threshold</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold">$175K</div>
+                    <div class="text-sm opacity-80 mt-1">Avg ML Salary</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold">$0</div>
+                    <div class="text-sm opacity-80 mt-1">Free for Job Seekers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What Makes Rebuix Different -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">A Job Board With Real Standards</h2>
+        <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">The AI hiring market is flooded with listings that mention AI once but offer nothing but legacy engineering work. Rebuix was built from the ground up to fix this.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-4">🎯</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">AI Relevance Scoring</h3>
+                <p class="text-gray-600">Every job is scored on a 100-point model — title match (40%), keyword density (30%), explicit AI skills (20%), team and product context (10%). Only jobs scoring 65% or higher are published.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-4">⚡</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Zero AI-Washing</h3>
+                <p class="text-gray-600">A role that mentions "AI-friendly tools" but describes CRUD development does not make the cut. Every job requires genuine AI, ML, or GenAI skills as core responsibilities.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-4">🌐</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Multi-Source Aggregation</h3>
+                <p class="text-gray-600">Jobs are sourced from CareerJet, Arbeitnow, Jobvertise, public ATS feeds (Greenhouse, Lever), and direct employer postings — all filtered through the same relevance engine.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Platform Features -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">Built for Three Audiences</h2>
+            <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">Job seekers get signal. Employers get qualified candidates. Administrators get full control.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="text-3xl mb-4">🔍</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">For Job Seekers</h3>
+                    <p class="text-gray-600 mb-4">Browse and search verified AI, ML, LLM, and GenAI roles. Apply as a guest or create an account. Location-aware homepage surfaces relevant jobs immediately on page load — no search required.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Guest apply</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Email verification</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Location-aware feed</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Free forever</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="text-3xl mb-4">📣</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">For Employers</h3>
+                    <p class="text-gray-600 mb-4">Post free, standard, or featured jobs with on-site application handling. Employer dashboard for managing listings, viewing applicants, and tracking performance. Featured jobs pinned at top of all results.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Standard ($99)</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Featured ($199)</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Stripe + PayPal</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">30-day listings</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="text-3xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Admin Control Center</h3>
+                    <p class="text-gray-600 mb-4">Full admin dashboard with job management, featured toggles, user suspension, payment reporting (Stripe vs PayPal split), and role-based access control. Every action protected behind authentication.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Featured toggle</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">User suspension</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Revenue split view</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Role-based access</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="text-3xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">SEO Architecture</h3>
+                    <p class="text-gray-600 mb-4">Static, indexable job URLs with dynamic sitemap generation. Per-job JobPosting JSON-LD schema for Google rich results. Programmatic keyword targeting across 42 AI career search terms.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">JSON-LD schema</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Dynamic sitemap</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">42 target keywords</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">AI career blog</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- How the filter works -->
+            <div class="mt-8 bg-gray-900 text-white rounded-xl p-8">
+                <div class="text-3xl mb-4">🏗️</div>
+                <h3 class="text-xl font-bold mb-3">How the AI Relevance Filter Works</h3>
+                <p class="text-gray-300 mb-4">Rebuix evaluates every job against a canonical AI taxonomy covering 25 core role types and a skill ontology of 60+ technologies — from PyTorch and LangChain to RAG, vector databases, and agentic AI frameworks. Jobs must score 65% or above to be published.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">PyTorch · TensorFlow · JAX</span>
+                    <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">LLMs · RAG · Transformers</span>
+                    <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">LangChain · LlamaIndex</span>
+                    <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">Vector DBs · Embeddings</span>
+                    <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">MLOps · MLflow · Kubeflow</span>
+                    <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">Computer Vision · NLP · Speech</span>
+                    <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">Agentic AI · AutoGen · CrewAI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">Production-Grade Infrastructure</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">Built to scale from day one — modern stack, serverless deployment, automated job management.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">▲</div>
+                <div class="font-bold text-gray-900">Next.js 14</div>
+                <div class="text-sm text-gray-500 mt-1">App Router, RSC, SSG/ISR</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">🐘</div>
+                <div class="font-bold text-gray-900">Supabase</div>
+                <div class="text-sm text-gray-500 mt-1">PostgreSQL + Auth</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">🔷</div>
+                <div class="font-bold text-gray-900">TypeScript</div>
+                <div class="text-sm text-gray-500 mt-1">Fully typed codebase</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">🗄️</div>
+                <div class="font-bold text-gray-900">Drizzle ORM</div>
+                <div class="text-sm text-gray-500 mt-1">Type-safe DB queries</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">⚡</div>
+                <div class="font-bold text-gray-900">Vercel</div>
+                <div class="text-sm text-gray-500 mt-1">Auto-deploy from GitHub</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">💳</div>
+                <div class="font-bold text-gray-900">Stripe</div>
+                <div class="text-sm text-gray-500 mt-1">Payments + 3DS</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">🅿️</div>
+                <div class="font-bold text-gray-900">PayPal</div>
+                <div class="text-sm text-gray-500 mt-1">Sandbox + Production</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div class="text-3xl mb-2">🕐</div>
+                <div class="font-bold text-gray-900">Vercel Cron</div>
+                <div class="text-sm text-gray-500 mt-1">Daily job expiration</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="bg-white py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">Job seekers always browse free. Employers choose their level of visibility.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:shadow-xl transition-shadow">
+                    <div class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">Free</div>
+                    <div class="text-5xl font-bold text-gray-900 mb-1">$0</div>
+                    <div class="text-gray-500 mb-6">7-day listing</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">Basic job listing</span></li>
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">Appears after paid jobs</span></li>
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">On-site apply</span></li>
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">AI relevance scored</span></li>
+                    </ul>
+                    <a href="https://www.rebuix.com/post-job" target="_blank" rel="noopener noreferrer" class="block text-center bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-all">
+                        Post Free Job
+                    </a>
+                </div>
+
+                <div class="bg-emerald-600 text-white rounded-xl shadow-xl p-8 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-lime-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
+                    <div class="text-sm font-bold text-emerald-200 uppercase tracking-wide mb-3">Standard</div>
+                    <div class="text-5xl font-bold text-white mb-1">$99</div>
+                    <div class="text-emerald-200 mb-6">30-day listing</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start"><span class="text-lime-300 mr-2">✅</span><span>Full job listing</span></li>
+                        <li class="flex items-start"><span class="text-lime-300 mr-2">✅</span><span>Company logo</span></li>
+                        <li class="flex items-start"><span class="text-lime-300 mr-2">✅</span><span>On-site apply + analytics</span></li>
+                        <li class="flex items-start"><span class="text-lime-300 mr-2">✅</span><span>Priority above free jobs</span></li>
+                        <li class="flex items-start"><span class="text-lime-300 mr-2">✅</span><span>Stripe &amp; PayPal accepted</span></li>
+                    </ul>
+                    <a href="https://www.rebuix.com/post-job" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-emerald-700 px-6 py-3 rounded-lg font-bold hover:bg-lime-50 transition-all">
+                        Post Standard Job
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:shadow-xl transition-shadow">
+                    <div class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">Featured</div>
+                    <div class="text-5xl font-bold text-gray-900 mb-1">$199</div>
+                    <div class="text-gray-500 mb-6">30-day listing</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">Pinned at top of all results</span></li>
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">⭐ Featured badge</span></li>
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">Homepage placement</span></li>
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">Advanced analytics</span></li>
+                        <li class="flex items-start"><span class="text-emerald-600 mr-2">✅</span><span class="text-gray-700">AI candidate targeting</span></li>
+                    </ul>
+                    <a href="https://www.rebuix.com/post-job" target="_blank" rel="noopener noreferrer" class="block text-center bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                        Post Featured Job
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- About StartTekk -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+            <div class="md:grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="text-sm font-bold text-emerald-600 uppercase tracking-wide mb-3">About This Product</div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Built by StartTekk to Solve a Real Problem</h2>
+                    <p class="text-gray-600 mb-4">When AI hiring exploded in 2024 and 2025, general job boards couldn't keep up. Search "AI engineer" on any major platform and 30–40% of results have nothing to do with AI beyond a single buzzword. Rebuix was designed from the ground up to eliminate this problem.</p>
+                    <p class="text-gray-600 mb-4">The platform enforces strict AI relevance scoring on every listing, aggregates jobs from verified free sources, and provides a clean, fast experience for both job seekers and employers. Fully production-deployed on Vercel with Supabase, automated job expiration, and dual payment processing via Stripe and PayPal.</p>
+                    <p class="text-gray-600 mb-8">StartTekk develops and maintains Rebuix as part of our portfolio of AI-first workforce technology products — alongside Star AI Cloud, Star AI eDiscovery, QR Feedback, and more.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.rebuix.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all text-center">
+                            Visit Rebuix.com →
+                        </a>
+                        <a href="/products.html" class="inline-block bg-white border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-all text-center">
+                            All Products
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="text-3xl font-bold text-emerald-600">2025</div>
+                            <div class="text-sm text-gray-500 mt-1">Year Launched</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="text-3xl font-bold text-emerald-600">150%</div>
+                            <div class="text-sm text-gray-500 mt-1">AI Job Growth YoY</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="text-3xl font-bold text-emerald-600">8</div>
+                            <div class="text-sm text-gray-500 mt-1">Job Sources Integrated</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="text-3xl font-bold text-emerald-600">64</div>
+                            <div class="text-sm text-gray-500 mt-1">QA Test Cases Passed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section (exact pattern from products.html) -->
+    <div class="bg-emerald-50 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Find Your Next AI Role — or Hire Your Next AI Engineer</h2>
+            <p class="text-xl text-gray-600 mb-8">Every job on Rebuix is verified for genuine AI relevance. No AI-washing. No noise. Just the roles that matter.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://www.rebuix.com/jobs" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-emerald-600 to-lime-500 text-white px-8 py-4 rounded-lg font-bold hover:shadow-lg transition-all">
+                    Browse AI Jobs
+                </a>
+                <a href="https://www.rebuix.com/post-job" target="_blank" rel="noopener noreferrer" class="inline-block bg-white border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg font-bold hover:bg-emerald-50 transition-all">
+                    Post a Job
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (copied exactly from products.html with Rebuix added to Products list) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
+                        <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
+                        <li><a href="/case-studies.html" class="hover:text-lime-300">Case Studies</a></li>
+                        <li><a href="/pages/jobs.html" class="hover:text-lime-300">Jobs</a></li>
+                        <li><a href="/contact.html" class="hover:text-lime-300">Contact</a></li>
+                        <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
+                        <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
+                        <li><a href="/star-ai-finance.html" class="hover:text-lime-300">Star AI Finance</a></li>
+                        <li><a href="/star-automation.html" class="hover:text-lime-300">Star Automation</a></li>
+                        <li><a href="/qr-feedback.html" class="hover:text-lime-300">QR Feedback</a></li>
+                        <li><a href="/products/rebuix" class="text-lime-300 font-semibold">Rebuix ↗</a></li>
+                        <li><a href="https://www.starworkforcesolutions.com" class="hover:text-lime-300">Career Accel</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">AI &amp; ML Services</a></li>
+                        <li><a href="https://starworkforce.net" class="hover:text-lime-300">Technology Staffing →</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
+                        <li><a href="/legal/cookie-policy.html" class="hover:text-lime-300">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility.html" class="hover:text-lime-300">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 Startekk, LLC. All rights reserved.</p>
+                <p class="mt-2">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> |
+                    5465 Legacy Drive Suite 650, Plano, TX 75024
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
