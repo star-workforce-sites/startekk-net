@@ -3,11 +3,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "http://startekk.net/:path*",
-      "destination": "https://www.startekk.net/:path*",
-      "permanent": true
-    },
-    {
       "source": "/careers/job-openings/srjob/:jobid*",
       "destination": "/pages/jobs",
       "permanent": true
