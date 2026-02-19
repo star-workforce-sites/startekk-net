@@ -3,6 +3,296 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "http://startekk.net/:path*",
+      "destination": "https://www.startekk.net/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/careers/job-openings/srjob/:jobid*",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/process-automation",
+      "destination": "/star-automation",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/process-automation/",
+      "destination": "/star-automation",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/managed-teams",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/managed-teams/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/project-solutions",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/project-solutions/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/outsource-solutions",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/outsource-solutions/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/application-services",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/application-services/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/outsource-",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud",
+      "destination": "/star-ai-cloud",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud/",
+      "destination": "/star-ai-cloud",
+      "permanent": true
+    },
+    {
+      "source": "/services/technology-staffing",
+      "destination": "https://starworkforce.net",
+      "permanent": true
+    },
+    {
+      "source": "/services/technology-staffing/",
+      "destination": "https://starworkforce.net",
+      "permanent": true
+    },
+    {
+      "source": "/services/management-consulting",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/management-consulting/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/testing-service",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/testing-service/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/business-process-services",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/business-process-services/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/business-intelligence-service",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/business-intelligence-service/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/careers/job-openings",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/job-openings/",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/contract-job-openings",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/contract-job-openings/",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/benefits",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/benefits/",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/benefits/employee-referral-incentive",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/benefits/employee-referral-incentive/",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/careers/meet-our-people",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers/meet-our-people/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers/culture-at-startekk",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers/culture-at-startekk/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers/about-us/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers/terms-of-use-and-eeo-policy",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/careers/terms-of-use-and-eeo-policy/",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/investor-relations",
+      "destination": "/investor",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/investor-relations/",
+      "destination": "/investor",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/terms-of-use-and-eeo-policy",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/terms-of-use-and-eeo-policy/",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use-and-eeo-policy",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use-and-eeo-policy/",
+      "destination": "/legal/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/legal/data-processing.html",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/jobs",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/jobs/",
+      "destination": "/pages/jobs",
+      "permanent": true
+    },
+    {
+      "source": "/location",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/location/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/m",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/m/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
