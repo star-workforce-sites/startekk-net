@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Automation - Business Process Automation | Startekk</title>
+<meta name="description" content="Automate business processes with AI workflows. 80% less manual work, 99.9% accuracy.">
+<meta name="keywords" content="business automation, workflow automation, RPA, process automation, intelligent automation">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8BFZG3R9ZR');</script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+        <nav style="background-color: #047857;" class="sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-xl font-bold text-white">Startekk</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/index.html" class="text-white hover:text-lime-300 transition-colors">Home</a>
+                    <a href="/about.html" class="text-white hover:text-lime-300 transition-colors">About</a>
+                    <a href="/products.html" class="text-white hover:text-lime-300 transition-colors">Products</a>
+                    <a href="/services.html" class="text-white hover:text-lime-300 transition-colors">Services</a>
+                    <a href="/pages/jobs.html" class="text-white hover:text-lime-300 transition-colors">Jobs</a>
+                    <a href="/investor/index.html" class="text-white hover:text-lime-300 transition-colors">Investors</a>
+                    <a href="/contact.html" class="px-4 py-2 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">Contact Us</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-700 px-4 py-4">
+            <a href="/index.html" class="block py-2 text-white hover:text-lime-300">Home</a>
+            <a href="/about.html" class="block py-2 text-white hover:text-lime-300">About</a>
+            <a href="/products.html" class="block py-2 text-white hover:text-lime-300">Products</a>
+            <a href="/services.html" class="block py-2 text-white hover:text-lime-300">Services</a>
+            <a href="/pages/jobs.html" class="block py-2 text-white hover:text-lime-300">Jobs</a>
+            <a href="/investor/index.html" class="block py-2 text-white hover:text-lime-300">Investors</a>
+            <a href="/contact.html" class="block py-2 text-white hover:text-lime-300">Contact Us</a>
+        </div>
+    </nav>
+
+    
+    <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    Star Automation
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Eliminate 80% of manual work with AI-powered business process automation. Connect 500+ apps, build intelligent workflows, and deploy RPA bots that work 24/7 with 99.9% accuracy.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">
+                        <div class="text-3xl font-bold mb-1">80%</div>
+                        <div class="text-sm text-emerald-50">Reduction in Manual Tasks</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">
+                        <div class="text-3xl font-bold mb-1">500+</div>
+                        <div class="text-sm text-emerald-50">App Integrations</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">
+                        <div class="text-3xl font-bold mb-1">99.9%</div>
+                        <div class="text-sm text-emerald-50">Automation Accuracy</div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://startekk.net/contact?product=star-automation" 
+                       class="inline-block bg-white text-emerald-700 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl transition-all">
+                        Get Started
+                    </a>
+                    <a href="https://startekk.net/cost-calculator" 
+                       class="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-emerald-700 transition-all">
+                        Calculate Your Savings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Powerful Automation Capabilities</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">No-Code Workflow Builder</h3>
+                    <p class="text-gray-600">Drag-and-drop interface to build complex automations without writing code. Visual workflow designer with pre-built templates.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">RPA Bots</h3>
+                    <p class="text-gray-600">Software robots that handle data entry, form filling, email processing, and repetitive tasks across applications.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl mb-4">🔗</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">500+ Integrations</h3>
+                    <p class="text-gray-600">Connect Salesforce, Microsoft 365, Google Workspace, Slack, SAP, Oracle, and hundreds more platforms seamlessly.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">AI Decision Engine</h3>
+                    <p class="text-gray-600">Machine learning models make intelligent decisions based on rules, patterns, and historical data.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Analytics Dashboard</h3>
+                    <p class="text-gray-600">Real-time visibility into automation performance, bottlenecks, and ROI with comprehensive reporting.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl mb-4">⏰</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">24/7 Execution</h3>
+                    <p class="text-gray-600">Automations run continuously with scheduled triggers, webhooks, and event-based activation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Common Use Cases</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-700">Sales & CRM Automation</h3>
+                    <p class="text-gray-600 mb-3">Automatically update Salesforce records, send follow-up emails, generate quotes, and sync data across systems.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Lead routing and assignment</li>
+                        <li>• Automated email sequences</li>
+                        <li>• Quote generation and approval</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-700">HR & Onboarding</h3>
+                    <p class="text-gray-600 mb-3">Streamline employee onboarding, payroll processing, leave requests, and performance reviews.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• New hire provisioning</li>
+                        <li>• Time-off approval workflows</li>
+                        <li>• Benefits enrollment automation</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-700">IT Operations</h3>
+                    <p class="text-gray-600 mb-3">Automate ticket routing, system monitoring, backup scheduling, and incident response.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Automated ticket triage</li>
+                        <li>• System health monitoring</li>
+                        <li>• Password reset workflows</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-700">Customer Service</h3>
+                    <p class="text-gray-600 mb-3">Route support tickets, send automated responses, update knowledge bases, and track SLAs.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Smart ticket routing</li>
+                        <li>• Automated status updates</li>
+                        <li>• Customer feedback collection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6">
+                    Need developers to build custom automation workflows?
+                </h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    Use our calculator to estimate costs and savings when working with our distributed teams. Save 30-50% on development costs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://startekk.net/contact?product=star-automation" 
+                       class="inline-block bg-white text-emerald-700 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl transition-all">
+                        Get Started
+                    </a>
+                    <a href="https://startekk.net/cost-calculator" 
+                       class="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-emerald-700 transition-all">
+                        Calculate Your Savings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Company -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="hover:text-lime-300">About Us</a></li>
+                        <li><a href="/blog.html" class="hover:text-lime-300">Blog</a></li>
+                        <li><a href="/case-studies.html" class="hover:text-lime-300">Case Studies</a></li>
+                        <li><a href="/pages/jobs.html" class="hover:text-lime-300">Jobs</a></li>
+                        <li><a href="/contact.html" class="hover:text-lime-300">Contact</a></li>
+                        <li><a href="/investor/index.html" class="hover:text-lime-300">Investors</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 2: Products -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/star-ai-cloud.html" class="hover:text-lime-300">Star AI Cloud</a></li>
+                        <li><a href="/star-ai-ediscovery.html" class="hover:text-lime-300">Star AI eDiscovery</a></li>
+                        <li><a href="/star-ai-finance.html" class="hover:text-lime-300">Star AI Finance</a></li>
+                        <li><a href="/star-automation.html" class="hover:text-lime-300">Star Automation</a></li>
+                        <li><a href="/qr-feedback.html" class="hover:text-lime-300">QR Feedback</a></li>
+                        <li><a href="/cost-calculator.html" class="hover:text-lime-300">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Services -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="hover:text-lime-300">Software Development</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">Cloud Solutions</a></li>
+                        <li><a href="/services.html" class="hover:text-lime-300">AI & ML Services</a></li>
+                        <li><a href="https://starworkforce.net" target="_blank" class="hover:text-lime-300" style="color: #E8C547;">Technology Staffing →</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Legal -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4" style="color: #84CC16;">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/legal/privacy-policy.html" class="hover:text-lime-300">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service.html" class="hover:text-lime-300">Terms of Service</a></li>
+                        <li><a href="/legal/cookie-policy.html" class="hover:text-lime-300">Cookie Policy</a></li>
+                        <li><a href="/legal/accessibility.html" class="hover:text-lime-300">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Startekk, LLC. All rights reserved.</p>
+                <p class="mt-2 text-sm">
+                    <a href="tel:+14697133993" class="hover:text-lime-300">(469) 713-3993</a> | 
+                    5465 Legacy Drive Suite 650, Plano, TX 75024
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
