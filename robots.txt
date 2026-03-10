@@ -1,4 +1,47 @@
+# robots.txt — startekk.net
+# Updated: 2026-03-10
+# Maintained by StartTekk LLC
+
 User-agent: *
 Allow: /
 
-Sitemap: https://www.startekk.net/sitemap.xml
+# Block API endpoints and server-side paths
+Disallow: /api/
+Disallow: /api/*
+Disallow: /.netlify/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Block query-string duplicates that could cause soft 404s
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
+Disallow: /*?*ref=
+
+# Allow all CSS/JS/images/fonts for rendering
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.svg
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+Allow: /*.woff2
+
+# Sitemap declaration
+Sitemap: https://startekk.net/sitemap.xml
+
+# Specific crawl-delay for heavy bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 30
+
+User-agent: DotBot
+Disallow: /
