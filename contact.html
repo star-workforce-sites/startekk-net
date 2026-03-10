@@ -96,60 +96,62 @@
         </div>
     </div>
 
-    <!-- 3-column layout: CTA LEFT | FORM CENTER | CTA RIGHT -->
+    <!-- Main layout: 3 columns, 2 rows
+         Col 1: [CTA StarWorkforce] / [Address card]
+         Col 2: [Form — spans both rows]
+         Col 3: [CTA Cost Calc] / [Map card]
+    -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr_280px] gap-6 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr_280px] lg:grid-rows-[auto_auto] gap-6">
 
-            <!-- LEFT CTA: Star Workforce -->
-            <div class="rounded-2xl p-5 flex flex-col justify-between h-full" style="background: linear-gradient(160deg, #0a1628 0%, #0f2942 55%, #0a3d1f 100%); border: 1px solid rgba(132,204,22,0.25);">
-                <div>
-                    <span class="inline-block text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wide mb-3" style="background: rgba(132,204,22,0.15); color: #84CC16;">Elite IT Staffing</span>
-                    <h2 class="text-base font-bold text-white mb-2 leading-snug">Reduce IT Costs by 30–52% with Star Workforce</h2>
-                    <p class="text-xs mb-4" style="color: #94a3b8;">Pre-vetted senior tech professionals placed in 1–2 weeks.</p>
-                    <!-- 5 delivery models stacked -->
-                    <div class="space-y-1 mb-4">
-                        <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(255,255,255,0.06);">
-                            <span class="text-xs text-white">Onsite</span>
-                            <span class="text-xs" style="color:#94a3b8;">USA</span>
-                        </div>
-                        <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.1);">
-                            <span class="text-xs font-medium" style="color:#84CC16;">Onshore</span>
-                            <span class="text-xs font-semibold" style="color:#84CC16;">35% off</span>
-                        </div>
-                        <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.1);">
-                            <span class="text-xs font-medium" style="color:#84CC16;">Nearshore</span>
-                            <span class="text-xs font-semibold" style="color:#84CC16;">30% off</span>
-                        </div>
-                        <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.18); border: 1px solid rgba(132,204,22,0.3);">
-                            <span class="text-xs font-bold" style="color:#84CC16;">Offshore ★</span>
-                            <span class="text-xs font-bold" style="color:#84CC16;">52% off</span>
-                        </div>
-                        <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.1);">
-                            <span class="text-xs font-medium" style="color:#84CC16;">Hybrid</span>
-                            <span class="text-xs" style="color:#94a3b8;">Custom</span>
-                        </div>
+            <!-- ══ COL 1 ROW 1: Star Workforce CTA ══ -->
+            <div class="rounded-2xl p-5 flex flex-col" style="background: linear-gradient(160deg, #0a1628 0%, #0f2942 55%, #0a3d1f 100%); border: 1px solid rgba(132,204,22,0.25);">
+                <span class="inline-block text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wide mb-3" style="background: rgba(132,204,22,0.15); color: #84CC16;">Elite IT Staffing</span>
+                <h2 class="text-base font-bold text-white mb-2 leading-snug">Reduce IT Costs by 30–52% with Star Workforce</h2>
+                <p class="text-xs mb-3" style="color: #94a3b8;">Pre-vetted senior tech professionals placed in 1–2 weeks.</p>
+                <!-- 5 delivery models -->
+                <div class="space-y-1 mb-3">
+                    <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(255,255,255,0.06);">
+                        <span class="text-xs text-white">Onsite</span>
+                        <span class="text-xs" style="color:#94a3b8;">USA</span>
                     </div>
-                    <!-- 2 key stats -->
-                    <div class="grid grid-cols-2 gap-2 mb-4">
-                        <div class="rounded-lg p-2 text-center" style="background: rgba(255,255,255,0.05);">
-                            <div class="text-lg font-bold" style="color:#84CC16;">238+</div>
-                            <div class="text-xs" style="color:#94a3b8;">Tech roles</div>
-                        </div>
-                        <div class="rounded-lg p-2 text-center" style="background: rgba(255,255,255,0.05);">
-                            <div class="text-lg font-bold" style="color:#84CC16;">1–2 wks</div>
-                            <div class="text-xs" style="color:#94a3b8;">To hire</div>
-                        </div>
+                    <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.1);">
+                        <span class="text-xs font-medium" style="color:#84CC16;">Onshore</span>
+                        <span class="text-xs font-semibold" style="color:#84CC16;">35% off</span>
+                    </div>
+                    <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.1);">
+                        <span class="text-xs font-medium" style="color:#84CC16;">Nearshore</span>
+                        <span class="text-xs font-semibold" style="color:#84CC16;">30% off</span>
+                    </div>
+                    <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.18); border: 1px solid rgba(132,204,22,0.3);">
+                        <span class="text-xs font-bold" style="color:#84CC16;">Offshore ★</span>
+                        <span class="text-xs font-bold" style="color:#84CC16;">52% off</span>
+                    </div>
+                    <div class="flex items-center justify-between rounded-lg px-3 py-1.5" style="background: rgba(132,204,22,0.1);">
+                        <span class="text-xs font-medium" style="color:#84CC16;">Hybrid</span>
+                        <span class="text-xs" style="color:#94a3b8;">Custom</span>
+                    </div>
+                </div>
+                <!-- 2 stats -->
+                <div class="grid grid-cols-2 gap-2 mb-4">
+                    <div class="rounded-lg p-2 text-center" style="background: rgba(255,255,255,0.05);">
+                        <div class="text-lg font-bold" style="color:#84CC16;">238+</div>
+                        <div class="text-xs" style="color:#94a3b8;">Tech roles</div>
+                    </div>
+                    <div class="rounded-lg p-2 text-center" style="background: rgba(255,255,255,0.05);">
+                        <div class="text-lg font-bold" style="color:#84CC16;">1–2 wks</div>
+                        <div class="text-xs" style="color:#94a3b8;">To hire</div>
                     </div>
                 </div>
                 <a href="https://www.starworkforce.net/" target="_blank" rel="noopener noreferrer"
-                   class="inline-flex items-center justify-center w-full py-2.5 rounded-xl font-semibold text-xs transition-all mt-2"
+                   class="inline-flex items-center justify-center w-full py-2.5 rounded-xl font-semibold text-xs transition-all"
                    style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">
                     Explore Star Workforce →
                 </a>
             </div>
 
-            <!-- CENTER: Contact Form -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <!-- ══ COL 2 ROWS 1+2: Contact Form (spans both rows) ══ -->
+            <div class="bg-white rounded-xl shadow-lg p-8 lg:row-span-2">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
                 <form id="investor-contact-form" class="space-y-5">
                     <div>
@@ -222,42 +224,88 @@
                 </div>
             </div>
 
-            <!-- RIGHT CTA: Cost Calculator -->
-            <div class="rounded-2xl p-5 flex flex-col justify-between h-full" style="background: linear-gradient(160deg, #0f1f0a 0%, #0a2918 55%, #112240 100%); border: 1px solid rgba(132,204,22,0.25);">
-                <div>
-                    <span class="inline-block text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wide mb-3" style="background: rgba(132,204,22,0.15); color: #84CC16;">Free · 60 Seconds</span>
-                    <h2 class="text-base font-bold text-white mb-2 leading-snug">See Exactly How Much You Can Save</h2>
-                    <p class="text-xs mb-4" style="color: #94a3b8;">238+ IT roles. Compare all delivery models instantly.</p>
-                    <!-- Savings teaser -->
-                    <div class="rounded-xl p-3 mb-4" style="background: rgba(132,204,22,0.08); border: 1px solid rgba(132,204,22,0.2);">
-                        <p class="text-xs font-medium text-white mb-2">Example: 5 Senior Devs</p>
-                        <div class="space-y-1.5">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs" style="color:#94a3b8;">Onsite USA</span>
-                                <span class="text-xs font-semibold text-white">$780K/yr</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs" style="color:#94a3b8;">Offshore India</span>
-                                <span class="text-xs font-semibold" style="color:#84CC16;">$374K/yr</span>
-                            </div>
-                            <div class="border-t pt-1.5 flex items-center justify-between" style="border-color: rgba(132,204,22,0.25);">
-                                <span class="text-xs font-bold text-white">You save</span>
-                                <span class="text-sm font-bold" style="color:#84CC16;">$406K · 52%</span>
-                            </div>
+            <!-- ══ COL 3 ROW 1: Cost Calculator CTA ══ -->
+            <div class="rounded-2xl p-5 flex flex-col" style="background: linear-gradient(160deg, #0f1f0a 0%, #0a2918 55%, #112240 100%); border: 1px solid rgba(132,204,22,0.25);">
+                <span class="inline-block text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wide mb-3" style="background: rgba(132,204,22,0.15); color: #84CC16;">Free · 60 Seconds</span>
+                <h2 class="text-base font-bold text-white mb-2 leading-snug">See Exactly How Much You Can Save</h2>
+                <p class="text-xs mb-3" style="color: #94a3b8;">238+ IT roles. Compare all delivery models instantly.</p>
+                <!-- Savings teaser -->
+                <div class="rounded-xl p-3 mb-3" style="background: rgba(132,204,22,0.08); border: 1px solid rgba(132,204,22,0.2);">
+                    <p class="text-xs font-medium text-white mb-2">Example: 5 Senior Devs</p>
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs" style="color:#94a3b8;">Onsite USA</span>
+                            <span class="text-xs font-semibold text-white">$780K/yr</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs" style="color:#94a3b8;">Offshore India</span>
+                            <span class="text-xs font-semibold" style="color:#84CC16;">$374K/yr</span>
+                        </div>
+                        <div class="border-t pt-1.5 flex items-center justify-between" style="border-color: rgba(132,204,22,0.25);">
+                            <span class="text-xs font-bold text-white">You save</span>
+                            <span class="text-sm font-bold" style="color:#84CC16;">$406K · 52%</span>
                         </div>
                     </div>
-                    <ul class="space-y-1.5 mb-4">
-                        <li class="flex items-start text-xs" style="color:#94a3b8;"><span style="color:#84CC16;" class="mr-1.5 mt-px">✓</span>238+ roles with real market rates</li>
-                        <li class="flex items-start text-xs" style="color:#94a3b8;"><span style="color:#84CC16;" class="mr-1.5 mt-px">✓</span>Compare all 5 delivery models</li>
-                        <li class="flex items-start text-xs" style="color:#94a3b8;"><span style="color:#84CC16;" class="mr-1.5 mt-px">✓</span>No signup · No commitment</li>
-                    </ul>
                 </div>
+                <ul class="space-y-1 mb-4">
+                    <li class="flex items-start text-xs" style="color:#94a3b8;"><span style="color:#84CC16;" class="mr-1.5 mt-px">✓</span>238+ roles with real market rates</li>
+                    <li class="flex items-start text-xs" style="color:#94a3b8;"><span style="color:#84CC16;" class="mr-1.5 mt-px">✓</span>Compare all 5 delivery models</li>
+                    <li class="flex items-start text-xs" style="color:#94a3b8;"><span style="color:#84CC16;" class="mr-1.5 mt-px">✓</span>No signup · No commitment</li>
+                </ul>
                 <a href="https://www.startekk.net/cost-calculator.html"
-                   class="inline-flex items-center justify-center w-full py-2.5 rounded-xl font-semibold text-xs transition-all mt-2"
+                   class="inline-flex items-center justify-center w-full py-2.5 rounded-xl font-semibold text-xs transition-all mt-auto"
                    style="background: linear-gradient(135deg, #84CC16 0%, #047857 100%); color: white;">
                     💰 Calculate My Savings →
                 </a>
             </div>
+
+            <!-- ══ COL 1 ROW 2: Address card (light/white) ══ -->
+            <div class="bg-white rounded-2xl shadow-md p-5 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-900 mb-4">Our Office</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">📍</div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-800">5465 Legacy Drive Suite 650</p>
+                                <p class="text-xs text-gray-500">Plano, TX 75024, United States</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">📞</div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-800"><a href="tel:+14697133993" class="hover:text-emerald-600 transition-colors">(469) 713-3993</a></p>
+                                <p class="text-xs text-gray-500">Mon–Fri, 9 AM–6 PM CST</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background: linear-gradient(135deg, #047857 0%, #84CC16 100%);">✉️</div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-800"><a href="mailto:info@startekk.net" class="hover:text-emerald-600 transition-colors">info@startekk.net</a></p>
+                                <p class="text-xs text-gray-500">We reply within 24–48 hrs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://maps.google.com/?q=5465+Legacy+Drive+Suite+650+Plano+TX+75024" target="_blank" rel="noopener noreferrer"
+                   class="mt-4 inline-flex items-center justify-center text-xs font-semibold text-emerald-700 hover:text-emerald-900 transition-colors">
+                    Get Directions →
+                </a>
+            </div>
+
+            <!-- ══ COL 3 ROW 2: Static map linking to Google Maps ══ -->
+            <a href="https://maps.google.com/?q=5465+Legacy+Drive+Suite+650+Plano+TX+75024" target="_blank" rel="noopener noreferrer"
+               class="block rounded-2xl overflow-hidden shadow-md relative group" style="min-height: 180px;">
+                <img
+                    src="https://maps.googleapis.com/maps/api/staticmap?center=5465+Legacy+Drive+Suite+650,Plano,TX+75024&zoom=14&size=560x360&scale=2&maptype=roadmap&markers=color:green%7Clabel:S%7C5465+Legacy+Drive,Plano,TX+75024&style=feature:all%7Celement:labels.text.fill%7Ccolor:0x333333&key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
+                    alt="StartTekk office location — 5465 Legacy Drive Suite 650, Plano TX 75024"
+                    class="w-full h-full object-cover"
+                    style="min-height: 180px;"
+                    onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-gray-100 rounded-2xl p-5\' style=\'min-height:180px\'><div class=\'text-3xl mb-2\'>📍</div><p class=\'text-sm font-semibold text-gray-700 text-center\'>5465 Legacy Drive<br>Suite 650<br>Plano, TX 75024</p><span class=\'mt-3 text-xs font-semibold text-emerald-700\'>View on Google Maps →</span></div>'">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100">
+                    <span class="bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow">View on Google Maps →</span>
+                </div>
+            </a>
 
         </div>
     </div>
