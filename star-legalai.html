@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarLegalAI — AI Contract Review for Attorneys & Businesses | Startekk</title>
-    <meta name="description" content="StarLegalAI uses AI to review contracts instantly — surfacing risks, obligations, deadlines, and red flags for attorneys and businesses.">
-    <meta name="keywords" content="AI contract review, AI contract analysis, contract review software, legal document analysis AI, AI legal contract review, AI tools for lawyers">
-    <meta property="og:title" content="StarLegalAI — Review Contracts in Minutes, Not Hours">
-    <meta property="og:description" content="AI-powered contract intelligence for attorneys, law firms, and businesses. Upload a PDF or DOCX and get a full risk analysis in under 60 seconds.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://startekk.net/star-legalai.html">
+    <title>StarLegalAI — AI Contract Review | StartTekk</title>
+    <meta name="description" content="StarLegalAI uses AI to review contracts instantly — surfacing risks, obligations, deadlines, and red flags for attorneys and businesses. Upload a PDF or DOCX and get a full risk analysis in under 60 seconds.">
+    <meta name="keywords" content="AI contract review, AI contract analysis, contract review software, legal document analysis AI, AI legal contract review, AI tools for lawyers, contract review tool for attorneys">
     <link rel="canonical" href="https://startekk.net/star-legalai.html">
-
-    <!-- JSON-LD Structured Data -->
+    <meta property="og:title" content="StarLegalAI — AI Contract Review | StartTekk">
+    <meta property="og:description" content="AI-powered contract intelligence for attorneys, law firms, and businesses. Review contracts in minutes, not hours.">
+    <meta property="og:url" content="https://startekk.net/star-legalai.html">
+    <meta property="og:type" content="website">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -20,8 +18,8 @@
       "name": "StarLegalAI",
       "applicationCategory": "LegalService",
       "operatingSystem": "Web",
-      "description": "AI-powered contract review platform for attorneys, law firms, and businesses. Upload PDF or DOCX contracts and receive full risk analysis in under 60 seconds.",
-      "url": "https://starlegalai.com",
+      "description": "AI-powered contract intelligence for attorneys, law firms, and businesses.",
+      "url": "https://www.starlegalai.com",
       "offers": [
         { "@type": "Offer", "name": "Free Trial", "price": "0", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "Starter", "price": "19", "priceCurrency": "USD", "billingIncrement": "month" },
@@ -30,939 +28,599 @@
       ]
     }
     </script>
-
-    <!-- Google Fonts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BFZG3R9ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8BFZG3R9ZR', { anonymize_ip: true });
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-        /* ============================================================
-           STARTEKK GLOBAL STYLES (matches site-wide)
-        ============================================================ */
         :root {
-            --emerald: #047857;
-            --lime: #84CC16;
-            --gradient: linear-gradient(135deg, #047857 0%, #84CC16 100%);
-
-            /* StarLegalAI Brand Colors */
-            --legal-ink: #0F1117;
-            --legal-gold: #C8A84B;
-            --legal-cream: #F9F6F0;
-            --legal-slate: #4A5568;
-            --legal-green: #1A6B4A;
-            --legal-red: #C0392B;
+            --ink:   #0F1117;
+            --gold:  #C8A84B;
+            --cream: #F9F6F0;
+            --slate: #4A5568;
+            --green: #1A6B4A;
+            --red:   #C0392B;
         }
-
         body { font-family: 'DM Sans', sans-serif; }
-
-        /* Startekk gradient (for nav/footer consistency) */
-        .gradient-bg { background: var(--gradient); }
-
-        /* StarLegalAI specific */
-        .legal-gold { color: var(--legal-gold); }
-        .legal-ink { color: var(--legal-ink); }
-        .legal-cream-bg { background-color: var(--legal-cream); }
-        .legal-ink-bg { background-color: var(--legal-ink); }
-
-        .legal-gradient {
-            background: linear-gradient(135deg, var(--legal-ink) 0%, #1a1f2e 50%, #0F1117 100%);
+        .legal-display { font-family: 'Playfair Display', serif; }
+        .gold-gradient { background: linear-gradient(135deg, #0F1117 0%, #1a1d26 60%, #2a2415 100%); }
+        .gradient-bg   { background: linear-gradient(135deg, #047857 0%, #84CC16 100%); }
+        .gold-accent   { color: var(--gold); }
+        .gold-bg       { background-color: var(--gold); }
+        .cream-bg      { background-color: var(--cream); }
+        .feature-card  { transition: transform .2s ease, box-shadow .2s ease; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.12); }
+        .badge-coming  { background: rgba(200,168,75,.15); color: var(--gold); border: 1px solid rgba(200,168,75,.4); }
+        .testimonial-card { background: #fff; border-left: 4px solid var(--gold); }
+        .pricing-featured { border: 2px solid var(--gold); position: relative; }
+        .pricing-featured::before {
+            content: "MOST POPULAR";
+            position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: #fff; font-size: 11px; font-weight: 700;
+            letter-spacing: .08em; padding: 2px 14px; border-radius: 99px;
         }
-
-        .legal-gold-gradient {
-            background: linear-gradient(135deg, var(--legal-gold) 0%, #e8c56e 100%);
-        }
-
-        /* Playfair for headings */
-        .playfair { font-family: 'Playfair Display', serif; }
-
-        /* Star mark */
-        .star-mark {
-            color: var(--legal-gold);
-            font-size: 1.2em;
-            line-height: 1;
-        }
-
-        /* Product badge */
-        .coming-soon-badge {
-            background: linear-gradient(135deg, var(--legal-gold), #e8c56e);
-            color: var(--legal-ink);
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.9rem;
-            border-radius: 999px;
-            display: inline-block;
-        }
-
-        /* Feature cards */
-        .feature-card {
-            background: white;
-            border: 1px solid #e8e4dd;
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--legal-gold), #e8c56e);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .feature-card:hover {
-            border-color: var(--legal-gold);
-            box-shadow: 0 8px 32px rgba(200, 168, 75, 0.12);
-            transform: translateY(-2px);
-        }
-        .feature-card:hover::before { opacity: 1; }
-
-        /* Pricing cards */
-        .pricing-card {
-            background: white;
-            border: 2px solid #e8e4dd;
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-        .pricing-card.featured {
-            border-color: var(--legal-gold);
-            box-shadow: 0 12px 40px rgba(200, 168, 75, 0.18);
-            transform: scale(1.03);
-        }
-        .pricing-card:not(.featured):hover {
-            border-color: #c8a84b80;
-            box-shadow: 0 8px 24px rgba(200, 168, 75, 0.10);
-        }
-
-        /* Testimonial cards */
-        .testimonial-card {
-            background: white;
-            border: 1px solid #e8e4dd;
-            border-radius: 12px;
-            padding: 2rem;
-            position: relative;
-        }
-        .testimonial-card::before {
-            content: '"';
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            line-height: 0.8;
-            color: var(--legal-gold);
-            opacity: 0.2;
-            position: absolute;
-            top: 1.2rem;
-            left: 1.5rem;
-        }
-
-        /* Security badges */
-        .security-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.75rem 1.25rem;
-            background: white;
-            border: 1px solid #e8e4dd;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: var(--legal-slate);
-            font-weight: 500;
-        }
-        .security-badge .check { color: var(--legal-green); font-size: 1rem; }
-
-        /* Stats strip */
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem 2rem;
-        }
-        .stat-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--legal-gold);
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            margin-top: 0.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        /* Step icons */
-        .step-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--legal-gold), #e8c56e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin: 0 auto 1.2rem;
-            flex-shrink: 0;
-        }
-
-        /* Audience tabs */
-        .audience-card {
-            background: var(--legal-cream);
-            border: 1px solid #e8e4dd;
-            border-radius: 12px;
-            padding: 1.75rem;
-            border-left: 4px solid var(--legal-gold);
-        }
-
-        /* Risk flag examples */
-        .risk-flag {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-left: 4px solid var(--legal-red);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            font-size: 0.9rem;
-            color: #7f1d1d;
-        }
-        .safe-flag {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-left: 4px solid var(--legal-green);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            font-size: 0.9rem;
-            color: #14532d;
-        }
-
-        /* Investor section */
-        .investor-stat {
-            background: rgba(200, 168, 75, 0.08);
-            border: 1px solid rgba(200, 168, 75, 0.2);
-            border-radius: 10px;
-            padding: 1.25rem 1.5rem;
-        }
-
-        /* Scrolled nav */
-        .nav-scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-
-        /* Mobile menu */
+        .trust-badge { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--slate); }
         #mobile-menu { display: none; }
         #mobile-menu.open { display: block; }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in { animation: fadeInUp 0.7s ease forwards; }
-        .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
-
-        /* CTA button styles */
-        .btn-gold {
-            background: linear-gradient(135deg, var(--legal-gold), #e8c56e);
-            color: var(--legal-ink);
-            font-weight: 700;
-            padding: 0.85rem 2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .btn-gold:hover {
-            box-shadow: 0 8px 24px rgba(200, 168, 75, 0.4);
-            transform: translateY(-1px);
-        }
-        .btn-outline-gold {
-            border: 2px solid var(--legal-gold);
-            color: var(--legal-gold);
-            font-weight: 600;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .btn-outline-gold:hover {
-            background: var(--legal-gold);
-            color: var(--legal-ink);
-        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
-    <!-- ============================================================
-         STARTEKK NAV (matches site-wide pattern)
-    ============================================================ -->
-    <nav id="navbar" class="bg-white sticky top-0 z-50 border-b border-gray-100 transition-shadow duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <a href="/index.html" class="flex items-center space-x-2">
-                    <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <span class="text-xl font-bold text-gray-900">Startekk<span class="text-emerald-700">.net</span></span>
-                </a>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/index.html" class="text-gray-600 hover:text-emerald-700 font-medium transition-colors">Home</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-emerald-700 font-medium transition-colors">About</a>
-                    <a href="/products.html" class="text-emerald-700 font-semibold transition-colors">Products</a>
-                    <a href="/services.html" class="text-gray-600 hover:text-emerald-700 font-medium transition-colors">Services</a>
-                    <a href="/case-studies.html" class="text-gray-600 hover:text-emerald-700 font-medium transition-colors">Case Studies</a>
-                    <a href="/blog.html" class="text-gray-600 hover:text-emerald-700 font-medium transition-colors">Blog</a>
-                    <a href="/contact.html" class="gradient-bg text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">Contact Us</a>
-                </div>
-
-                <!-- Mobile toggle -->
-                <button id="mobile-toggle" class="md:hidden text-gray-600 hover:text-emerald-700" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+<!-- NAV -->
+<nav style="background-color:#047857;" class="sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="/index.html" class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-lime-400 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-emerald-800" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
                     </svg>
-                </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden py-4 border-t border-gray-100">
-                <div class="flex flex-col space-y-3">
-                    <a href="/index.html" class="text-gray-600 hover:text-emerald-700 font-medium px-2 py-1">Home</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-emerald-700 font-medium px-2 py-1">About</a>
-                    <a href="/products.html" class="text-emerald-700 font-semibold px-2 py-1">Products</a>
-                    <a href="/services.html" class="text-gray-600 hover:text-emerald-700 font-medium px-2 py-1">Services</a>
-                    <a href="/case-studies.html" class="text-gray-600 hover:text-emerald-700 font-medium px-2 py-1">Case Studies</a>
-                    <a href="/blog.html" class="text-gray-600 hover:text-emerald-700 font-medium px-2 py-1">Blog</a>
-                    <a href="/contact.html" class="gradient-bg text-white px-4 py-2 rounded-lg font-semibold text-center">Contact Us</a>
                 </div>
+                <span class="text-white font-bold text-xl">Startekk</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/index.html"        class="text-emerald-100 hover:text-white text-sm font-medium">Home</a>
+                <a href="/about.html"        class="text-emerald-100 hover:text-white text-sm font-medium">About</a>
+                <a href="/services.html"     class="text-emerald-100 hover:text-white text-sm font-medium">Services</a>
+                <a href="/products.html"     class="text-white text-sm font-semibold border-b-2 border-lime-400 pb-0.5">Products</a>
+                <a href="/case-studies.html" class="text-emerald-100 hover:text-white text-sm font-medium">Case Studies</a>
+                <a href="/blog.html"         class="text-emerald-100 hover:text-white text-sm font-medium">Blog</a>
+                <a href="/contact.html"      class="bg-lime-400 text-emerald-900 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-lime-300 transition-colors">Contact Us</a>
             </div>
-        </div>
-    </nav>
-
-    <!-- ============================================================
-         BREADCRUMB
-    ============================================================ -->
-    <div class="bg-gray-50 border-b border-gray-100 py-2 px-4">
-        <div class="max-w-7xl mx-auto">
-            <nav class="text-sm text-gray-500">
-                <a href="/index.html" class="hover:text-emerald-700">Home</a>
-                <span class="mx-2">›</span>
-                <a href="/products.html" class="hover:text-emerald-700">Products</a>
-                <span class="mx-2">›</span>
-                <span class="text-gray-900 font-medium">StarLegalAI</span>
-            </nav>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
         </div>
     </div>
+    <div id="mobile-menu" class="md:hidden bg-emerald-800 px-4 pb-4">
+        <a href="/index.html"        class="block text-emerald-100 py-2 text-sm">Home</a>
+        <a href="/about.html"        class="block text-emerald-100 py-2 text-sm">About</a>
+        <a href="/services.html"     class="block text-emerald-100 py-2 text-sm">Services</a>
+        <a href="/products.html"     class="block text-white py-2 text-sm font-semibold">Products</a>
+        <a href="/case-studies.html" class="block text-emerald-100 py-2 text-sm">Case Studies</a>
+        <a href="/blog.html"         class="block text-emerald-100 py-2 text-sm">Blog</a>
+        <a href="/contact.html"      class="block bg-lime-400 text-emerald-900 mt-2 px-4 py-2 rounded-lg text-sm font-semibold text-center">Contact Us</a>
+    </div>
+</nav>
 
-    <!-- ============================================================
-         HERO SECTION
-    ============================================================ -->
-    <section class="legal-ink-bg overflow-hidden relative">
-        <!-- Background texture -->
-        <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(45deg, #C8A84B 0, #C8A84B 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+<!-- BREADCRUMB -->
+<div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm text-gray-500">
+            <a href="/index.html" class="hover:text-emerald-700">Home</a>
+            <span class="mx-2">/</span>
+            <a href="/products.html" class="hover:text-emerald-700">Products</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-800 font-medium">StarLegalAI</span>
+        </nav>
+    </div>
+</div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Badge -->
-                <div class="mb-6 animate-fade-in">
-                    <span class="coming-soon-badge">★ Launching Soon</span>
-                </div>
-
-                <!-- Logo + Name -->
-                <div class="flex items-center justify-center gap-3 mb-6 animate-fade-in animate-delay-1">
-                    <span class="star-mark text-4xl">★</span>
-                    <h1 class="playfair text-4xl md:text-5xl font-bold text-white tracking-tight">StarLegalAI</h1>
-                </div>
-
-                <!-- Tagline -->
-                <p class="playfair text-2xl md:text-3xl font-semibold legal-gold mb-4 animate-fade-in animate-delay-2">
-                    Review Contracts in Minutes, Not Hours.
-                </p>
-
-                <!-- Sub-tagline -->
-                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 animate-fade-in animate-delay-3" style="font-family:'DM Sans',sans-serif;">
-                    AI-powered contract intelligence for attorneys, law firms, and businesses. Upload a PDF or DOCX and get a full risk analysis in under 60 seconds.
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-3">
-                    <a href="https://www.starlegalai.com" target="_blank" rel="noopener" class="btn-gold text-center">
-                        Visit StarLegalAI.com →
-                    </a>
-                    <a href="#features" class="btn-outline-gold text-center">
-                        See How It Works
-                    </a>
-                </div>
-
-                <!-- Trust line -->
-                <p class="text-gray-500 text-sm mt-8 animate-fade-in animate-delay-3">
-                    $0 to start &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; First document free
-                </p>
+<!-- HERO -->
+<section class="gold-gradient text-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 badge-coming px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                Launching Soon — Visit StarLegalAI.com
+            </div>
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <span class="text-5xl gold-accent">&#9733;</span>
+                <span class="legal-display text-4xl md:text-5xl font-bold text-white">StarLegalAI</span>
+            </div>
+            <h1 class="legal-display text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Review Contracts in Minutes,<br>Not Hours.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                AI-powered contract intelligence for attorneys, law firms, and businesses.<br>
+                Upload a PDF or DOCX and get a full risk analysis in under 60 seconds.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://www.starlegalai.com" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-2 gold-bg text-white px-8 py-4 rounded-xl font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg">
+                    Visit StarLegalAI.com
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                </a>
+                <a href="#investor"
+                   class="inline-flex items-center justify-center gap-2 border border-gray-500 text-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:border-yellow-400 hover:text-white transition-colors">
+                    Investor Overview
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-         HOW IT WORKS — 3 STEPS
-    ============================================================ -->
-    <section id="how-it-works" class="py-16 legal-cream-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="playfair text-3xl md:text-4xl font-bold legal-ink mb-3">How StarLegalAI Works</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">Three steps from contract to intelligence report — under 60 seconds total.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <!-- Step 1 -->
-                <div class="text-center">
-                    <div class="step-icon">📄</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">1. Upload</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Upload any PDF or DOCX contract — NDAs, vendor agreements, employment contracts, or any legal document you need analyzed.</p>
-                </div>
-
-                <!-- Arrow (desktop) -->
-                <div class="hidden md:flex items-center justify-center" style="margin-top: -1rem;">
-                    <svg width="60" height="20" viewBox="0 0 60 20">
-                        <line x1="0" y1="10" x2="45" y2="10" stroke="#C8A84B" stroke-width="2"/>
-                        <polyline points="40,4 50,10 40,16" fill="none" stroke="#C8A84B" stroke-width="2"/>
+<!-- HOW IT WORKS -->
+<section class="py-16 cream-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="legal-display text-3xl font-bold text-center mb-12" style="color:var(--ink);">How StarLegalAI Works</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="text-center">
-                    <div class="step-icon">🤖</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">2. Analyze</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">The Anthropic Claude AI engine reads every clause, surfaces risks, maps obligations, and extracts critical deadlines automatically.</p>
-                </div>
+                <div class="text-4xl font-bold gold-accent mb-2">01</div>
+                <h3 class="text-xl font-bold mb-2" style="color:var(--ink);">Upload</h3>
+                <p class="text-gray-600">Drop your PDF or DOCX contract. Any length, any complexity — NDA, vendor agreement, employment contract, or complex M&amp;A document.</p>
             </div>
-
-            <!-- Bottom step (centered) -->
-            <div class="flex justify-center mt-8">
-                <div class="text-center max-w-xs">
-                    <div class="step-icon">✅</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">3. Act</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Receive a structured intelligence report — risk flags, obligations, deadlines, and plain-English summaries ready to share with clients.</p>
+            <div class="text-center">
+                <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
                 </div>
+                <div class="text-4xl font-bold gold-accent mb-2">02</div>
+                <h3 class="text-xl font-bold mb-2" style="color:var(--ink);">Analyze</h3>
+                <p class="text-gray-600">Claude AI reads every clause, surfaces risks, obligations, deadlines, and unusual terms — in under 60 seconds on average.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         6 FEATURE CARDS
-    ============================================================ -->
-    <section id="features" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="playfair text-3xl md:text-4xl font-bold legal-ink mb-3">What StarLegalAI Surfaces</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">Six layers of contract intelligence — everything an attorney needs, delivered instantly.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Feature 1 -->
-                <div class="feature-card">
-                    <div class="text-3xl mb-3">📋</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">Contract Summary</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Plain-language overview of every key agreement point — what was agreed, by whom, and under what conditions.</p>
-                    <div class="mt-4 safe-flag">
-                        ✓ Agreement confirmed: Services to be delivered by March 31
-                    </div>
+            <div class="text-center">
+                <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
                 </div>
-
-                <!-- Feature 2 -->
-                <div class="feature-card">
-                    <div class="text-3xl mb-3">⚠️</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">Risk Detection</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Flags unfavorable clauses, uncapped liability, unusual indemnification terms, and missing protections.</p>
-                    <div class="mt-4 risk-flag">
-                        ⚠ Uncapped liability clause detected on page 7 — attorney review advised
-                    </div>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="feature-card">
-                    <div class="text-3xl mb-3">📌</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">Key Obligations</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Maps who owes what, by when — payment terms, performance requirements, and party-specific duties.</p>
-                    <div class="mt-4 safe-flag">
-                        ✓ Client owes $25,000 net-30 upon delivery milestone
-                    </div>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="feature-card">
-                    <div class="text-3xl mb-3">📅</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">Deadline Extraction</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Surfaces renewal dates, notice periods, option exercise windows, and performance deadlines — nothing buried.</p>
-                    <div class="mt-4 risk-flag">
-                        ⚠ Auto-renews in 90 days — notice required by June 15
-                    </div>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="feature-card">
-                    <div class="text-3xl mb-3">💬</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">AI Follow-Up Q&A</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Ask any question about the contract in plain English and get an instant, accurate answer from the AI engine.</p>
-                    <div class="mt-4 safe-flag">
-                        ✓ "Who bears cost overruns?" → Answered in 3 seconds
-                    </div>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="feature-card">
-                    <div class="text-3xl mb-3">🔤</div>
-                    <h3 class="playfair text-xl font-bold legal-ink mb-2">Plain English Mode</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Translates dense legalese into client-ready language for faster sign-off — no law degree required.</p>
-                    <div class="mt-4 safe-flag">
-                        ✓ Client summary generated — ready to send in 1 click
-                    </div>
-                </div>
+                <div class="text-4xl font-bold gold-accent mb-2">03</div>
+                <h3 class="text-xl font-bold mb-2" style="color:var(--ink);">Act</h3>
+                <p class="text-gray-600">Receive a structured legal intelligence report. Share plain-English summaries with clients, ask follow-up questions, make informed decisions fast.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-         STATS STRIP
-    ============================================================ -->
-    <section class="legal-ink-bg py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-700">
-                <div class="stat-item">
-                    <div class="stat-value">42s</div>
-                    <div class="stat-label">Average Analysis Time</div>
+<!-- 6 FEATURE CARDS -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="legal-display text-3xl font-bold text-center mb-4" style="color:var(--ink);">What StarLegalAI Surfaces</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Six layers of AI-powered contract intelligence — everything that matters, nothing that doesn't.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="feature-card bg-white border border-gray-200 rounded-2xl p-7 shadow-sm">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(200,168,75,.12);">
+                    <svg class="w-6 h-6 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">6+hrs</div>
-                    <div class="stat-label">Saved Per Attorney/Week</div>
+                <h3 class="text-lg font-bold mb-2" style="color:var(--ink);">Contract Summary</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Plain-language overview of every key agreement point — what was agreed, by whom, and under what conditions — without reading 40 pages yourself.</p>
+            </div>
+            <div class="feature-card bg-white border border-gray-200 rounded-2xl p-7 shadow-sm">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(192,57,43,.08);">
+                    <svg class="w-6 h-6" style="color:var(--red);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">$0</div>
-                    <div class="stat-label">To Start — No CC Required</div>
+                <h3 class="text-lg font-bold mb-2" style="color:var(--ink);">Risk Detection</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Flags unfavorable clauses, uncapped liability, unusual indemnification terms, and missing protections before they become six-figure problems.</p>
+            </div>
+            <div class="feature-card bg-white border border-gray-200 rounded-2xl p-7 shadow-sm">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(26,107,74,.08);">
+                    <svg class="w-6 h-6" style="color:var(--green);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">1</div>
-                    <div class="stat-label">Missed Clause = $100K Risk</div>
+                <h3 class="text-lg font-bold mb-2" style="color:var(--ink);">Key Obligations</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Maps who owes what, by when — payment terms, performance requirements, and party-specific duties laid out clearly in one view.</p>
+            </div>
+            <div class="feature-card bg-white border border-gray-200 rounded-2xl p-7 shadow-sm">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(200,168,75,.12);">
+                    <svg class="w-6 h-6 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 </div>
+                <h3 class="text-lg font-bold mb-2" style="color:var(--ink);">Deadline Extraction</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Surfaces renewal dates, notice periods, option exercise windows, and performance deadlines — nothing buried on page 34 slips through.</p>
+            </div>
+            <div class="feature-card bg-white border border-gray-200 rounded-2xl p-7 shadow-sm">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(200,168,75,.12);">
+                    <svg class="w-6 h-6 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2" style="color:var(--ink);">AI Follow-Up Q&amp;A</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Ask any question about the contract in plain English and get an instant, accurate answer — no re-reading, no searching through pages.</p>
+            </div>
+            <div class="feature-card bg-white border border-gray-200 rounded-2xl p-7 shadow-sm">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(26,107,74,.08);">
+                    <svg class="w-6 h-6" style="color:var(--green);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2" style="color:var(--ink);">Plain English Mode</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Translates dense legalese into client-ready language for faster sign-off — share directly with your client without re-drafting a summary yourself.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-         TARGET AUDIENCES
-    ============================================================ -->
-    <section class="py-16 legal-cream-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="playfair text-3xl md:text-4xl font-bold legal-ink mb-3">Built for Legal Professionals & Businesses</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">Whether you bill by the hour or sign contracts to run your business — StarLegalAI gives you an unfair advantage.</p>
+<!-- STATS STRIP -->
+<section class="py-14" style="background-color:var(--ink);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="legal-display text-4xl font-bold gold-accent mb-2">42s</div>
+                <div class="text-gray-400 text-sm">Average full contract analysis</div>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="audience-card">
-                    <div class="text-2xl mb-2">⚖️</div>
-                    <h3 class="playfair text-lg font-bold legal-ink mb-1">Attorneys</h3>
-                    <p class="text-gray-600 text-sm">Save 6+ hours/week on routine contract review. Catch issues before they become client problems. First-pass analysis in under a minute.</p>
-                </div>
-                <div class="audience-card">
-                    <div class="text-2xl mb-2">🏢</div>
-                    <h3 class="playfair text-lg font-bold legal-ink mb-1">Law Firms</h3>
-                    <p class="text-gray-600 text-sm">Standardize review quality across your team. Handle more matters without adding headcount. Consistent AI-grade analysis on every file.</p>
-                </div>
-                <div class="audience-card">
-                    <div class="text-2xl mb-2">🚀</div>
-                    <h3 class="playfair text-lg font-bold legal-ink mb-1">Businesses & Startups</h3>
-                    <p class="text-gray-600 text-sm">Review vendor agreements, NDAs, and service contracts before signing — without paying attorney rates for first-pass review.</p>
-                </div>
-                <div class="audience-card">
-                    <div class="text-2xl mb-2">👤</div>
-                    <h3 class="playfair text-lg font-bold legal-ink mb-1">Individuals</h3>
-                    <p class="text-gray-600 text-sm">Understand what you are signing. Plain-English summaries written for non-lawyers. Know the risks before you commit.</p>
-                </div>
+            <div>
+                <div class="legal-display text-4xl font-bold gold-accent mb-2">6+</div>
+                <div class="text-gray-400 text-sm">Hours/week saved per attorney</div>
+            </div>
+            <div>
+                <div class="legal-display text-4xl font-bold gold-accent mb-2">$0</div>
+                <div class="text-gray-400 text-sm">To start — no credit card required</div>
+            </div>
+            <div>
+                <div class="legal-display text-4xl font-bold gold-accent mb-2">1</div>
+                <div class="text-gray-400 text-sm">Missed clause = six-figure liability</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-         TESTIMONIALS
-    ============================================================ -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="playfair text-3xl md:text-4xl font-bold legal-ink mb-3">What Legal Professionals Say</h2>
+<!-- WHO IT'S FOR -->
+<section class="py-16 cream-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="legal-display text-3xl font-bold text-center mb-4" style="color:var(--ink);">Built for Legal Professionals and Businesses</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Whether you bill by the hour or sign contracts every week, StarLegalAI removes the risk of missing what matters.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="text-3xl mb-3">&#9878;&#65039;</div>
+                <h3 class="font-bold text-lg mb-2" style="color:var(--ink);">Attorneys</h3>
+                <p class="text-sm text-gray-600">Save 6+ hours/week on routine contract review. Catch issues before they become client problems. Handle more matters without adding hours.</p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <p class="text-gray-700 text-sm leading-relaxed mt-8 mb-6">Caught a unilateral termination clause in a vendor agreement my client was about to sign. StarLegalAI flagged it in 45 seconds. Saved us from a very uncomfortable conversation six months down the road.</p>
-                    <div class="border-t border-gray-100 pt-4">
-                        <div class="font-semibold text-gray-900 text-sm">M. Torres</div>
-                        <div class="text-gray-500 text-xs">Corporate Attorney, Dallas TX</div>
-                        <div class="flex text-yellow-400 text-xs mt-1">★★★★★</div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <p class="text-gray-700 text-sm leading-relaxed mt-8 mb-6">I run a solo practice. StarLegalAI is like having a first-year associate on call 24/7. I use it for every initial contract review before I invest my own time in deep analysis.</p>
-                    <div class="border-t border-gray-100 pt-4">
-                        <div class="font-semibold text-gray-900 text-sm">J. Kim</div>
-                        <div class="text-gray-500 text-xs">IP Attorney, Austin TX</div>
-                        <div class="flex text-yellow-400 text-xs mt-1">★★★★★</div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <p class="text-gray-700 text-sm leading-relaxed mt-8 mb-6">The risk flags alone paid for a year's subscription in the first month. Caught a dangerous indemnification clause buried on page 34 that my client would have signed without question.</p>
-                    <div class="border-t border-gray-100 pt-4">
-                        <div class="font-semibold text-gray-900 text-sm">R. Patel</div>
-                        <div class="text-gray-500 text-xs">Contract Specialist, New York NY</div>
-                        <div class="flex text-yellow-400 text-xs mt-1">★★★★★</div>
-                    </div>
-                </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="text-3xl mb-3">&#127963;&#65039;</div>
+                <h3 class="font-bold text-lg mb-2" style="color:var(--ink);">Law Firms</h3>
+                <p class="text-sm text-gray-600">Standardize review quality across your team. Handle more matters without adding headcount. Consistent, attorney-grade output every time.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="text-3xl mb-3">&#127970;</div>
+                <h3 class="font-bold text-lg mb-2" style="color:var(--ink);">Businesses &amp; Startups</h3>
+                <p class="text-sm text-gray-600">Review vendor agreements, NDAs, and service contracts before signing — without paying $400/hr attorney rates for first-pass review.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="text-3xl mb-3">&#128100;</div>
+                <h3 class="font-bold text-lg mb-2" style="color:var(--ink);">Individuals</h3>
+                <p class="text-sm text-gray-600">Understand what you are signing. Plain-English summaries written for non-lawyers — so you never sign something you don't fully understand.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-         PRICING
-    ============================================================ -->
-    <section id="pricing" class="py-16 legal-cream-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="playfair text-3xl md:text-4xl font-bold legal-ink mb-3">Simple, Transparent Pricing</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">Start free. Scale as you grow. No surprise fees.</p>
+
+
+<!-- PRICING -->
+<section class="py-16 cream-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="legal-display text-3xl font-bold text-center mb-4" style="color:var(--ink);">Simple, Transparent Pricing</h2>
+        <p class="text-center text-gray-600 mb-12">Start free. Upgrade when you're ready. No contracts, cancel anytime.</p>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-200">
+                <h3 class="font-bold text-xl mb-1" style="color:var(--ink);">Free Trial</h3>
+                <div class="text-4xl font-bold gold-accent mb-1">$0</div>
+                <div class="text-xs text-gray-500 mb-5">1 document &middot; no credit card</div>
+                <ul class="space-y-2 text-sm text-gray-600 mb-7">
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> 1 contract analysis</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Full AI report</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Risk detection</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> No credit card required</li>
+                </ul>
+                <a href="https://www.starlegalai.com/pricing" target="_blank" rel="noopener noreferrer" class="block text-center py-2 rounded-lg border-2 border-gray-300 text-gray-700 text-sm font-semibold hover:border-yellow-400 transition-colors">Get Started Free</a>
             </div>
-
-            <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto items-start">
-                <!-- Free -->
-                <div class="pricing-card text-center">
-                    <div class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">Free Trial</div>
-                    <div class="playfair text-4xl font-bold legal-ink mb-1">$0</div>
-                    <div class="text-gray-500 text-xs mb-4">1 document · no credit card</div>
-                    <div class="text-sm text-gray-600 mb-6">Perfect for trying StarLegalAI with your first real contract.</div>
-                    <a href="https://www.starlegalai.com" target="_blank" class="block border border-gray-300 text-gray-700 py-2 px-4 rounded-lg text-sm font-semibold hover:border-yellow-500 transition-colors text-center">Get Started Free</a>
-                </div>
-
-                <!-- Starter -->
-                <div class="pricing-card text-center">
-                    <div class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">Starter</div>
-                    <div class="playfair text-4xl font-bold legal-ink mb-1">$19<span class="text-lg text-gray-400 font-normal">/mo</span></div>
-                    <div class="text-gray-500 text-xs mb-4">Individuals & solo practitioners</div>
-                    <div class="text-sm text-gray-600 mb-6">Ideal for solo attorneys and individuals who review contracts regularly.</div>
-                    <a href="https://www.starlegalai.com" target="_blank" class="block border border-gray-300 text-gray-700 py-2 px-4 rounded-lg text-sm font-semibold hover:border-yellow-500 transition-colors text-center">Get Starter</a>
-                </div>
-
-                <!-- Professional (featured) -->
-                <div class="pricing-card featured text-center relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-                        <span class="coming-soon-badge text-xs">Most Popular</span>
-                    </div>
-                    <div class="text-sm font-semibold uppercase tracking-wide mb-1" style="color:var(--legal-gold)">Professional</div>
-                    <div class="playfair text-4xl font-bold legal-ink mb-1">$49<span class="text-lg text-gray-400 font-normal">/mo</span></div>
-                    <div class="text-gray-500 text-xs mb-4">Active attorneys & small firms</div>
-                    <div class="text-sm text-gray-600 mb-6">The sweet spot for attorneys who bill time. Full AI pipeline, unlimited Q&A.</div>
-                    <a href="https://www.starlegalai.com" target="_blank" class="btn-gold block text-center text-sm py-2 px-4">Get Professional</a>
-                </div>
-
-                <!-- Business -->
-                <div class="pricing-card text-center">
-                    <div class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">Business</div>
-                    <div class="playfair text-4xl font-bold legal-ink mb-1">$99<span class="text-lg text-gray-400 font-normal">/mo</span></div>
-                    <div class="text-gray-500 text-xs mb-4">Teams & high-volume users</div>
-                    <div class="text-sm text-gray-600 mb-6">For legal teams processing high contract volume. Enterprise available on request.</div>
-                    <a href="https://www.starlegalai.com" target="_blank" class="block border border-gray-300 text-gray-700 py-2 px-4 rounded-lg text-sm font-semibold hover:border-yellow-500 transition-colors text-center">Get Business</a>
-                </div>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-200">
+                <h3 class="font-bold text-xl mb-1" style="color:var(--ink);">Starter</h3>
+                <div class="text-4xl font-bold gold-accent mb-1">$19</div>
+                <div class="text-xs text-gray-500 mb-5">per month</div>
+                <ul class="space-y-2 text-sm text-gray-600 mb-7">
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Individuals &amp; solo practitioners</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Up to 10 analyses/month</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> All 6 AI features</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Plain English mode</li>
+                </ul>
+                <a href="https://www.starlegalai.com/pricing" target="_blank" rel="noopener noreferrer" class="block text-center py-2 rounded-lg border-2 border-gray-300 text-gray-700 text-sm font-semibold hover:border-yellow-400 transition-colors">Get Starter</a>
             </div>
-
-            <p class="text-center text-gray-400 text-sm mt-8">Enterprise / large firm pricing available on request. <a href="/contact.html" class="text-emerald-700 underline">Contact us</a>.</p>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         SECURITY & TRUST
-    ============================================================ -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="playfair text-3xl font-bold legal-ink mb-3">Enterprise-Grade Security</h2>
-                <p class="text-gray-500 max-w-lg mx-auto text-sm">Your contracts are confidential. Our security ensures they stay that way.</p>
+            <div class="pricing-featured bg-white rounded-2xl p-7 shadow-lg">
+                <h3 class="font-bold text-xl mb-1" style="color:var(--ink);">Professional</h3>
+                <div class="text-4xl font-bold gold-accent mb-1">$49</div>
+                <div class="text-xs text-gray-500 mb-5">per month</div>
+                <ul class="space-y-2 text-sm text-gray-600 mb-7">
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Active attorneys &amp; small firms</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Unlimited analyses</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> AI follow-up Q&amp;A</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Priority processing</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Export reports (PDF)</li>
+                </ul>
+                <a href="https://www.starlegalai.com/pricing" target="_blank" rel="noopener noreferrer" class="block text-center py-3 rounded-xl gold-bg text-white text-sm font-bold hover:opacity-90 transition-opacity">Get Professional</a>
             </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
-                <div class="security-badge"><span class="check">🔒</span> 256-bit AES encryption at rest</div>
-                <div class="security-badge"><span class="check">🛡️</span> TLS 1.3 in transit</div>
-                <div class="security-badge"><span class="check">✅</span> Row-Level Security (Supabase)</div>
-                <div class="security-badge"><span class="check">🚫</span> Zero AI training on your files</div>
-                <div class="security-badge"><span class="check">🔗</span> Signed URLs — no public access</div>
-                <div class="security-badge"><span class="check">🌍</span> GDPR & CCPA compliant</div>
-            </div>
-
-            <!-- Legal Disclaimer -->
-            <div class="max-w-3xl mx-auto bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
-                <p class="text-gray-500 text-xs leading-relaxed">
-                    <strong class="text-gray-700">Disclaimer:</strong> StarLegalAI is not a law firm and does not provide legal advice. AI analysis is for informational purposes only and does not constitute legal counsel. Always consult a licensed attorney for legal decisions.
-                </p>
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-200">
+                <h3 class="font-bold text-xl mb-1" style="color:var(--ink);">Business</h3>
+                <div class="text-4xl font-bold gold-accent mb-1">$99</div>
+                <div class="text-xs text-gray-500 mb-5">per month</div>
+                <ul class="space-y-2 text-sm text-gray-600 mb-7">
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Teams &amp; high-volume users</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Multi-user access</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Team analytics</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> API access (coming soon)</li>
+                    <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Dedicated support</li>
+                </ul>
+                <a href="https://www.starlegalai.com/pricing" target="_blank" rel="noopener noreferrer" class="block text-center py-2 rounded-lg border-2 border-gray-300 text-gray-700 text-sm font-semibold hover:border-yellow-400 transition-colors">Get Business</a>
             </div>
         </div>
-    </section>
+        <p class="text-center text-sm text-gray-500 mt-6">Enterprise pricing available for large firms and corporate legal departments. <a href="https://www.starlegalai.com/contact" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">Contact us</a>.</p>
+    </div>
+</section>
 
-    <!-- ============================================================
-         INVESTOR SECTION (anchor: #investor)
-    ============================================================ -->
-    <section id="investor" class="py-20 legal-ink-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header -->
-            <div class="text-center mb-16">
-                <div class="inline-block coming-soon-badge mb-4">★ Investor Overview</div>
-                <h2 class="playfair text-3xl md:text-4xl font-bold text-white mb-4">Market Opportunity & Investment Thesis</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">StarLegalAI targets a $12B annual attorney-time market with a scalable SaaS model and sub-$50 CAC.</p>
+<!-- SECURITY -->
+<section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="legal-display text-3xl font-bold text-center mb-4" style="color:var(--ink);">Enterprise-Grade Security</h2>
+        <p class="text-center text-gray-600 mb-10">Your contracts are confidential. StarLegalAI is built with legal-grade security from day one.</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+            <div class="trust-badge bg-gray-50 rounded-xl p-4">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1l2.928 5.938L20 8.118l-5 4.869 1.18 6.877L10 16.897 3.82 19.864 5 12.987 0 8.118l7.072-1.18z" clip-rule="evenodd"/></svg>
+                <span>256-bit AES encryption at rest</span>
             </div>
-
-            <!-- Market Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-                <div class="investor-stat text-center">
-                    <div class="playfair text-2xl font-bold legal-gold mb-1">$25B+</div>
-                    <div class="text-gray-400 text-xs">Global LegalTech Market</div>
-                </div>
-                <div class="investor-stat text-center">
-                    <div class="playfair text-2xl font-bold legal-gold mb-1">9%+</div>
-                    <div class="text-gray-400 text-xs">Annual Market Growth</div>
-                </div>
-                <div class="investor-stat text-center">
-                    <div class="playfair text-2xl font-bold legal-gold mb-1">$570</div>
-                    <div class="text-gray-400 text-xs">Estimated LTV (Pro Plan)</div>
-                </div>
-                <div class="investor-stat text-center">
-                    <div class="playfair text-2xl font-bold legal-gold mb-1">$45</div>
-                    <div class="text-gray-400 text-xs">Estimated CAC</div>
-                </div>
+            <div class="trust-badge bg-gray-50 rounded-xl p-4">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                <span>TLS 1.3 in transit</span>
             </div>
-
-            <!-- 2-col content -->
-            <div class="grid md:grid-cols-2 gap-12 mb-16">
-                <!-- Problem & Solution -->
+            <div class="trust-badge bg-gray-50 rounded-xl p-4">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2V7a5 5 0 00-5-5zm0 2a3 3 0 013 3v2H7V7a3 3 0 013-3z"/></svg>
+                <span>Row-Level Security (Supabase)</span>
+            </div>
+            <div class="trust-badge bg-gray-50 rounded-xl p-4">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Zero AI training on your documents</span>
+            </div>
+            <div class="trust-badge bg-gray-50 rounded-xl p-4">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                <span>Signed URLs for all file access</span>
+            </div>
+            <div class="trust-badge bg-gray-50 rounded-xl p-4">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1l2.928 5.938L20 8.118l-5 4.869 1.18 6.877L10 16.897 3.82 19.864 5 12.987 0 8.118l7.072-1.18z" clip-rule="evenodd"/></svg>
+                <span>GDPR &amp; CCPA compliant</span>
+            </div>
+        </div>
+        <!-- IRON-CLAD LEGAL DISCLAIMER -->
+        <div class="rounded-2xl p-8 border-2 border-red-100" style="background:#fff8f8;">
+            <div class="flex items-start gap-4 max-w-4xl mx-auto">
+                <div class="text-2xl flex-shrink-0 mt-1">⚠️</div>
                 <div>
-                    <h3 class="playfair text-2xl font-bold text-white mb-5">The Problem We Solve</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex gap-3"><span class="text-red-400 mt-0.5">✗</span> Large law firms spend 30–40% of associate time on routine contract review</li>
-                        <li class="flex gap-3"><span class="text-red-400 mt-0.5">✗</span> Small firms have no scalable way to handle review volume</li>
-                        <li class="flex gap-3"><span class="text-red-400 mt-0.5">✗</span> Businesses pay $300–$600/hour for attorney review of standard NDAs</li>
-                        <li class="flex gap-3"><span class="text-red-400 mt-0.5">✗</span> First-time reviewers miss critical clauses 23% of the time</li>
-                        <li class="flex gap-3"><span class="text-red-400 mt-0.5">✗</span> No affordable, attorney-grade AI tool exists for the SMB legal market</li>
-                    </ul>
-
-                    <h3 class="playfair text-2xl font-bold text-white mt-10 mb-5">Our Solution</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex gap-3"><span class="legal-gold">★</span> Built natively on Anthropic Claude — top model for legal reasoning</li>
-                        <li class="flex gap-3"><span class="legal-gold">★</span> Sub-60-second analysis vs. 30-minute industry average</li>
-                        <li class="flex gap-3"><span class="legal-gold">★</span> Designed for SMB legal market — upload and analyze immediately</li>
-                        <li class="flex gap-3"><span class="legal-gold">★</span> Structured JSON output enables future API and integration product lines</li>
-                    </ul>
-                </div>
-
-                <!-- Business Model -->
-                <div>
-                    <h3 class="playfair text-2xl font-bold text-white mb-5">Business Model</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm mb-10">
-                        <li class="flex gap-3"><span class="legal-gold">★</span> SaaS subscription — monthly and annual billing via Stripe</li>
-                        <li class="flex gap-3"><span class="legal-gold">★</span> Free trial (1 document) drives top-of-funnel with zero friction</li>
-                        <li class="flex gap-3"><span class="legal-gold">★</span> Credit-based per-analysis model aligns pricing with usage</li>
-                        <li class="flex gap-3"><span class="legal-gold">★</span> Enterprise tier targets law firms and corporate legal departments</li>
-                    </ul>
-
-                    <h3 class="playfair text-2xl font-bold text-white mb-5">Seed Round — Use of Funds</h3>
-                    <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-300">Go-to-market & paid acquisition</span>
-                                <span class="legal-gold font-semibold">35%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-1.5">
-                                <div class="h-1.5 rounded-full" style="width:35%;background:var(--legal-gold)"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-300">Engineering (2 developers)</span>
-                                <span class="legal-gold font-semibold">30%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-1.5">
-                                <div class="h-1.5 rounded-full" style="width:30%;background:var(--legal-gold)"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-300">Content marketing & SEO</span>
-                                <span class="legal-gold font-semibold">20%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-1.5">
-                                <div class="h-1.5 rounded-full" style="width:20%;background:var(--legal-gold)"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-300">Operations & infrastructure</span>
-                                <span class="legal-gold font-semibold">10%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-1.5">
-                                <div class="h-1.5 rounded-full" style="width:10%;background:var(--legal-gold)"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-300">Legal & compliance</span>
-                                <span class="legal-gold font-semibold">5%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-1.5">
-                                <div class="h-1.5 rounded-full" style="width:5%;background:var(--legal-gold)"></div>
-                            </div>
-                        </div>
+                    <h3 class="font-bold text-gray-900 mb-3 text-base">Important Legal Disclaimer &amp; Terms of Use</h3>
+                    <div class="space-y-3 text-xs text-gray-600 leading-relaxed">
+                        <p><strong>NOT LEGAL ADVICE.</strong> StarLegalAI is an AI-powered document analysis tool and is <strong>NOT a law firm, attorney, or legal services provider.</strong> All output generated by StarLegalAI — including but not limited to contract summaries, risk flags, obligation extractions, deadline identifications, and Q&amp;A responses — constitutes <strong>informational reference material only</strong> and does not constitute legal advice, legal opinion, or attorney-client communication of any kind.</p>
+                        <p><strong>POWERED BY ANTHROPIC CLAUDE AI.</strong> StarLegalAI uses the Anthropic Claude artificial intelligence API to process and analyze documents. AI language models, including Claude, may produce inaccurate, incomplete, or misleading outputs. AI analysis is inherently probabilistic and <strong>cannot guarantee accuracy, completeness, or fitness for any particular legal purpose.</strong> You acknowledge that AI-generated analysis may miss critical clauses, misinterpret legal language, or fail to identify material risks.</p>
+                        <p><strong>MANDATORY ATTORNEY REVIEW.</strong> Any output produced by StarLegalAI <strong>must be reviewed and verified by a licensed attorney</strong> before you rely on it for any legal decision, contract execution, negotiation, litigation, regulatory filing, or any other legal purpose. <strong>Do not sign, execute, or act on any contract based solely on StarLegalAI output without obtaining independent legal counsel.</strong></p>
+                        <p><strong>NO LIABILITY.</strong> StartTekk LLC, its officers, directors, employees, and agents expressly disclaim all liability for any loss, damage, claim, liability, or expense — including attorneys' fees — arising from or related to your use of StarLegalAI or reliance on any AI-generated analysis. Your use of StarLegalAI is entirely at your own risk.</p>
+                        <p><strong>NO ATTORNEY-CLIENT RELATIONSHIP.</strong> Use of StarLegalAI does not create an attorney-client relationship between you and StartTekk LLC or any affiliated party.</p>
+                        <p class="text-gray-500 italic">By using StarLegalAI, you acknowledge that you have read, understood, and agree to these terms. For legal decisions, always consult a licensed attorney in your jurisdiction.</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
 
-            <!-- Tech Stack -->
-            <div class="border border-gray-700 rounded-xl p-6 mb-10">
-                <h3 class="playfair text-xl font-bold text-white mb-4">Technology Stack</h3>
-                <div class="flex flex-wrap gap-3">
-                    <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-600">Next.js 14 (App Router)</span>
-                    <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-600">Anthropic Claude API</span>
-                    <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-600">Supabase (PostgreSQL + RLS)</span>
-                    <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-600">Stripe Subscriptions</span>
-                    <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-600">Vercel (Edge CDN)</span>
-                    <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-600">Resend API</span>
-                    <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-600">Tailwind CSS</span>
-                </div>
+<!-- INVESTOR SECTION -->
+<section id="investor" class="py-20 bg-white border-t-4" style="border-color:var(--gold);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-4" style="color:var(--gold);">Investment Overview</div>
+            <h2 class="legal-display text-3xl md:text-4xl font-bold mb-4" style="color:var(--ink);">StarLegalAI — Market Opportunity</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">A StartTekk LLC product. Seeking seed investment to accelerate go-to-market, content/SEO, enterprise sales, and team growth.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 mb-14">
+            <div class="text-center bg-gray-50 rounded-2xl p-8">
+                <div class="legal-display text-4xl font-bold gold-accent mb-2">$25B+</div>
+                <div class="font-semibold mb-1" style="color:var(--ink);">Global Legal Tech Market</div>
+                <div class="text-sm text-gray-500">Growing at 9%+ annually</div>
             </div>
-
-            <!-- Current Status -->
-            <div class="border border-gray-700 rounded-xl p-6 mb-10">
-                <h3 class="playfair text-xl font-bold text-white mb-4">Current Status</h3>
-                <ul class="space-y-2 text-sm">
-                    <li class="text-gray-300 flex gap-3"><span class="legal-gold">✓</span> MVP application built and deployed on Vercel</li>
-                    <li class="text-gray-300 flex gap-3"><span class="legal-gold">✓</span> Full AI pipeline operational (PDF + DOCX → Claude → structured report)</li>
-                    <li class="text-gray-300 flex gap-3"><span class="legal-gold">✓</span> Stripe subscriptions integrated (4 pricing tiers)</li>
-                    <li class="text-gray-300 flex gap-3"><span class="legal-gold">✓</span> Supabase authentication and database live</li>
-                    <li class="text-gray-300 flex gap-3"><span class="legal-gold">✓</span> Domain starlegalai.com live</li>
-                    <li class="text-gray-300 flex gap-3"><span class="text-yellow-400">◎</span> Seeking seed investment for go-to-market, SEO, enterprise sales, and team growth</li>
+            <div class="text-center bg-gray-50 rounded-2xl p-8">
+                <div class="legal-display text-4xl font-bold gold-accent mb-2">$12B</div>
+                <div class="font-semibold mb-1" style="color:var(--ink);">US Attorney Contract Review Time</div>
+                <div class="text-sm text-gray-500">Annual cost, addressable market</div>
+            </div>
+            <div class="text-center bg-gray-50 rounded-2xl p-8">
+                <div class="legal-display text-4xl font-bold gold-accent mb-2">23%</div>
+                <div class="font-semibold mb-1" style="color:var(--ink);">First-Pass Review Miss Rate</div>
+                <div class="text-sm text-gray-500">Critical clauses missed by manual review</div>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 mb-14">
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <h3 class="font-bold text-xl mb-5" style="color:var(--ink);">The Problem</h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start gap-3"><span style="color:var(--red);">&#10007;</span> Large firms spend 30-40% of associate time on routine review</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--red);">&#10007;</span> Solo practitioners have no scalable review workflow</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--red);">&#10007;</span> Businesses pay $300-$600/hr for attorney review of standard NDAs</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--red);">&#10007;</span> First-time reviewers miss critical clauses 23% of the time</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--red);">&#10007;</span> No affordable, attorney-grade AI tool for the SMB legal market</li>
                 </ul>
             </div>
-
-            <!-- CTA -->
-            <div class="text-center">
-                <p class="text-gray-400 mb-6 text-sm">Interested in learning more about StarLegalAI as an investment or partnership opportunity?</p>
-                <a href="/contact.html" class="btn-gold inline-block">Contact Investor Relations →</a>
+            <div class="rounded-2xl p-8" style="background:linear-gradient(135deg,rgba(200,168,75,.08) 0%,rgba(26,107,74,.06) 100%);border:1px solid rgba(200,168,75,.2);">
+                <h3 class="font-bold text-xl mb-5" style="color:var(--ink);">The Solution</h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start gap-3"><span style="color:var(--green);">&#10003;</span> Anthropic Claude API — leading model for legal reasoning</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--green);">&#10003;</span> Sub-60s analysis vs. 30-minute industry average</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--green);">&#10003;</span> Designed for the SMB legal market from day one</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--green);">&#10003;</span> No setup cost — upload and analyze immediately</li>
+                    <li class="flex items-start gap-3"><span style="color:var(--green);">&#10003;</span> Structured JSON output enables future API product lines</li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- ============================================================
-         FINAL CTA SECTION
-    ============================================================ -->
-    <section class="py-16 legal-cream-bg">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="star-mark text-3xl">★</span>
-            <h2 class="playfair text-3xl md:text-4xl font-bold legal-ink mt-3 mb-4">Launching Soon — Analyze Your First Contract Free</h2>
-            <p class="text-gray-600 mb-8 max-w-xl mx-auto">No credit card required. No setup. Upload your contract and see what you've been missing.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://www.starlegalai.com" target="_blank" rel="noopener" class="btn-gold text-center">
-                    Visit StarLegalAI.com →
-                </a>
-                <a href="/products.html" class="btn-outline-gold text-center" style="border-color:var(--emerald);color:var(--emerald);">
-                    ← View All Products
-                </a>
+        <div class="grid md:grid-cols-2 gap-8 mb-14">
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <h3 class="font-bold text-xl mb-5" style="color:var(--ink);">Business Model</h3>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full gold-bg flex-shrink-0"></span>SaaS subscription — monthly &amp; annual billing via Stripe</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full gold-bg flex-shrink-0"></span>Free trial (1 document) drives top-of-funnel with zero friction</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full gold-bg flex-shrink-0"></span>Credit-based per-analysis model aligns pricing with usage</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full gold-bg flex-shrink-0"></span>Enterprise tier (custom pricing) targets large firms</li>
+                </ul>
+                <div class="mt-6 pt-6 border-t border-gray-100 grid grid-cols-2 gap-4">
+                    <div><div class="text-2xl font-bold gold-accent">$570</div><div class="text-xs text-gray-500">Estimated LTV (Professional, 12-mo avg)</div></div>
+                    <div><div class="text-2xl font-bold gold-accent">$45</div><div class="text-xs text-gray-500">Estimated CAC (organic SEO + legal channels)</div></div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         FOOTER (matches site-wide 4-column pattern)
-    ============================================================ -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <!-- Company -->
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <span class="font-bold">Startekk.net</span>
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <h3 class="font-bold text-xl mb-5" style="color:var(--ink);">Use of Seed Funds</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Go-to-market &amp; paid acquisition</span><span class="font-bold gold-accent">35%</span></div>
+                        <div class="w-full bg-gray-100 rounded-full h-2"><div class="h-2 rounded-full gold-bg" style="width:35%"></div></div>
                     </div>
-                    <p class="text-gray-400 text-sm mb-4">AI-powered SaaS products and cloud automation. Startekk LLC, Plano TX.</p>
-                    <p class="text-gray-400 text-sm">(469) 713-3993</p>
-                    <p class="text-gray-400 text-sm">5465 Legacy Drive Suite 650<br>Plano, TX 75024</p>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Engineering (2 additional developers)</span><span class="font-bold gold-accent">30%</span></div>
+                        <div class="w-full bg-gray-100 rounded-full h-2"><div class="h-2 rounded-full gold-bg" style="width:30%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Content marketing &amp; SEO</span><span class="font-bold gold-accent">20%</span></div>
+                        <div class="w-full bg-gray-100 rounded-full h-2"><div class="h-2 rounded-full gold-bg" style="width:20%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Operations &amp; infrastructure</span><span class="font-bold gold-accent">10%</span></div>
+                        <div class="w-full bg-gray-100 rounded-full h-2"><div class="h-2 rounded-full gold-bg" style="width:10%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="font-medium text-gray-700">Legal &amp; compliance</span><span class="font-bold gold-accent">5%</span></div>
+                        <div class="w-full bg-gray-100 rounded-full h-2"><div class="h-2 rounded-full gold-bg" style="width:5%"></div></div>
+                    </div>
                 </div>
-
-                <!-- Products -->
-                <div>
-                    <h4 class="font-semibold mb-4">Products</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="/star-ai-cloud.html" class="hover:text-white transition-colors">Star AI Cloud</a></li>
-                        <li><a href="/star-ai-ediscovery.html" class="hover:text-white transition-colors">Star AI eDiscovery</a></li>
-                        <li><a href="/star-ai-finance.html" class="hover:text-white transition-colors">Star AI Finance</a></li>
-                        <li><a href="/star-legalai.html" class="hover:text-white transition-colors text-yellow-400">★ StarLegalAI</a></li>
-                        <li><a href="/star-automation.html" class="hover:text-white transition-colors">Star Automation</a></li>
-                        <li><a href="/qr-feedback.html" class="hover:text-white transition-colors">QR Feedback</a></li>
-                        <li><a href="/products.html" class="hover:text-white transition-colors">All Products</a></li>
-                    </ul>
-                </div>
-
-                <!-- Resources -->
-                <div>
-                    <h4 class="font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="/blog.html" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="/case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
-                        <li><a href="/cost-calculator.html" class="hover:text-white transition-colors">Cost Calculator</a></li>
-                        <li><a href="/career-accel.html" class="hover:text-white transition-colors">Career Accel</a></li>
-                        <li><a href="https://www.starworkforce.net" class="hover:text-white transition-colors">Star Workforce →</a></li>
-                    </ul>
-                </div>
-
-                <!-- Legal -->
-                <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="/legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="/legal/terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="/legal/cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
-                        <li><a href="/legal/do-not-sell.html" class="hover:text-white transition-colors">Do Not Sell</a></li>
-                        <li><a href="/legal/accessibility.html" class="hover:text-white transition-colors">Accessibility</a></li>
-                        <li><a href="/legal/fraud-alert.html" class="hover:text-white transition-colors">Fraud Alert</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2026 Startekk LLC. All rights reserved.</p>
-                <p class="text-gray-500 text-xs mt-2 md:mt-0">StarLegalAI is not a law firm. AI analysis does not constitute legal advice.</p>
             </div>
         </div>
-    </footer>
+        <div class="bg-gray-50 rounded-2xl p-8 mb-10">
+            <h3 class="font-bold text-xl mb-5 text-center" style="color:var(--ink);">Current Status &amp; Tech Stack</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-semibold text-sm text-gray-500 uppercase tracking-wider mb-4">MVP Progress</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> MVP application built &amp; deployed on Vercel</li>
+                        <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Full AI pipeline operational (PDF + DOCX to Claude to report)</li>
+                        <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Stripe subscriptions integrated (4 pricing tiers)</li>
+                        <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Supabase authentication &amp; database live</li>
+                        <li class="flex items-center gap-2"><span style="color:var(--green);">&#10003;</span> Domain starlegalai.com live</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm text-gray-500 uppercase tracking-wider mb-4">Technology Stack</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Next.js 14</span>
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">React 18</span>
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Anthropic Claude API</span>
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Supabase</span>
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Stripe</span>
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Resend API</span>
+                        <span class="bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p class="text-gray-600 mb-6">Interested in learning more about the investment opportunity?</p>
+            <a href="/contact.html" class="inline-flex items-center gap-2 gradient-bg text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity">
+                Contact Investor Relations
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
 
-    <script>
-        // Sticky nav shadow
-        window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
-        });
-    </script>
+<!-- FOOTER CTA -->
+<section class="py-16 gold-gradient text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-4xl gold-accent mb-4">&#9733;</div>
+        <h2 class="legal-display text-3xl md:text-4xl font-bold mb-4">Launching Soon</h2>
+        <p class="text-gray-300 mb-8 text-lg">Analyze your first contract free &mdash; no credit card required.</p>
+        <a href="https://www.starlegalai.com" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 gold-bg text-white px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-opacity shadow-lg">
+            Visit StarLegalAI.com &#8594;
+        </a>
+    </div>
+</section>
 
+<!-- FOOTER -->
+<footer style="background-color:#0a1a0a;" class="text-gray-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-5">
+                    <div class="w-7 h-7 bg-lime-400 rounded-md flex items-center justify-center">
+                        <svg class="w-4 h-4 text-emerald-800" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <span class="text-white font-bold">Startekk</span>
+                </div>
+                <p class="text-sm leading-relaxed mb-4">AI-powered SaaS products and elite IT staffing across USA, India, Canada &amp; Australia.</p>
+                <p class="text-xs">5465 Legacy Drive Suite 650<br>Plano, TX 75024<br>(469) 713-3993</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm mb-4">Products</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/star-ai-cloud.html"      class="hover:text-white transition-colors">Star AI Cloud</a></li>
+                    <li><a href="/star-ai-ediscovery.html" class="hover:text-white transition-colors">Star AI eDiscovery</a></li>
+                    <li><a href="/star-ai-finance.html"    class="hover:text-white transition-colors">Star AI Finance</a></li>
+                    <li><a href="/star-legalai.html"       class="text-yellow-400 hover:text-yellow-300 transition-colors">StarLegalAI &#9733;</a></li>
+                    <li><a href="/star-automation.html"    class="hover:text-white transition-colors">Star Automation</a></li>
+                    <li><a href="/qr-feedback.html"        class="hover:text-white transition-colors">QR Feedback</a></li>
+                    <li><a href="/products.html"           class="hover:text-white transition-colors">All Products &#8594;</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/blog.html"            class="hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/case-studies.html"    class="hover:text-white transition-colors">Case Studies</a></li>
+                    <li><a href="/cost-calculator.html" class="hover:text-white transition-colors">Cost Calculator</a></li>
+                    <li><a href="/about.html"           class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.starworkforce.net" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">StarWorkforce.net &#8599;</a></li>
+                    <li><a href="/investor/index.html"  class="hover:text-white transition-colors">Investor Relations</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/legal/privacy-policy.html"   class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="/legal/terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="/legal/cookie-policy.html"    class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="/legal/do-not-sell.html"      class="hover:text-white transition-colors">Do Not Sell (CCPA)</a></li>
+                    <li><a href="/legal/accessibility.html"    class="hover:text-white transition-colors">Accessibility</a></li>
+                    <li><a href="/legal/fraud-alert.html"      class="hover:text-white transition-colors">Fraud Alert</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-600">
+            <p>&copy; 2025 StartTekk LLC. All rights reserved. StartTekk.net &amp; StarWorkforce.net are brands of StartTekk LLC, Plano TX.</p>
+            <p class="mt-1">StarLegalAI is a product of StartTekk LLC. AI analysis does not constitute legal advice.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('open');
+    });
+</script>
 </body>
 </html>
